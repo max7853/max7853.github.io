@@ -1,0 +1,327 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Praline</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+    integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&amp;subset=cyrillic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700&amp;subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="./fonts/stylesheet.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" type="image/png" href="./img/favicon.png">
+  </head>
+<body>
+
+<div id="app">
+
+<div class="container-fluid main">
+  <div class="social">
+    <img class="social_ico" src="./img/fb.png" alt="fb"><br>
+    <img class="social_ico" src="./img/vk.png" alt="vk"><br>
+    <img class="social_ico" src="./img/ins.png" alt="ins">
+  </div>
+  <div class="container">
+    <div class="row vcenter">
+      <div class="col-lg-3 logo text-center"><img class="img-fluid" src="./img/logo.png" alt="logo"></div>
+      <div class="col-lg-8 offset-xl-1">
+        <div class="row menu justify-content-center">
+          <a href="#" v-scroll-to="{el: '#about-item', duration: 500}"><div class="menu_link">Обо мне</div></a>
+          <a href="#" v-scroll-to="{el: '#prod-item', duration: 1000}"><div class="menu_link">Каталог</div></a>
+          <a href="#" v-scroll-to="{el: '#rev-item', duration: 1500}"><div class="menu_link">Отзывы</div></a>
+          <a href="#" v-scroll-to="{el: '#zakaz-item', duration: 2000}"><div class="menu_link">Заказать</div></a>
+          <a href="#" v-scroll-to="{el: '#zakaz-item', duration: 2000}"><div class="menu_link">8 900 287 25 25</div></a>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-10">
+      <div class="main_title">Лучший кондитерский магазин сладостей ручной работы в Краснодаре</div>
+      <button class="main_button" v-scroll-to="{el: '#adv-item', duration: 700}">Подробнее >></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid" id="about-item">
+  <div class="row">
+    <div class="col-md-12 text-center row_title">
+      <h1>ОБО МНЕ</h1>
+      <h2>когда и как появилось “praline”</h2>
+      <div class="line_left"></div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="about_title">Приветствую вас!</div>
+      <div class="about_text">
+        Размещение, на первый взгляд, осмысленно индуцирует конструктивный мониторинг активности. Фокусировка, в рамках сегодняшних воззрений, искажает традиционный канал.
+        <br><br>До недавнего времени считалось, что фирменный стиль основан на анализе телесмотрения и Product placement.
+      </div>
+    </div>
+    <div class="col-md-6 vcenter hcenter"><img class="img-fluid" src="./img/photo.png" alt="photo"></div>
+  </div>
+</div>
+
+<div class="container-fluid" id="adv-item">
+  <div class="row">
+    <div class="col-md-12 text-center row_title">
+      <h1>ПРЕИМУЩЕСТВА</h1>
+      <h2>почему стоит заказать именно у меня</h2>
+      <div class="line_right"></div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row justify-content-center adv_ico_row">
+    <div class="col-sm-4 col-8 text-center">
+      <img class="img-fluid adv_ico_img" src="./img/ico_milk.png" alt="milk">
+      <div class="adv_text">Использую только свежие и натуральные ингредиенты</div>
+    </div>
+    <div class="col-sm-4 col-8 text-center">
+      <img class="img-fluid adv_ico_img" src="./img/ico_hat.png" alt="hat">
+      <div class="adv_text">Готовлю с любовью более 10 лет и считаю это делом своей жизни</div>
+    </div>
+    <div class="col-sm-4 col-8 text-center">
+      <img class="img-fluid adv_ico_img" src="./img/ico_gift.png" alt="gift">
+      <div class="adv_text">Аккуратно доставляю и бережно упаковываю в крафтовую бумагу</div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid prod" id="prod-item">
+  <div class="row">
+    <div class="col-md-12 text-center row_title">
+      <h1>МОЯ ПРОДУКЦИЯ</h1>
+      <h2>каталог сладостей</h2>
+      <div class="line_left"></div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid prod">
+  <div class="container">
+    <div class="row justify-content-center row_prod">
+      <div class="col-sm-4 col-8 prod_col" v-on:click="modal_4 = true, modal_bg = true">
+        <div class="prod_hover">Кексы</div>
+        <img class="img-fluid prod_img" src="./img/keks.png" alt="keks">
+      </div>
+      <div class="col-sm-4 col-8 prod_col" v-on:click="modal_4 = true, modal_bg = true">
+        <div class="prod_hover">Торты</div>
+        <img class="img-fluid prod_img" src="./img/tort.png" alt="tort">
+      </div>
+      <div class="col-sm-4 col-8 prod_col" v-on:click="modal_4 = true, modal_bg = true">
+        <div class="prod_hover">Пирожные</div>
+        <img class="img-fluid prod_img" src="./img/ekler.png" alt="ekler">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12 text-center row_title">
+      <h1>ИНДИВИДУАЛЬНЫЙ ЗАКАЗ</h1>
+      <h2>что скрывается внутри</h2>
+      <div class="line_right"></div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row slider_row">
+    <div class="col-md-12 text-center">
+
+          <swiper ref="awesomeSwiperA" :options="swiperOptionA">
+            <swiper-slide>
+              <img class="img-fluid slider_d" src="./img/slider_1.png" alt="slider_1">
+              <img class="img-fluid slider_m" src="./img/slider_1_m.png" alt="slider_1_m">
+            </swiper-slide>
+            <swiper-slide>
+              <img class="img-fluid slider_d" src="./img/slider_2.png" alt="slider_2">
+              <img class="img-fluid slider_m" src="./img/slider_2_m.png" alt="slider_2_m">
+            </swiper-slide>
+            <swiper-slide>
+              <img class="img-fluid slider_d" src="./img/slider_3.png" alt="slider_3">
+              <img class="img-fluid slider_m" src="./img/slider_3_m.png" alt="slider_3_m">
+            </swiper-slide>
+            <!-- <div class="swiper-pagination"  slot="pagination"></div> -->
+            <div class="swiper-button-prev" slot="button-prev"></div>
+            <div class="swiper-button-next" slot="button-next"></div>
+          </swiper>
+
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid" id="rev-item">
+  <div class="row">
+    <div class="col-md-12 text-center row_title">
+      <h1>ОТЗЫВЫ КЛИЕНТОВ</h1>
+      <h2>здесь вы можете оставить комментарий</h2>
+      <div class="line_left"></div>
+    </div>
+  </div>
+</div>
+
+<div class="container rev">
+  <div class="row justify-content-center">
+    <div class="col-md-3 vcenter hcenter"><img class="img-fluid" src="./img/rev_photo_1.png" alt=""></div>
+    <div class="col-md-7">
+      <div class="rev_title">Виктория Иванова</div>
+      <div class="rev_text">
+        Я бесконечно довольна результатом. Торт получился безумно вкусным и красивым, сделал наш главный праздник незабываемым!
+        Гости были в восторге. Обязательно будем заказывать еще тортики. Процветания вам и кулинарных изысков!
+      </div>
+    </div>
+  </div>
+<br><br>
+  <div class="row justify-content-center">
+    <div class="col-md-3 vcenter hcenter"><img class="img-fluid" src="./img/rev_photo_2.png" alt=""></div>
+    <div class="col-md-7">
+      <div class="rev_title">Дмитрий Николаев</div>
+      <div class="rev_text">
+        Огромное спасибо за невероятный торт. Очень красивый и безумно вкусный, вы мастер своего дела!
+        Ваши шедевры никого не оставят равнодушными. Еще раз огромное спасибо, что украсили наш праздник.
+      </div>
+    </div>
+    <button v-on:click="modal_bg = true, modal_2 = true" class="send_button">ОТПРАВИТЬ ОТЗЫВ</button>
+  </div>
+</div>
+
+<div class="container-fluid zakaz_row" id="zakaz-item">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 zakaz_col text-center">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 text-center row_title">
+              <h3>СДЕЛАТЬ ЗАКАЗ</h1>
+              <h4>оставьте ваш телефон и я перезвоню в течение 10 минут</h2>
+              <div class="line_right"></div>
+            </div>
+          </div>
+        </div>
+        <div class="container form_box">
+          <form v-on:submit.prevent="modal_1 = true, modal_bg = true" v-on:submit="reset_form">
+          <div class="row">
+            <div class="col-md-6"><input class="input_call" placeholder="Ваше имя" required></div>
+              <div class="col-md-6"><input class="input_call"placeholder="Ваш телефон" required></div>
+              <div class="col-md-12">
+                <input class="input_text" type="text" name="message" placeholder="Сообщение" required>
+                <br><br><button type="submit" class="send_button">ОТПРАВИТЬ ЗАКАЗ</button>
+              </div>
+            </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="container-fluid footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 vcenter hcenter">KARCREATIVE.RU © 2017</div>
+      <div class="col-md-4 text-center hcenter vcenter footer_social">
+        <img class="social_ico" src="./img/fb.png" alt="fb">
+        <img class="social_ico" src="./img/vk.png" alt="vk">
+        <img class="social_ico" src="./img/ins.png" alt="ins">
+      </div>
+      <div class="col-md-4 footer_contacts">
+        <span class="footer_contacts_h">КОНТАКТЫ:</span><br>
+        г. Краснодар, ул. Первомайская 35/5<br>8 900 287 25 25
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<modal-bg v-if="modal_bg"
+  @close="modal_bg = false,
+          modal_1 = false,
+          modal_2 = false,
+          modal_3 = false,
+          modal_4 = false
+          ">
+</modal-bg>
+<modal-1 v-if="modal_1" @close="modal_bg = false, modal_1 = false"></modal-1>
+<modal-2 v-if="modal_2" @close="modal_bg = true, modal_2 = false, modal_3 = true"></modal-2>
+<modal-3 v-if="modal_3" @close="modal_bg = false, modal_3 = false"></modal-3>
+<modal-4 v-if="modal_4" @close="modal_bg = false, modal_4 = false"></modal-4>
+
+
+
+</div><!-- #app -->
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="https://unpkg.com/vue-scrollto"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/css/swiper.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/js/swiper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue-awesome-swiper@3.0.4/dist/vue-awesome-swiper.js"></script>
+<script src="./js/scrypt.js" type="text/javascript"></script>
+
+
+
+<script id="modal-bg">
+<transition name="modal_fade_bg">
+<div class="modal_bg" v-on:click="$emit('close')"></div>
+</transition>
+</script>
+
+
+<script id="modal-1">
+<transition name="modal_fade">
+<div class="modal-container text-center">
+   <h1>ВАШ ЗАКАЗ ПРИНЯТ</h1>
+   <span class="modal_text">Вам перезвонят в течении 10 минут</span><br>
+   <button class="send_button" v-on:click="$emit('close')">ЗАКРЫТЬ</button>
+</div>
+</transition>
+</script>
+
+
+<script id="modal-2">
+<transition name="modal_fade">
+<div class="modal-container text-center">
+   <h1>ОТПРАВИТЬ ОТЗЫВ</h1>
+   <form v-on:submit.prevent="$emit('close')">
+   <input class="input_text" placeholder="Сообщение" required><br><br>
+   <button type="submit" class="send_button">ОТПРАВИТЬ</button>
+   </form>
+</div>
+</transition>
+</script>
+
+
+<script id="modal-3">
+<transition name="modal_fade">
+<div class="modal-container text-center">
+   <h1>ВАШ ОТЗЫВ ПРИНЯТ</h1>
+   <span class="modal_text">Спасибо за ваш комментарий</span><br>
+   <button class="send_button" v-on:click="$emit('close')">ЗАКРЫТЬ</button>
+</div>
+</transition>
+</script>
+
+<script id="modal-4">
+<transition name="modal_fade">
+<div class="modal-container text-center">
+   <img class="prod_img_modal" src="./img/prod_1.png"><br><br>
+   <div class="modal_text">какой то текст</div>
+   <button class="send_button" v-scroll-to="{el: '#zakaz-item', duration: 1000}" v-on:click="$emit('close')">СДЕЛАТЬ ЗАКАЗ</button>
+</div>
+</transition>
+</script>
+
+
+</body>
+</html>

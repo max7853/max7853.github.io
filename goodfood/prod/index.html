@@ -1,0 +1,825 @@
+<!doctype html>
+<html>
+  <head>
+    <title>GoodFood</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+    integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&amp;subset=cyrillic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700&amp;subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" type="image/png" href="./img/favicon.png">
+  </head>
+<body>
+
+<div id="app">
+
+<div class="container-fluid main_bg">
+  <div class="container">
+    <div class="row justify-content-center menu">
+      <a href="#"><div class="menu_link">О нас</div></a>
+      <a href="#"><div class="menu_link">Меню</div></a>
+      <a href="#"><div class="menu_link">Подписки</div></a>
+      <a href="#"><div class="menu_link">Расчет калорий</div></a>
+      <a href="#"><div class="menu_link">Консультация</div></a>
+      <a href="#"><div class="menu_link_p">+7(900)287-25-25</div></a>
+    </div>
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <img class="logo img-fluid" src="./img/logo.png" alt="logo">
+        <div class="main_title">
+          Сбалансированная <br>готовая еда с доставкой<br>
+          <span class="main_sub_title">от 1500 рублей в день</span><br>
+          <button class="main_button">ВЫБРАТЬ ПОДПИСКУ</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container-fluid about_bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row_title">О нас</div>
+        <div class="row_line"></div>
+        <div class="row_sub_title">Почему люди заказывают у нас</div>
+      </div>
+    </div>
+    <div class="row justify-content-center about_row">
+      <div class="col-xl-3 col-md-4 col-8 text-center">
+        <img class="img-fluid about_ico_img" src="./img/about_ico_1.png" alt="about_ico_1">
+        <div class="about_text">
+          Good Food - это доставка готовых сбалансированных блюд с учетом личных потребностей
+        </div>
+      </div>
+      <div class="col-xl-3 col-md-4 col-8 text-center">
+        <img class="img-fluid about_ico_img" src="./img/about_ico_2.png" alt="about_ico_2">
+        <div class="about_text">
+          Мы готовим наши блюда только из натуральных и свежих продуктов с минимальной обработкой
+        </div>
+      </div>
+      <div class="col-xl-3 col-md-4 col-8 text-center">
+        <img class="img-fluid about_ico_img" src="./img/about_ico_3.png" alt="about_ico_3">
+        <div class="about_text">
+          Доставка в холодильнике, контейнеры блюд подходят для перевозки и разогрева
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="container-fluid gray_row_bg">
+  <div class="container">
+    <div class="row row_padding">
+      <div class="col-md-12">
+        <div class="row_title">Меню</div>
+        <div class="row_line"></div>
+        <div class="row_sub_title">Что мы готовим и доставляем</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="container-fluid gray_row_bg">
+<div class="container">
+
+
+
+<!-- ПЕРЕКЛЮЧАТЕЛЬ -->
+    <div class="row justify-content-center">
+      <div class="col-md-3 vcenter toggle_img"><img class="img-fluid" src="./img/fit_ico.png" alt="fit_ico"></div>
+      <div class="col-lg-6 col-md-6 col-sm-12 text-center">
+        <button class="toggle_button" v-on:click="toggle_button_1 = !toggle_button_1">
+          <div class="toggle_button_text_row">
+            <div class="toggle_button_text" v-bind:class="{ toggle_button_text_white: toggle_button_1 == true }">ПОХУДЕНИЕ</div>
+            <div class="toggle_button_text" v-bind:class="{ toggle_button_text_white: toggle_button_1 == false }">НАБОР</div>
+          </div>
+          <div class="toggle_1" v-bind:class="{ toggle_2: toggle_button_1 == false }"></div>
+        </button>
+      </div>
+      <div class="col-md-3 vcenter toggle_img"><img class="img-fluid" src="./img/mass_ico.png" alt="mass_ico"></div>
+    </div>
+
+
+
+<div class="relative">
+<transition-group name="slide">
+
+
+
+<!-- ПОХУДЕНИЕ -->
+<div v-show="toggle_button_1 == true" key="1" v-cloak>
+        <div class="row row_menu_padding">
+          <div class="col-lg-12 text-center">
+            <form>
+            <div class="row justify-content-center">
+              <label v-on:click="tabs_fit = 1" class="menu_label"><input name="menu" type="radio" checked><div>ЗАВТРАК</div></label>
+              <label v-on:click="tabs_fit = 2" class="menu_label"><input name="menu" type="radio"><div>ОБЕД</div></label>
+              <label v-on:click="tabs_fit = 3" class="menu_label"><input name="menu" type="radio"><div>УЖИН</div></label>
+              <label v-on:click="tabs_fit = 4" class="menu_label"><input name="menu" type="radio"><div>ПЕРЕКУСЫ</div></label>
+              <label v-on:click="tabs_fit = 5" class="menu_label"><input name="menu" type="radio"><div>ДЕСЕРТЫ</div></label>
+            </div>
+            </form>
+          </div>
+        </div>
+
+<div class="relative">
+<transition-group name="fade">
+<!-- завтрак -->
+          <div class="row menu_slider_padding justify-content-center" v-show="tabs_fit == 1" key="1_1" v-cloak>
+            <div class="col-lg-4 col-md-6 col-sm-10 menu_item">
+              <img class="menu_img" src="./img/fit_1_1.png" alt="fit_1_1">
+              <div class="menu_item_title">Каша с фруктами</div>
+              <div class="menu_item_ccal">240 ККАЛ</div>
+              <div class="menu_item_weight">250 гр.</div>
+              <div class="row">
+                <div class="col-sm-4 menu_item_col menu_item_col_b">Белки:<br>9 гр.</div>
+                <div class="col-sm-4 menu_item_col menu_item_col_b">Жиры:<br>5 гр.</div>
+                <div class="col-sm-4 menu_item_col">Углеводы:<br>33 гр.</div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-10 menu_item">
+              <img class="menu_img" src="./img/fit_1_2.png" alt="fit_1_2">
+              <div class="menu_item_title">Омлет с ветчиной</div>
+              <div class="menu_item_ccal">330 ККАЛ</div>
+              <div class="menu_item_weight">210 гр.</div>
+              <div class="row">
+                <div class="col-sm-4 menu_item_col menu_item_col_b">Белки:<br>21 гр.</div>
+                <div class="col-sm-4 menu_item_col menu_item_col_b">Жиры:<br>15 гр.</div>
+                <div class="col-sm-4 menu_item_col">Углеводы:<br>7 гр.</div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-10 menu_item">
+              <img class="menu_img" src="./img/fit_1_3.png" alt="fit_1_3">
+              <div class="menu_item_title">Оладьи с ягодами</div>
+              <div class="menu_item_ccal">290 ККАЛ</div>
+              <div class="menu_item_weight">180 гр.</div>
+              <div class="row">
+                <div class="col-sm-4 menu_item_col menu_item_col_b">Белки:<br>6 гр.</div>
+                <div class="col-sm-4 menu_item_col menu_item_col_b">Жиры:<br>9 гр.</div>
+                <div class="col-sm-4 menu_item_col">Углеводы:<br>30 гр.</div>
+              </div>
+            </div>
+          </div>
+<!-- обед -->
+          <div class="row menu_slider_padding justify-content-center" v-show="tabs_fit == 2" key="1_2" v-cloak>
+            <div class="col-lg-4 col-md-6 col-sm-10 menu_item">
+              <img class="menu_img" src="./img/fit_2_1.png" alt="fit_2_1">
+              <div class="menu_item_title">Овощной суп</div>
+              <div class="menu_item_ccal">240 ККАЛ</div>
+              <div class="menu_item_weight">230 гр.</div>
+              <div class="row">
+                <div class="col-sm-4 menu_item_col menu_item_col_b">Белки:<br>9 гр.</div>
+                <div class="col-sm-4 menu_item_col menu_item_col_b">Жиры:<br>5 гр.</div>
+                <div class="col-sm-4 menu_item_col">Углеводы:<br>33 гр.</div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-10 menu_item">
+              <img class="menu_img" src="./img/fit_2_2.png" alt="fit_2_2">
+              <div class="menu_item_title">Салат Цезарь</div>
+              <div class="menu_item_ccal">330 ККАЛ</div>
+              <div class="menu_item_weight">170 гр.</div>
+              <div class="row">
+                <div class="col-sm-4 menu_item_col menu_item_col_b">Белки:<br>21 гр.</div>
+                <div class="col-sm-4 menu_item_col menu_item_col_b">Жиры:<br>15 гр.</div>
+                <div class="col-sm-4 menu_item_col">Углеводы:<br>7 гр.</div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-10 menu_item">
+              <img class="menu_img" src="./img/fit_2_3.png" alt="fit_2_3">
+              <div class="menu_item_title">Сендвич с авокадо</div>
+              <div class="menu_item_ccal">290 ККАЛ</div>
+              <div class="menu_item_weight">120 гр.</div>
+              <div class="row">
+                <div class="col-sm-4 menu_item_col menu_item_col_b">Белки:<br>6 гр.</div>
+                <div class="col-sm-4 menu_item_col menu_item_col_b">Жиры:<br>9 гр.</div>
+                <div class="col-sm-4 menu_item_col">Углеводы:<br>30 гр.</div>
+              </div>
+            </div>
+          </div>
+<!-- ужин -->
+          <div class="row menu_slider_padding justify-content-center" v-show="tabs_fit == 3" key="1_3" v-cloak>
+            <div class="col-lg-4 col-md-6 col-sm-10 menu_item">
+              <img class="menu_img" src="./img/fit_3_1.png" alt="fit_3_1">
+              <div class="menu_item_title">Запеченный лосось</div>
+              <div class="menu_item_ccal">240 ККАЛ</div>
+              <div class="menu_item_weight">260 гр.</div>
+              <div class="row">
+                <div class="col-sm-4 menu_item_col menu_item_col_b">Белки:<br>9 гр.</div>
+                <div class="col-sm-4 menu_item_col menu_item_col_b">Жиры:<br>5 гр.</div>
+                <div class="col-sm-4 menu_item_col">Углеводы:<br>33 гр.</div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-10 menu_item">
+              <img class="menu_img" src="./img/fit_3_2.png" alt="fit_3_2">
+              <div class="menu_item_title">Салат Мимоза</div>
+              <div class="menu_item_ccal">330 ККАЛ</div>
+              <div class="menu_item_weight">190 гр.</div>
+              <div class="row">
+                <div class="col-sm-4 menu_item_col menu_item_col_b">Белки:<br>21 гр.</div>
+                <div class="col-sm-4 menu_item_col menu_item_col_b">Жиры:<br>15 гр.</div>
+                <div class="col-sm-4 menu_item_col">Углеводы:<br>7 гр.</div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-10 menu_item">
+              <img class="menu_img" src="./img/fit_3_3.png" alt="fit_3_3">
+              <div class="menu_item_title">Фруктовый кекс</div>
+              <div class="menu_item_ccal">290 ККАЛ</div>
+              <div class="menu_item_weight">110 гр.</div>
+              <div class="row">
+                <div class="col-sm-4 menu_item_col menu_item_col_b">Белки:<br>6 гр.</div>
+                <div class="col-sm-4 menu_item_col menu_item_col_b">Жиры:<br>9 гр.</div>
+                <div class="col-sm-4 menu_item_col">Углеводы:<br>30 гр.</div>
+              </div>
+            </div>
+          </div>
+<!-- перекусы -->
+          <div class="row menu_slider_padding justify-content-center" v-show="tabs_fit == 4" key="1_4" v-cloak>
+            <div class="col-lg-4 col-md-6 col-sm-10 menu_item">
+              <img class="menu_img" src="./img/fit_4_1.png" alt="fit_4_1">
+              <div class="menu_item_title">Мюсли с орехами</div>
+              <div class="menu_item_ccal">240 ККАЛ</div>
+              <div class="menu_item_weight">140 гр.</div>
+              <div class="row">
+                <div class="col-sm-4 menu_item_col menu_item_col_b">Белки:<br>9 гр.</div>
+                <div class="col-sm-4 menu_item_col menu_item_col_b">Жиры:<br>5 гр.</div>
+                <div class="col-sm-4 menu_item_col">Углеводы:<br>33 гр.</div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-10 menu_item">
+              <img class="menu_img" src="./img/fit_4_2.png" alt="fit_4_2">
+              <div class="menu_item_title">Яблоки</div>
+              <div class="menu_item_ccal">330 ККАЛ</div>
+              <div class="menu_item_weight">90 гр.</div>
+              <div class="row">
+                <div class="col-sm-4 menu_item_col menu_item_col_b">Белки:<br>21 гр.</div>
+                <div class="col-sm-4 menu_item_col menu_item_col_b">Жиры:<br>15 гр.</div>
+                <div class="col-sm-4 menu_item_col">Углеводы:<br>7 гр.</div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-10 menu_item">
+              <img class="menu_img" src="./img/fit_4_3.png" alt="fit_4_3">
+              <div class="menu_item_title">Йогурт с ягодами</div>
+              <div class="menu_item_ccal">290 ККАЛ</div>
+              <div class="menu_item_weight">130 гр.</div>
+              <div class="row">
+                <div class="col-sm-4 menu_item_col menu_item_col_b">Белки:<br>6 гр.</div>
+                <div class="col-sm-4 menu_item_col menu_item_col_b">Жиры:<br>9 гр.</div>
+                <div class="col-sm-4 menu_item_col">Углеводы:<br>30 гр.</div>
+              </div>
+            </div>
+          </div>
+<!-- десерты -->
+          <div class="row menu_slider_padding justify-content-center" v-show="tabs_fit == 5" key="1_5" v-cloak>
+            <div class="col-lg-4 col-md-6 col-sm-10 menu_item">
+              <img class="menu_img" src="./img/fit_5_1.png" alt="fit_5_1">
+              <div class="menu_item_title">Фруктовый салат</div>
+              <div class="menu_item_ccal">240 ККАЛ</div>
+              <div class="menu_item_weight">180 гр.</div>
+              <div class="row">
+                <div class="col-sm-4 menu_item_col menu_item_col_b">Белки:<br>9 гр.</div>
+                <div class="col-sm-4 menu_item_col menu_item_col_b">Жиры:<br>5 гр.</div>
+                <div class="col-sm-4 menu_item_col">Углеводы:<br>33 гр.</div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-10 menu_item">
+              <img class="menu_img" src="./img/fit_5_2.png" alt="fit_5_2">
+              <div class="menu_item_title">Ягодный смузи</div>
+              <div class="menu_item_ccal">330 ККАЛ</div>
+              <div class="menu_item_weight">150 гр.</div>
+              <div class="row">
+                <div class="col-sm-4 menu_item_col menu_item_col_b">Белки:<br>21 гр.</div>
+                <div class="col-sm-4 menu_item_col menu_item_col_b">Жиры:<br>15 гр.</div>
+                <div class="col-sm-4 menu_item_col">Углеводы:<br>7 гр.</div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-10 menu_item">
+              <img class="menu_img" src="./img/fit_5_3.png" alt="fit_5_3">
+              <div class="menu_item_title">Чизкейк из творога</div>
+              <div class="menu_item_ccal">290 ККАЛ</div>
+              <div class="menu_item_weight">130 гр.</div>
+              <div class="row">
+                <div class="col-sm-4 menu_item_col menu_item_col_b">Белки:<br>6 гр.</div>
+                <div class="col-sm-4 menu_item_col menu_item_col_b">Жиры:<br>9 гр.</div>
+                <div class="col-sm-4 menu_item_col">Углеводы:<br>30 гр.</div>
+              </div>
+            </div>
+          </div>
+</transition-group><!-- fade -->
+</div><!-- relative -->
+</div><!-- toggle_button_1 == false -->
+
+
+
+<!-- НАБОР -->
+<div v-show="toggle_button_1 == false" key="2" v-cloak>
+        <div class="row row_menu_padding">
+          <div class="col-lg-12 text-center">
+            <form>
+            <div class="row justify-content-center">
+              <label v-on:click="tabs_mass = 1" class="menu_label"><input name="menu" type="radio" checked><div>ЗАВТРАК</div></label>
+              <label v-on:click="tabs_mass = 2" class="menu_label"><input name="menu" type="radio"><div>ОБЕД</div></label>
+              <label v-on:click="tabs_mass = 3" class="menu_label"><input name="menu" type="radio"><div>УЖИН</div></label>
+              <label v-on:click="tabs_mass = 4" class="menu_label"><input name="menu" type="radio"><div>ПЕРЕКУСЫ</div></label>
+              <label v-on:click="tabs_mass = 5" class="menu_label"><input name="menu" type="radio"><div>ДЕСЕРТЫ</div></label>
+            </div>
+            </form>
+          </div>
+        </div>
+
+<div class="relative">
+<transition-group name="fade">
+<!-- завтрак -->
+          <div class="row menu_slider_padding justify-content-center" v-show="tabs_mass == 1" key="2_1" v-cloak>
+            <div class="col-lg-4 col-md-6 col-sm-10 menu_item">
+              <img class="menu_img" src="./img/mass_1_1.png" alt="mass_1_1">
+              <div class="menu_item_title">Куриная грудка</div>
+              <div class="menu_item_ccal">160 ККАЛ</div>
+              <div class="menu_item_weight">250 гр.</div>
+              <div class="row">
+                <div class="col-sm-4 menu_item_col menu_item_col_b">Белки:<br>32 гр.</div>
+                <div class="col-sm-4 menu_item_col menu_item_col_b">Жиры:<br>4 гр.</div>
+                <div class="col-sm-4 menu_item_col">Углеводы:<br>1 гр.</div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-10 menu_item">
+              <img class="menu_img" src="./img/mass_1_2.png" alt="mass_1_2">
+              <div class="menu_item_title">Сырники из творога</div>
+              <div class="menu_item_ccal">180 ККАЛ</div>
+              <div class="menu_item_weight">160 гр.</div>
+              <div class="row">
+                <div class="col-sm-4 menu_item_col menu_item_col_b">Белки:<br>19 гр.</div>
+                <div class="col-sm-4 menu_item_col menu_item_col_b">Жиры:<br>3 гр.</div>
+                <div class="col-sm-4 menu_item_col">Углеводы:<br>17 гр.</div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-10 menu_item">
+              <img class="menu_img" src="./img/mass_1_3.png" alt="mass_1_3">
+              <div class="menu_item_title">Сендвич с ветчиной</div>
+              <div class="menu_item_ccal">230 ККАЛ</div>
+              <div class="menu_item_weight">140 гр.</div>
+              <div class="row">
+                <div class="col-sm-4 menu_item_col menu_item_col_b">Белки:<br>13 гр.</div>
+                <div class="col-sm-4 menu_item_col menu_item_col_b">Жиры:<br>11 гр.</div>
+                <div class="col-sm-4 menu_item_col">Углеводы:<br>18 гр.</div>
+              </div>
+            </div>
+          </div>
+<!-- обед -->
+          <div class="row menu_slider_padding justify-content-center" v-show="tabs_mass == 2" key="2_2" v-cloak>
+            <div class="col-lg-4 col-md-6 col-sm-10 menu_item">
+              <img class="menu_img" src="./img/mass_2_1.png" alt="mass_2_1">
+              <div class="menu_item_title">Стейк из говядины</div>
+              <div class="menu_item_ccal">270 ККАЛ</div>
+              <div class="menu_item_weight">230 гр.</div>
+              <div class="row">
+                <div class="col-sm-4 menu_item_col menu_item_col_b">Белки:<br>25 гр.</div>
+                <div class="col-sm-4 menu_item_col menu_item_col_b">Жиры:<br>19 гр.</div>
+                <div class="col-sm-4 menu_item_col">Углеводы:<br>1 гр.</div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-10 menu_item">
+              <img class="menu_img" src="./img/mass_2_2.png" alt="mass_2_2">
+              <div class="menu_item_title">Жульен с грибами</div>
+              <div class="menu_item_ccal">130 ККАЛ</div>
+              <div class="menu_item_weight">180 гр.</div>
+              <div class="row">
+                <div class="col-sm-4 menu_item_col menu_item_col_b">Белки:<br>11 гр.</div>
+                <div class="col-sm-4 menu_item_col menu_item_col_b">Жиры:<br>9 гр.</div>
+                <div class="col-sm-4 menu_item_col">Углеводы:<br>3 гр.</div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-10 menu_item">
+              <img class="menu_img" src="./img/mass_2_3.png" alt="mass_2_3">
+              <div class="menu_item_title">Шоколадный маффин</div>
+              <div class="menu_item_ccal">350 ККАЛ</div>
+              <div class="menu_item_weight">90 гр.</div>
+              <div class="row">
+                <div class="col-sm-4 menu_item_col menu_item_col_b">Белки:<br>6 гр.</div>
+                <div class="col-sm-4 menu_item_col menu_item_col_b">Жиры:<br>12 гр.</div>
+                <div class="col-sm-4 menu_item_col">Углеводы:<br>54 гр.</div>
+              </div>
+            </div>
+          </div>
+<!-- ужин -->
+          <div class="row menu_slider_padding justify-content-center" v-show="tabs_mass == 3" key="2_3" v-cloak>
+            <div class="col-lg-4 col-md-6 col-sm-10 menu_item">
+              <img class="menu_img" src="./img/mass_3_1.png" alt="mass_3_1">
+              <div class="menu_item_title">Салат Греческий</div>
+              <div class="menu_item_ccal">90 ККАЛ</div>
+              <div class="menu_item_weight">130 гр.</div>
+              <div class="row">
+                <div class="col-sm-4 menu_item_col menu_item_col_b">Белки:<br>3 гр.</div>
+                <div class="col-sm-4 menu_item_col menu_item_col_b">Жиры:<br>6 гр.</div>
+                <div class="col-sm-4 menu_item_col">Углеводы:<br>4 гр.</div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-10 menu_item">
+              <img class="menu_img" src="./img/mass_3_2.png" alt="mass_3_2">
+              <div class="menu_item_title">Стейк из индейки</div>
+              <div class="menu_item_ccal">140 ККАЛ</div>
+              <div class="menu_item_weight">270 гр.</div>
+              <div class="row">
+                <div class="col-sm-4 menu_item_col menu_item_col_b">Белки:<br>14 гр.</div>
+                <div class="col-sm-4 menu_item_col menu_item_col_b">Жиры:<br>7 гр.</div>
+                <div class="col-sm-4 menu_item_col">Углеводы:<br>2 гр.</div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-10 menu_item">
+              <img class="menu_img" src="./img/mass_3_3.png" alt="mass_3_3">
+              <div class="menu_item_title">Тосты с сыром</div>
+              <div class="menu_item_ccal">190 ККАЛ</div>
+              <div class="menu_item_weight">120 гр.</div>
+              <div class="row">
+                <div class="col-sm-4 menu_item_col menu_item_col_b">Белки:<br>7 гр.</div>
+                <div class="col-sm-4 menu_item_col menu_item_col_b">Жиры:<br>8 гр.</div>
+                <div class="col-sm-4 menu_item_col">Углеводы:<br>22 гр.</div>
+              </div>
+            </div>
+          </div>
+<!-- перекусы -->
+          <div class="row menu_slider_padding justify-content-center" v-show="tabs_mass == 4" key="2_4" v-cloak>
+            <div class="col-lg-4 col-md-6 col-sm-10 menu_item">
+              <img class="menu_img" src="./img/mass_4_1.png" alt="mass_4_1">
+              <div class="menu_item_title">Салат с тунцом</div>
+              <div class="menu_item_ccal">180 ККАЛ</div>
+              <div class="menu_item_weight">190 гр.</div>
+              <div class="row">
+                <div class="col-sm-4 menu_item_col menu_item_col_b">Белки:<br>16 гр.</div>
+                <div class="col-sm-4 menu_item_col menu_item_col_b">Жиры:<br>11 гр.</div>
+                <div class="col-sm-4 menu_item_col">Углеводы:<br>9 гр.</div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-10 menu_item">
+              <img class="menu_img" src="./img/mass_4_2.png" alt="mass_4_2">
+              <div class="menu_item_title">Сендвич с курицей</div>
+              <div class="menu_item_ccal">250 ККАЛ</div>
+              <div class="menu_item_weight">140 гр.</div>
+              <div class="row">
+                <div class="col-sm-4 menu_item_col menu_item_col_b">Белки:<br>8 гр.</div>
+                <div class="col-sm-4 menu_item_col menu_item_col_b">Жиры:<br>9 гр.</div>
+                <div class="col-sm-4 menu_item_col">Углеводы:<br>32 гр.</div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-10 menu_item">
+              <img class="menu_img" src="./img/mass_4_3.png" alt="mass_4_3">
+              <div class="menu_item_title">Бананы</div>
+              <div class="menu_item_ccal">90 ККАЛ</div>
+              <div class="menu_item_weight">110 гр.</div>
+              <div class="row">
+                <div class="col-sm-4 menu_item_col menu_item_col_b">Белки:<br>2 гр.</div>
+                <div class="col-sm-4 menu_item_col menu_item_col_b">Жиры:<br>1 гр.</div>
+                <div class="col-sm-4 menu_item_col">Углеводы:<br>19 гр.</div>
+              </div>
+            </div>
+          </div>
+<!-- десерты-->
+          <div class="row menu_slider_padding justify-content-center" v-show="tabs_mass == 5" key="2_5" v-cloak>
+            <div class="col-lg-4 col-md-6 col-sm-10 menu_item">
+              <img class="menu_img" src="./img/mass_5_1.png" alt="mass_5_1">
+              <div class="menu_item_title">Пончики с глазурью</div>
+              <div class="menu_item_ccal">380 ККАЛ</div>
+              <div class="menu_item_weight">80 гр.</div>
+              <div class="row">
+                <div class="col-sm-4 menu_item_col menu_item_col_b">Белки:<br>6 гр.</div>
+                <div class="col-sm-4 menu_item_col menu_item_col_b">Жиры:<br>24 гр.</div>
+                <div class="col-sm-4 menu_item_col">Углеводы:<br>52 гр.</div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-10 menu_item">
+              <img class="menu_img" src="./img/mass_5_2.png" alt="mass_5_2">
+              <div class="menu_item_title">Фисташковый коктейль</div>
+              <div class="menu_item_ccal">90 ККАЛ</div>
+              <div class="menu_item_weight">180 гр.</div>
+              <div class="row">
+                <div class="col-sm-4 menu_item_col menu_item_col_b">Белки:<br>2 гр.</div>
+                <div class="col-sm-4 menu_item_col menu_item_col_b">Жиры:<br>3 гр.</div>
+                <div class="col-sm-4 menu_item_col">Углеводы:<br>12 гр.</div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-10 menu_item">
+              <img class="menu_img" src="./img/mass_5_3.png" alt="mass_5_3">
+              <div class="menu_item_title">Бисквитное пирожное</div>
+              <div class="menu_item_ccal">340 ККАЛ</div>
+              <div class="menu_item_weight">90 гр.</div>
+              <div class="row">
+                <div class="col-sm-4 menu_item_col menu_item_col_b">Белки:<br>6 гр.</div>
+                <div class="col-sm-4 menu_item_col menu_item_col_b">Жиры:<br>14 гр.</div>
+                <div class="col-sm-4 menu_item_col">Углеводы:<br>47 гр.</div>
+              </div>
+            </div>
+          </div>
+</transition-group><!-- fade -->
+</div><!-- relative -->
+</div><!-- toggle_button_1 == true -->
+
+
+
+</transition-group><!-- slide -->
+</div><!-- relative -->
+
+
+
+</div><!-- container -->
+</div><!-- container-fluid -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid">
+  <div class="container">
+    <div class="row row_padding">
+      <div class="col-md-12">
+        <div class="row_title">Подписки</div>
+        <div class="row_line"></div>
+        <div class="row_sub_title">Выберите то, что вам подходит</div>
+      </div>
+    </div>
+      <div class="row justify-content-center">
+        <div class="col-md-2 text-right toggle_img"><img class="img-fluid" src="./img/w_ico.png" alt="w_ico"></div>
+        <div class="col-lg-6 col-md-8 col-sm-12 text-center">
+          <button class="toggle_button" v-on:click="toggle_button_3 = !toggle_button_3">
+            <div class="toggle_button_text_row">
+              <div class="toggle_button_text" v-bind:class="{ toggle_button_text_white: toggle_button_3 == true }">ЖЕНЩИНА</div>
+              <div class="toggle_button_text" v-bind:class="{ toggle_button_text_white: toggle_button_3 == false }">МУЖЧИНА</div>
+            </div>
+            <div class="toggle_1" v-bind:class="{ toggle_2: toggle_button_3 == false }"></div>
+          </button>
+        </div>
+        <div class="col-md-2 text-left toggle_img"><img class="img-fluid" src="./img/m_ico.png" alt="m_ico"></div>
+      </div>
+      <div class="row row_padding justify-content-center">
+        <div class="col-lg-4 col-md-6 col-sm-8">
+          <div class="sub_item">
+            <div class="sub_title vcenter">НАБОР</div>
+            <div class="sub_ccal">3000 Ккал</div>
+            <div class="sub_text">500 ккал порция</div>
+            <div class="row">
+              <div class="col-sm-4 menu_item_col menu_item_col_b">Белки:<br>150 гр.</div>
+              <div class="col-sm-4 menu_item_col menu_item_col_b">Жиры:<br>90 гр.</div>
+              <div class="col-sm-4 menu_item_col">Углеводы:<br>300 гр.</div>
+            </div>
+            <div class="sub_text">3 приема пищи, 3 перекуса, доставка на дом или в офис</div>
+            <div class="text-center"><button class="sub_button">ЗАКАЗАТЬ</button></div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-8">
+          <div class="sub_item">
+            <div class="sub_title vcenter">ПОХУДЕНИЕ</div>
+            <div class="sub_ccal">1700 Ккал</div>
+            <div class="sub_text">340 ккал порция</div>
+            <div class="row">
+              <div class="col-sm-4 menu_item_col menu_item_col_b">Белки:<br>90 гр.</div>
+              <div class="col-sm-4 menu_item_col menu_item_col_b">Жиры:<br>60 гр.</div>
+              <div class="col-sm-4 menu_item_col">Углеводы:<br>170 гр.</div>
+            </div>
+            <div class="sub_text">3 приема пищи, 3 перекуса, доставка на дом или в офис</div>
+            <div class="text-center"><button class="sub_button">ЗАКАЗАТЬ</button></div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-8">
+          <div class="sub_item">
+            <div class="sub_title vcenter">ПОДДЕРЖАНИЕ</div>
+            <div class="sub_ccal">2200 Ккал</div>
+            <div class="sub_text">450 ккал порция</div>
+            <div class="row ">
+              <div class="col-sm-4 menu_item_col menu_item_col_b">Белки:<br>10 гр.</div>
+              <div class="col-sm-4 menu_item_col menu_item_col_b">Жиры:<br>80 гр.</div>
+              <div class="col-sm-4 menu_item_col">Углеводы:<br>220 гр.</div>
+            </div>
+            <div class="sub_text">3 приема пищи, 3 перекуса, доставка на дом или в офис</div>
+            <div class="text-center"><button class="sub_button">ЗАКАЗАТЬ</button></div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div><!-- container -->
+</div><!-- container-fluid -->
+
+
+<div class="container-fluid gray_row_bg">
+  <div class="container">
+    <div class="row row_padding">
+      <div class="col-md-12">
+        <div class="row_title">Расчет калорий</div>
+        <div class="row_line"></div>
+        <div class="row_sub_title">Калькулятор калорий для выбора программы</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="container-fluid gray_row_bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 calc text-center">
+        <div class="row justify-content-center">
+          <div class="col-md-2 text-right toggle_img"><img class="img-fluid" src="./img/w_ico.png" alt="w_ico"></div>
+          <div class="col-lg-6 col-md-8 col-sm-12 text-center">
+            <button class="toggle_button" v-on:click="toggle_button_2 = !toggle_button_2">
+              <div class="toggle_button_text_row">
+                <div class="toggle_button_text" v-bind:class="{ toggle_button_text_white: toggle_button_2 == true }">ЖЕНЩИНА</div>
+                <div class="toggle_button_text" v-bind:class="{ toggle_button_text_white: toggle_button_2 == false }">МУЖЧИНА</div>
+              </div>
+              <div class="toggle_1" v-bind:class="{ toggle_2: toggle_button_2 == false }"></div>
+            </button>
+          </div>
+          <div class="col-md-2 text-left toggle_img"><img class="img-fluid" src="./img/m_ico.png" alt="m_ico"></div>
+        </div>
+        <div class="calc_title">Ваша цель</div>
+        <form>
+        <div class="row justify-content-center">
+        <label class="menu_label"><input value="2300" v-model="c_target" type="radio"><div>Набор</div></label>
+        <label class="menu_label"><input value="2000" v-model="c_target" type="radio"><div>Поддержание</div></label>
+        <label class="menu_label"><input value="1700" v-model="c_target" type="radio"><div>Похудение</div></label>
+        </div>
+        </form>
+        <div class="calc_line"></div>
+        <div class="calc_title">Ваши параметры</div>
+        <div class="row justify-content-center">
+          <div class="col-lg-3 col-md-4 calc_text">Возраст
+            <form>
+              <div class="row">
+                <div class="col-lg-12 nopadding"><label class="calc_label_min"><input value="0" v-model="c_age" type="radio"><div>от 20 до 40 лет</div></label></div>
+                <div class="col-lg-6 nopadding"><label class="calc_label_min"><input value="-200" v-model="c_age" type="radio"><div>до 20 лет</div></label></div>
+                <div class="col-lg-6 nopadding"><label class="calc_label_min"><input value="200" v-model="c_age" type="radio"><div>от 40 лет</div></label></div>
+              </div>
+            </form>
+          </div>
+          <div class="col-lg-3 col-md-4 calc_text">Рост
+            <form>
+              <div class="row">
+                <div class="col-lg-12 nopadding"><label class="calc_label_min"><input value="0" v-model="c_growth" type="radio"><div>от 150 до 180 см</div></label></div>
+                <div class="col-lg-6 nopadding"><label class="calc_label_min"><input value="-200" v-model="c_growth" type="radio"><div>до 150 см</div></label></div>
+                <div class="col-lg-6 nopadding"><label class="calc_label_min"><input value="200" v-model="c_growth" type="radio"><div>от 180 см</div></label></div>
+              </div>
+            </form>
+          </div>
+          <div class="col-lg-3 col-md-4 calc_text">Вес
+            <form>
+            <div class="row">
+              <div class="col-lg-12 nopadding"><label class="calc_label_min"><input value="0" v-model="c_weight" type="radio"><div>от 60 до 80 кг</div></label></div>
+              <div class="col-lg-6 nopadding"><label class="calc_label_min"><input value="-200" v-model="c_weight" type="radio"><div>до 60 кг</div></label></div>
+              <div class="col-lg-6 nopadding"><label class="calc_label_min"><input value="200" v-model="c_weight" type="radio"><div>от 80 кг</div></label></div>
+            </div>
+            </form>
+          </div>
+        </div>
+        <div class="calc_line"></div>
+        <div class="calc_title">Ваша активность</div>
+        <form>
+          <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-5 nopadding">
+              <label class="calc_label"><input input value="-200" v-model="c_active" type="radio"><div>Сидячий образ жизни</div></label>
+            </div>
+            <div class="col-lg-4 col-md-5 nopadding">
+              <label class="calc_label"><input input value="0" v-model="c_active" type="radio"><div>Средняя активность</div></label><br>
+            </div>
+            </div>
+            <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-5 nopadding">
+              <label class="calc_label"><input input value="200" v-model="c_active" type="radio"><div>Повышенная активость</div></label>
+            </div>
+            <div class="col-lg-4 col-md-5 nopadding">
+              <label class="calc_label"><input input value="400" v-model="c_active" type="radio"><div>Высокая активность</div></label>
+            </div>
+          </div>
+        </form>
+        <div class="calc_line"></div>
+        <div class="row justify-content-center calc_bottom">
+        <div class="col-lg-4 col-md-6 calc_bottom_text nopadding vcenter">Ваша дневная<br> норма калорий</div>
+        <div class="col-lg-4 col-md-6 calc_bottom_count nopadding vcenter"> {{ animatedNumber }} ккал</div>
+        </div>
+      </div>
+    </div>
+  </div><br><br>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><!-- #app -->
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="https://unpkg.com/vue-scrollto"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/css/swiper.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/js/swiper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue-awesome-swiper@3.0.4/dist/vue-awesome-swiper.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/16.3.5/Tween.min.js"></script>
+<!-- <script src="./js/scrypt.js" type="text/javascript"></script> -->
+
+
+
+
+<script>
+
+
+new Vue({
+  el: '#app',
+  data: {
+    toggle_button_1: true,
+    toggle_button_2: true,
+    toggle_button_3: true,
+    tabs_fit: 1,
+    tabs_mass: 1,
+    c_target: 2000,
+    c_age: 0,
+    c_weight: 0,
+    c_growth: 0,
+    c_active: 0,
+    animatedNumber: 2000,
+  },
+  computed: {
+    total: function() {
+        return parseInt(this.c_target) + parseInt(this.c_age) + parseInt(this.c_weight) + parseInt(this.c_growth) + parseInt(this.c_active);
+    }
+  },
+  watch: {
+    total: function(newValue, oldValue) {
+      var vm = this
+      function animate () {
+        if (TWEEN.update()) {
+          requestAnimationFrame(animate)
+        }
+      }
+      new TWEEN.Tween({ tweeningNumber: oldValue })
+        .easing(TWEEN.Easing.Quadratic.Out)
+        .to({ tweeningNumber: newValue }, 1000)
+        .onUpdate(function () {
+          vm.animatedNumber = this.tweeningNumber.toFixed(0)
+        })
+        .start()
+      animate()
+    }
+  }
+})
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
