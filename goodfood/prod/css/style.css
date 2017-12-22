@@ -265,7 +265,8 @@ input[type="radio"]:checked + div {
 .calc {
   background-color: white;
   border-radius: 20px;
-  padding: 40px; }
+  padding: 40px;
+  margin-bottom: 60px; }
 
 .calc_text {
   font-family: Roboto;
@@ -393,6 +394,40 @@ input[type="radio"]:checked + div {
   .sub_button:focus {
     outline: none; }
   .sub_button:hover {
+    background-color: #e21616; }
+
+.cons_bg {
+  background-color: #fbfdfc; }
+
+.cons_input {
+  width: 90%;
+  border: 2px solid lightgray;
+  border-radius: 20px;
+  padding: 10px 20px;
+  margin: 10px;
+  font-family: Roboto;
+  color: gray;
+  font-size: 20px; }
+  .cons_input:focus {
+    outline: none; }
+
+.cons_button {
+  background-color: #c22d2d;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 20px;
+  width: 90%;
+  margin: 10px;
+  color: white;
+  font-family: Roboto;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  transition: all 0.3s;
+  cursor: pointer; }
+  .cons_button:focus {
+    outline: none; }
+  .cons_button:hover {
     background-color: #e21616; }
 
 .slide-enter {
