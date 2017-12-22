@@ -59,8 +59,11 @@
     <div class="col-md-6">
       <div class="about_title">Приветствую вас!</div>
       <div class="about_text">
-        Размещение, на первый взгляд, осмысленно индуцирует конструктивный мониторинг активности. Фокусировка, в рамках сегодняшних воззрений, искажает традиционный канал.
-        <br><br>До недавнего времени считалось, что фирменный стиль основан на анализе телесмотрения и Product placement.
+        Я верю, что вы оказались не случайно на моем сайте, поэтому давайте познакомимся.
+        Меня зовут Александра и я работаю в кондитерском искусстве более 10 лет. Любовь к сладкому берёт свои корни ещё из детства.
+        <br><br>
+        Стараюсь делать все на высшем уровне: только самые качественные сливки, натуральные красители, продукты без консервантов.
+        В моем ассортименте есть не только классические торты, капкейки, кейкпопы, но и муссовые пирожные, различные расписные пряники и трайфлы.
       </div>
     </div>
     <div class="col-md-6 vcenter hcenter"><img class="img-fluid" src="./img/photo.png" alt="photo"></div>
@@ -107,15 +110,15 @@
 <div class="container-fluid prod">
   <div class="container">
     <div class="row justify-content-center row_prod">
-      <div class="col-sm-4 col-8 prod_col" v-on:click="modal_4 = true, modal_bg = true">
+      <div class="col-sm-4 col-8 prod_col" v-on:click="modal = 4, modal_bg = 1">
         <div class="prod_hover">Кексы</div>
         <img class="img-fluid prod_img" src="./img/keks.png" alt="keks">
       </div>
-      <div class="col-sm-4 col-8 prod_col" v-on:click="modal_4 = true, modal_bg = true">
+      <div class="col-sm-4 col-8 prod_col" v-on:click="modal = 5, modal_bg = 1">
         <div class="prod_hover">Торты</div>
         <img class="img-fluid prod_img" src="./img/tort.png" alt="tort">
       </div>
-      <div class="col-sm-4 col-8 prod_col" v-on:click="modal_4 = true, modal_bg = true">
+      <div class="col-sm-4 col-8 prod_col" v-on:click="modal = 6, modal_bg = 1">
         <div class="prod_hover">Пирожные</div>
         <img class="img-fluid prod_img" src="./img/ekler.png" alt="ekler">
       </div>
@@ -136,8 +139,7 @@
 <div class="container-fluid">
   <div class="row slider_row">
     <div class="col-md-12 text-center">
-
-          <swiper ref="awesomeSwiperA" :options="swiperOptionA">
+          <swiper :options="slider">
             <swiper-slide>
               <img class="img-fluid slider_d" src="./img/slider_1.png" alt="slider_1">
               <img class="img-fluid slider_m" src="./img/slider_1_m.png" alt="slider_1_m">
@@ -150,11 +152,9 @@
               <img class="img-fluid slider_d" src="./img/slider_3.png" alt="slider_3">
               <img class="img-fluid slider_m" src="./img/slider_3_m.png" alt="slider_3_m">
             </swiper-slide>
-            <!-- <div class="swiper-pagination"  slot="pagination"></div> -->
             <div class="swiper-button-prev" slot="button-prev"></div>
             <div class="swiper-button-next" slot="button-next"></div>
           </swiper>
-
     </div>
   </div>
 </div>
@@ -190,7 +190,7 @@
         Ваши шедевры никого не оставят равнодушными. Еще раз огромное спасибо, что украсили наш праздник.
       </div>
     </div>
-    <button v-on:click="modal_bg = true, modal_2 = true" class="send_button">ОТПРАВИТЬ ОТЗЫВ</button>
+    <button v-on:click="modal_bg = 1, modal = 2" class="send_button">ОТПРАВИТЬ ОТЗЫВ</button>
   </div>
 </div>
 
@@ -208,7 +208,7 @@
           </div>
         </div>
         <div class="container form_box">
-          <form v-on:submit.prevent="modal_1 = true, modal_bg = true" v-on:submit="reset_form">
+          <form v-on:submit.prevent="modal = 1, modal_bg = 1" v-on:submit="reset_form">
           <div class="row">
             <div class="col-md-6"><input class="input_call" placeholder="Ваше имя" required></div>
               <div class="col-md-6"><input class="input_call"placeholder="Ваш телефон" required></div>
@@ -241,26 +241,50 @@
   </div>
 </div>
 
+<!-- модальные окна -->
 
+<transition name="modal_bg">
+<div v-show="modal_bg == 1" v-on:click="modal_bg = 0, modal=0" class="modal_bg" v-cloak></div>
+</transition>
 
-<modal-bg v-if="modal_bg"
-  @close="modal_bg = false,
-          modal_1 = false,
-          modal_2 = false,
-          modal_3 = false,
-          modal_4 = false
-          ">
-</modal-bg>
-<modal-1 v-if="modal_1" @close="modal_bg = false, modal_1 = false"></modal-1>
-<modal-2 v-if="modal_2" @close="modal_bg = true, modal_2 = false, modal_3 = true"></modal-2>
-<modal-3 v-if="modal_3" @close="modal_bg = false, modal_3 = false"></modal-3>
-<modal-4 v-if="modal_4" @close="modal_bg = false, modal_4 = false"></modal-4>
+<transition-group name="modal">
 
+  <div v-show="modal == 1" class="modal-container text-center" key="m_1" v-cloak>
+     <h1>ВАШ ЗАКАЗ ПРИНЯТ</h1>
+     <span class="modal_text">Вам перезвонят в течении 10 минут</span><br>
+     <button class="send_button" v-on:click="modal_bg = 0, modal = 0">ЗАКРЫТЬ</button>
+  </div>
 
+  <div v-show="modal == 2" class="modal-container text-center" key="m_2" v-cloak>
+     <h1>ОТПРАВИТЬ ОТЗЫВ</h1>
+     <form v-on:submit.prevent="modal_bg = 1, modal = 3" v-on:submit="reset_form">
+     <input class="input_text" placeholder="Сообщение" required><br><br>
+     <button type="submit" class="send_button">ОТПРАВИТЬ</button>
+     </form>
+  </div>
 
-</div><!-- #app -->
+  <div v-show="modal == 3" class="modal-container text-center" key="m_3" v-cloak>
+     <h1>ВАШ ОТЗЫВ ПРИНЯТ</h1>
+     <span class="modal_text">Спасибо за ваш комментарий</span><br>
+     <button class="send_button" v-on:click="modal_bg = 0, modal = 0">ЗАКРЫТЬ</button>
+  </div>
 
+  <div v-show="modal == 4" class="modal-container text-center" key="m_4" v-cloak>
+     <img class="prod_img_modal" src="./img/menu_1.jpg">
+     <button class="send_button" v-scroll-to="{el: '#zakaz-item', duration: 1000}" v-on:click="modal_bg = 0, modal = 0">СДЕЛАТЬ ЗАКАЗ</button>
+  </div>
 
+  <div v-show="modal == 5" class="modal-container text-center" key="m_5" v-cloak>
+     <img class="prod_img_modal" src="./img/menu_2.jpg">
+     <button class="send_button" v-scroll-to="{el: '#zakaz-item', duration: 1000}" v-on:click="modal_bg = 0, modal = 0">СДЕЛАТЬ ЗАКАЗ</button>
+  </div>
+
+  <div v-show="modal == 6" class="modal-container text-center" key="m_6" v-cloak>
+     <img class="prod_img_modal" src="./img/menu_3.jpg">
+     <button class="send_button" v-scroll-to="{el: '#zakaz-item', duration: 1000}" v-on:click="modal_bg = 0, modal = 0">СДЕЛАТЬ ЗАКАЗ</button>
+  </div>
+
+</transition-group>
 
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 <script src="https://unpkg.com/vue-scrollto"></script>
@@ -269,59 +293,6 @@
 <script src="https://cdn.jsdelivr.net/npm/vue-awesome-swiper@3.0.4/dist/vue-awesome-swiper.js"></script>
 <script src="./js/scrypt.js" type="text/javascript"></script>
 
-
-
-<script id="modal-bg">
-<transition name="modal_fade_bg">
-<div class="modal_bg" v-on:click="$emit('close')"></div>
-</transition>
-</script>
-
-
-<script id="modal-1">
-<transition name="modal_fade">
-<div class="modal-container text-center">
-   <h1>ВАШ ЗАКАЗ ПРИНЯТ</h1>
-   <span class="modal_text">Вам перезвонят в течении 10 минут</span><br>
-   <button class="send_button" v-on:click="$emit('close')">ЗАКРЫТЬ</button>
-</div>
-</transition>
-</script>
-
-
-<script id="modal-2">
-<transition name="modal_fade">
-<div class="modal-container text-center">
-   <h1>ОТПРАВИТЬ ОТЗЫВ</h1>
-   <form v-on:submit.prevent="$emit('close')">
-   <input class="input_text" placeholder="Сообщение" required><br><br>
-   <button type="submit" class="send_button">ОТПРАВИТЬ</button>
-   </form>
-</div>
-</transition>
-</script>
-
-
-<script id="modal-3">
-<transition name="modal_fade">
-<div class="modal-container text-center">
-   <h1>ВАШ ОТЗЫВ ПРИНЯТ</h1>
-   <span class="modal_text">Спасибо за ваш комментарий</span><br>
-   <button class="send_button" v-on:click="$emit('close')">ЗАКРЫТЬ</button>
-</div>
-</transition>
-</script>
-
-<script id="modal-4">
-<transition name="modal_fade">
-<div class="modal-container text-center">
-   <img class="prod_img_modal" src="./img/prod_1.png"><br><br>
-   <div class="modal_text">какой то текст</div>
-   <button class="send_button" v-scroll-to="{el: '#zakaz-item', duration: 1000}" v-on:click="$emit('close')">СДЕЛАТЬ ЗАКАЗ</button>
-</div>
-</transition>
-</script>
-
-
+</div><!-- #app -->
 </body>
 </html>

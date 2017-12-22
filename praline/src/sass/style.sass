@@ -5,6 +5,12 @@ a
     text-decoration: none
     color: inherit
 
+[v-cloak]
+  display: none
+
+.noscroll
+  overflow: hidden
+
 .vcenter
   display: flex
   align-items: center
@@ -264,6 +270,7 @@ h4
   color: white
   transition: all 0.3s
   border-radius: 10px
+  cursor: pointer
   &:focus
     outline: none
   &:hover
@@ -308,28 +315,37 @@ h4
 
 .modal-container
   position: fixed
-  top: 5%
+  overflow-y: scroll
+  top: 3%
   left: 0
   right: 0
   margin: auto
-  max-width: 90%
-  width: 800px
+  max-width: 95%
+  width: 700px
   height: auto
+  max-height: 95%
   padding: 30px
   background-color: white
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6)
   border-radius: 20px
   z-index: 2
 
-.modal_fade-enter-active, .modal_fade-leave-active
+.modal-container::-webkit-scrollbar
+  width: 0
+
+
+
+//переходы
+
+.modal-enter-active, .modal-leave-active
   transition: all 0.3s
-.modal_fade-enter, .modal_fade-leave-to
+.modal-enter, .modal-leave-to
   opacity: 0
   transform: scale(0.8)
 
-.modal_fade_bg-enter-active, .modal_fade_bg-leave-active
+.modal_bg-enter-active, .modal_bg-leave-active
   transition: all 0.3s
-.modal_fade_bg-enter, .modal_fade_bg-leave-to
+.modal_bg-enter, .modal_bg-leave-to
   opacity: 0
 
 
@@ -352,9 +368,9 @@ h4
 
 @media screen and (min-width: 1600px)
   .swiper-button-prev
-    left: 15%!important
+    left: 13%!important
   .swiper-button-next
-    right: 15%!important
+    right: 13%!important
 
 
 
