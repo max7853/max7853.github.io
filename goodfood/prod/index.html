@@ -18,12 +18,12 @@
 <div class="container-fluid main_bg">
   <div class="container">
     <div class="row justify-content-center menu">
-      <a href="#"><div class="menu_link">О нас</div></a>
-      <a href="#"><div class="menu_link">Меню</div></a>
-      <a href="#"><div class="menu_link">Подписки</div></a>
-      <a href="#"><div class="menu_link">Расчет калорий</div></a>
-      <a href="#"><div class="menu_link">Консультация</div></a>
-      <a href="#"><div class="menu_link_p">+7(900)287-25-25</div></a>
+      <a href="#"><div v-scroll-to="{el: '#about', duration: 700}" class="menu_link">О нас</div></a>
+      <a href="#"><div v-scroll-to="{el: '#menu', duration: 1000}" class="menu_link">Меню</div></a>
+      <a href="#"><div v-scroll-to="{el: '#sub', duration: 1300}" class="menu_link">Подписки</div></a>
+      <a href="#"><div v-scroll-to="{el: '#calc', duration: 1500}" class="menu_link">Расчет калорий</div></a>
+      <a href="#"><div v-scroll-to="{el: '#cons', duration: 1700}" class="menu_link">Консультация</div></a>
+      <a href="#"><div v-on:click="modal_bg = 1, modal = 2" class="menu_link_p">+7(900)287-25-25</div></a>
     </div>
     <div class="row">
       <div class="col-md-12 text-center">
@@ -31,7 +31,7 @@
         <div class="main_title">
           Сбалансированная <br>готовая еда с доставкой<br>
           <span class="main_sub_title">от 1500 рублей в день</span><br>
-          <button class="main_button">ВЫБРАТЬ ПОДПИСКУ</button>
+          <button v-scroll-to="{el: '#sub', duration: 1300}" class="main_button">ВЫБРАТЬ ПОДПИСКУ</button>
         </div>
       </div>
     </div>
@@ -39,7 +39,7 @@
 </div>
 
 
-<div class="container-fluid about_bg">
+<div class="container-fluid about_bg" id="about">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
@@ -73,7 +73,7 @@
 
 
 
-<div class="container-fluid gray_row_bg">
+<div class="container-fluid gray_row_bg" id="menu">
   <div class="container">
     <div class="row row_padding">
       <div class="col-md-12">
@@ -535,18 +535,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-<div class="container-fluid">
+<div class="container-fluid" id="sub">
   <div class="container">
     <div class="row row_padding">
       <div class="col-md-12">
@@ -584,7 +573,7 @@
               <div class="col-sm-4 menu_item_col">Углеводы:<br>300 гр.</div>
             </div>
             <div class="sub_text">3 приема пищи, 3 перекуса, доставка на дом или в офис</div>
-            <div class="text-center"><button class="sub_button">ЗАКАЗАТЬ</button></div>
+            <div class="text-center"><button v-on:click="modal_bg = 1, modal = 2" class="sub_button">ЗАКАЗАТЬ</button></div>
           </div>
         </div>
         <div class="col-lg-4 col-md-6 col-sm-8">
@@ -598,7 +587,7 @@
               <div class="col-sm-4 menu_item_col">Углеводы:<br>170 гр.</div>
             </div>
             <div class="sub_text">3 приема пищи, 2 перекуса, доставка на дом или в офис</div>
-            <div class="text-center"><button class="sub_button">ЗАКАЗАТЬ</button></div>
+            <div class="text-center"><button v-on:click="modal_bg = 1, modal = 2" class="sub_button">ЗАКАЗАТЬ</button></div>
           </div>
         </div>
         <div class="col-lg-4 col-md-6 col-sm-8">
@@ -612,7 +601,7 @@
               <div class="col-sm-4 menu_item_col">Углеводы:<br>220 гр.</div>
             </div>
             <div class="sub_text">3 приема пищи, 3 перекуса, доставка на дом или в офис</div>
-            <div class="text-center"><button class="sub_button">ЗАКАЗАТЬ</button></div>
+            <div class="text-center"><button v-on:click="modal_bg = 1, modal = 2" class="sub_button">ЗАКАЗАТЬ</button></div>
           </div>
         </div>
       </div>
@@ -630,7 +619,7 @@
               <div class="col-sm-4 menu_item_col">Углеводы:<br>320 гр.</div>
             </div>
             <div class="sub_text">3 приема пищи, 3 перекуса, доставка на дом или в офис</div>
-            <div class="text-center"><button class="sub_button">ЗАКАЗАТЬ</button></div>
+            <div class="text-center"><button v-on:click="modal_bg = 1, modal = 2" class="sub_button">ЗАКАЗАТЬ</button></div>
           </div>
         </div>
         <div class="col-lg-4 col-md-6 col-sm-8">
@@ -644,7 +633,7 @@
               <div class="col-sm-4 menu_item_col">Углеводы:<br>190 гр.</div>
             </div>
             <div class="sub_text">3 приема пищи, 2 перекуса, доставка на дом или в офис</div>
-            <div class="text-center"><button class="sub_button">ЗАКАЗАТЬ</button></div>
+            <div class="text-center"><button v-on:click="modal_bg = 1, modal = 2" class="sub_button">ЗАКАЗАТЬ</button></div>
           </div>
         </div>
         <div class="col-lg-4 col-md-6 col-sm-8">
@@ -658,7 +647,7 @@
               <div class="col-sm-4 menu_item_col">Углеводы:<br>240 гр.</div>
             </div>
             <div class="sub_text">3 приема пищи, 3 перекуса, доставка на дом или в офис</div>
-            <div class="text-center"><button class="sub_button">ЗАКАЗАТЬ</button></div>
+            <div class="text-center"><button v-on:click="modal_bg = 1, modal = 2" class="sub_button">ЗАКАЗАТЬ</button></div>
           </div>
         </div>
       </div>
@@ -671,7 +660,7 @@
 
 
 
-<div class="container-fluid gray_row_bg">
+<div class="container-fluid gray_row_bg" id="calc">
   <div class="container">
     <div class="row row_padding">
       <div class="col-md-12">
@@ -848,7 +837,7 @@
   </div><!-- container -->
 </div><!-- container-fluid -->
 
-<div class="container-fluid cons_bg">
+<div class="container-fluid cons_bg" id="cons">
   <div class="container">
     <div class="row row_padding">
       <div class="col-md-12">
@@ -860,9 +849,11 @@
 
     <div class="row justify-content-center vcenter">
       <div class="col-lg-5 col-md-6">
-        <input class="cons_input" type="text" placeholder="Ваше имя"><br>
-        <input class="cons_input" type="text" placeholder="Номер телефона"><br>
+        <form v-on:submit.prevent="modal = 1, modal_bg = 1" v-on:submit="reset_form">
+        <input class="cons_input" type="text" placeholder="Ваше имя" required><br>
+        <input class="cons_input" type="text" placeholder="Номер телефона" required><br>
         <button class="cons_button">ОСТАВИТЬ ЗАЯВКУ</button>
+        </form>
       </div>
       <div class="col-lg-5 col-md-6">
         <img class="img-fluid" src="./img/cons_img.png" alt="const_img">
@@ -887,6 +878,44 @@
     </div>
   </div><!-- container -->
 </div><!-- container-fluid -->
+
+
+
+
+
+
+
+
+<!-- модальные окна -->
+
+<transition name="modal_bg">
+<div v-show="modal_bg == 1" v-on:click="modal_bg = 0, modal=0" class="modal_bg" v-cloak></div>
+</transition>
+
+<transition-group name="modal">
+
+  <div v-show="modal == 1" class="modal-container text-center" key="m_1" v-cloak>
+     <div class="modatl_title">Ваша заявка получена</div>
+     <div class="modal_text">Вам перезвонят в течении 10 минут</div>
+     <button class="modal_button" v-on:click="modal_bg = 0, modal = 0">ЗАКРЫТЬ</button>
+  </div>
+
+  <div v-show="modal == 2" class="modal-container text-center" key="m_2" v-cloak>
+  <div class="modatl_title">Оставьте заявку и наш <br>менеджер свяжется с вами</div>
+  <div class="row justify-content-center">
+      <div class="col-md-8">
+      <form v-on:submit.prevent="modal = 1, modal_bg = 1" v-on:submit="reset_form">
+      <input class="cons_input" type="text" placeholder="Ваше имя" required><br>
+      <input class="cons_input" type="text" placeholder="Номер телефона" required><br>
+      <button class="cons_button">ОСТАВИТЬ ЗАЯВКУ</button>
+      </form>
+      </div>
+  </div>
+
+
+</transition-group>
+
+
 
 
 </div><!-- #app -->
@@ -923,6 +952,10 @@ new Vue({
     c_growth_m: 0,
     c_active_m: 0,
     total_m: 2200,
+    modal: 0,
+    modal_bg: 0,
+  },
+  methods: {reset_form:function(){event.target.reset()}
   },
   computed: {
     total_1: function() {
@@ -969,14 +1002,6 @@ new Vue({
 })
 
 </script>
-
-
-
-
-
-
-
-
 
 
 
