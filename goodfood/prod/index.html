@@ -568,11 +568,15 @@
         </div>
         <div class="col-md-2 text-left toggle_img"><img class="img-fluid" src="./img/m_ico.png" alt="m_ico"></div>
       </div>
-      <div class="row row_padding justify-content-center">
+
+<div class="relative">
+<transition-group name="slide">
+
+      <div v-show="toggle_button_3 == true" class="row row_padding justify-content-center" key="s_1">
         <div class="col-lg-4 col-md-6 col-sm-8">
           <div class="sub_item">
             <div class="sub_title vcenter">НАБОР</div>
-            <div class="sub_ccal">3000 Ккал</div>
+            <div class="sub_ccal">2800 ккал</div>
             <div class="sub_text">500 ккал порция</div>
             <div class="row">
               <div class="col-sm-4 menu_item_col menu_item_col_b">Белки:<br>150 гр.</div>
@@ -586,24 +590,24 @@
         <div class="col-lg-4 col-md-6 col-sm-8">
           <div class="sub_item">
             <div class="sub_title vcenter">ПОХУДЕНИЕ</div>
-            <div class="sub_ccal">1700 Ккал</div>
+            <div class="sub_ccal">1600 ккал</div>
             <div class="sub_text">340 ккал порция</div>
             <div class="row">
               <div class="col-sm-4 menu_item_col menu_item_col_b">Белки:<br>90 гр.</div>
               <div class="col-sm-4 menu_item_col menu_item_col_b">Жиры:<br>60 гр.</div>
               <div class="col-sm-4 menu_item_col">Углеводы:<br>170 гр.</div>
             </div>
-            <div class="sub_text">3 приема пищи, 3 перекуса, доставка на дом или в офис</div>
+            <div class="sub_text">3 приема пищи, 2 перекуса, доставка на дом или в офис</div>
             <div class="text-center"><button class="sub_button">ЗАКАЗАТЬ</button></div>
           </div>
         </div>
         <div class="col-lg-4 col-md-6 col-sm-8">
           <div class="sub_item">
             <div class="sub_title vcenter">ПОДДЕРЖАНИЕ</div>
-            <div class="sub_ccal">2200 Ккал</div>
+            <div class="sub_ccal">2000 ккал</div>
             <div class="sub_text">450 ккал порция</div>
             <div class="row ">
-              <div class="col-sm-4 menu_item_col menu_item_col_b">Белки:<br>10 гр.</div>
+              <div class="col-sm-4 menu_item_col menu_item_col_b">Белки:<br>50 гр.</div>
               <div class="col-sm-4 menu_item_col menu_item_col_b">Жиры:<br>80 гр.</div>
               <div class="col-sm-4 menu_item_col">Углеводы:<br>220 гр.</div>
             </div>
@@ -614,26 +618,57 @@
       </div>
 
 
+      <div v-show="toggle_button_3 == false" class="row row_padding justify-content-center" key="s_2">
+        <div class="col-lg-4 col-md-6 col-sm-8">
+          <div class="sub_item">
+            <div class="sub_title vcenter">НАБОР</div>
+            <div class="sub_ccal">3000 ккал</div>
+            <div class="sub_text">560 ккал порция</div>
+            <div class="row">
+              <div class="col-sm-4 menu_item_col menu_item_col_b">Белки:<br>160 гр.</div>
+              <div class="col-sm-4 menu_item_col menu_item_col_b">Жиры:<br>100 гр.</div>
+              <div class="col-sm-4 menu_item_col">Углеводы:<br>320 гр.</div>
+            </div>
+            <div class="sub_text">3 приема пищи, 3 перекуса, доставка на дом или в офис</div>
+            <div class="text-center"><button class="sub_button">ЗАКАЗАТЬ</button></div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-8">
+          <div class="sub_item">
+            <div class="sub_title vcenter">ПОХУДЕНИЕ</div>
+            <div class="sub_ccal">1800 ккал</div>
+            <div class="sub_text">370 ккал порция</div>
+            <div class="row">
+              <div class="col-sm-4 menu_item_col menu_item_col_b">Белки:<br>110 гр.</div>
+              <div class="col-sm-4 menu_item_col menu_item_col_b">Жиры:<br>70 гр.</div>
+              <div class="col-sm-4 menu_item_col">Углеводы:<br>190 гр.</div>
+            </div>
+            <div class="sub_text">3 приема пищи, 2 перекуса, доставка на дом или в офис</div>
+            <div class="text-center"><button class="sub_button">ЗАКАЗАТЬ</button></div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-8">
+          <div class="sub_item">
+            <div class="sub_title vcenter">ПОДДЕРЖАНИЕ</div>
+            <div class="sub_ccal">2200 ккал</div>
+            <div class="sub_text">480 ккал порция</div>
+            <div class="row ">
+              <div class="col-sm-4 menu_item_col menu_item_col_b">Белки:<br>60 гр.</div>
+              <div class="col-sm-4 menu_item_col menu_item_col_b">Жиры:<br>90 гр.</div>
+              <div class="col-sm-4 menu_item_col">Углеводы:<br>240 гр.</div>
+            </div>
+            <div class="sub_text">3 приема пищи, 3 перекуса, доставка на дом или в офис</div>
+            <div class="text-center"><button class="sub_button">ЗАКАЗАТЬ</button></div>
+          </div>
+        </div>
+      </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    </transition-group>
+    </div>
 
   </div><!-- container -->
 </div><!-- container-fluid -->
+
 
 
 <div class="container-fluid gray_row_bg">
@@ -667,12 +702,17 @@
           </div>
           <div class="col-md-2 text-left toggle_img"><img class="img-fluid" src="./img/m_ico.png" alt="m_ico"></div>
         </div>
+
+<div class="relative">
+<transition-group name="fade">
+
+<div v-show="toggle_button_2 == true" key="c_1">
         <div class="calc_title">Ваша цель</div>
         <form>
         <div class="row justify-content-center">
-        <label class="menu_label"><input value="2300" v-model="c_target" type="radio"><div>Набор</div></label>
-        <label class="menu_label"><input value="2000" v-model="c_target" type="radio"><div>Поддержание</div></label>
-        <label class="menu_label"><input value="1700" v-model="c_target" type="radio"><div>Похудение</div></label>
+        <label class="menu_label"><input value="2200" v-model="c_target_w" type="radio"><div>Набор</div></label>
+        <label class="menu_label"><input value="2000" v-model="c_target_w" type="radio"><div>Поддержание</div></label>
+        <label class="menu_label"><input value="1800" v-model="c_target_w" type="radio"><div>Похудение</div></label>
         </div>
         </form>
         <div class="calc_line"></div>
@@ -681,27 +721,27 @@
           <div class="col-lg-3 col-md-4 calc_text">Возраст
             <form>
               <div class="row">
-                <div class="col-lg-12 nopadding"><label class="calc_label_min"><input value="0" v-model="c_age" type="radio"><div>от 20 до 40 лет</div></label></div>
-                <div class="col-lg-6 nopadding"><label class="calc_label_min"><input value="-200" v-model="c_age" type="radio"><div>до 20 лет</div></label></div>
-                <div class="col-lg-6 nopadding"><label class="calc_label_min"><input value="200" v-model="c_age" type="radio"><div>от 40 лет</div></label></div>
+                <div class="col-lg-12 nopadding"><label class="calc_label_min"><input value="0" v-model="c_age_w" type="radio"><div>от 20 до 40 лет</div></label></div>
+                <div class="col-lg-6 nopadding"><label class="calc_label_min"><input value="100" v-model="c_age_w" type="radio"><div>до 20 лет</div></label></div>
+                <div class="col-lg-6 nopadding"><label class="calc_label_min"><input value="-100" v-model="c_age_w" type="radio"><div>от 40 лет</div></label></div>
               </div>
             </form>
           </div>
           <div class="col-lg-3 col-md-4 calc_text">Рост
             <form>
               <div class="row">
-                <div class="col-lg-12 nopadding"><label class="calc_label_min"><input value="0" v-model="c_growth" type="radio"><div>от 150 до 180 см</div></label></div>
-                <div class="col-lg-6 nopadding"><label class="calc_label_min"><input value="-200" v-model="c_growth" type="radio"><div>до 150 см</div></label></div>
-                <div class="col-lg-6 nopadding"><label class="calc_label_min"><input value="200" v-model="c_growth" type="radio"><div>от 180 см</div></label></div>
+                <div class="col-lg-12 nopadding"><label class="calc_label_min"><input value="0" v-model="c_growth_w" type="radio"><div>от 150 до 180 см</div></label></div>
+                <div class="col-lg-6 nopadding"><label class="calc_label_min"><input value="-100" v-model="c_growth_w" type="radio"><div>до 150 см</div></label></div>
+                <div class="col-lg-6 nopadding"><label class="calc_label_min"><input value="100" v-model="c_growth_w" type="radio"><div>от 180 см</div></label></div>
               </div>
             </form>
           </div>
           <div class="col-lg-3 col-md-4 calc_text">Вес
             <form>
             <div class="row">
-              <div class="col-lg-12 nopadding"><label class="calc_label_min"><input value="0" v-model="c_weight" type="radio"><div>от 60 до 80 кг</div></label></div>
-              <div class="col-lg-6 nopadding"><label class="calc_label_min"><input value="-200" v-model="c_weight" type="radio"><div>до 60 кг</div></label></div>
-              <div class="col-lg-6 nopadding"><label class="calc_label_min"><input value="200" v-model="c_weight" type="radio"><div>от 80 кг</div></label></div>
+              <div class="col-lg-12 nopadding"><label class="calc_label_min"><input value="0" v-model="c_weight_w" type="radio"><div>от 60 до 80 кг</div></label></div>
+              <div class="col-lg-6 nopadding"><label class="calc_label_min"><input value="100" v-model="c_weight_w" type="radio"><div>до 60 кг</div></label></div>
+              <div class="col-lg-6 nopadding"><label class="calc_label_min"><input value="-100" v-model="c_weight_w" type="radio"><div>от 80 кг</div></label></div>
             </div>
             </form>
           </div>
@@ -711,31 +751,102 @@
         <form>
           <div class="row justify-content-center">
             <div class="col-lg-4 col-md-5 nopadding">
-              <label class="calc_label"><input input value="-200" v-model="c_active" type="radio"><div>Сидячий образ жизни</div></label>
+              <label class="calc_label"><input input value="-100" v-model="c_active_w" type="radio"><div>Сидячий образ жизни</div></label>
             </div>
             <div class="col-lg-4 col-md-5 nopadding">
-              <label class="calc_label"><input input value="0" v-model="c_active" type="radio"><div>Средняя активность</div></label><br>
+              <label class="calc_label"><input input value="0" v-model="c_active_w" type="radio"><div>Средняя активность</div></label><br>
             </div>
             </div>
             <div class="row justify-content-center">
             <div class="col-lg-4 col-md-5 nopadding">
-              <label class="calc_label"><input input value="200" v-model="c_active" type="radio"><div>Повышенная активость</div></label>
+              <label class="calc_label"><input input value="100" v-model="c_active_w" type="radio"><div>Повышенная активость</div></label>
             </div>
             <div class="col-lg-4 col-md-5 nopadding">
-              <label class="calc_label"><input input value="400" v-model="c_active" type="radio"><div>Высокая активность</div></label>
+              <label class="calc_label"><input input value="200" v-model="c_active_w" type="radio"><div>Высокая активность</div></label>
             </div>
           </div>
         </form>
         <div class="calc_line"></div>
         <div class="row justify-content-center calc_bottom">
-        <div class="col-lg-4 col-md-6 calc_bottom_text nopadding vcenter">Ваша дневная<br> норма калорий</div>
-        <div class="col-lg-4 col-md-6 calc_bottom_count nopadding vcenter"> {{ animatedNumber }} ккал</div>
+          <div class="col-lg-4 col-md-6 calc_bottom_text nopadding vcenter">Ваша дневная<br> норма калорий</div>
+          <div class="col-lg-4 col-md-6 calc_bottom_count nopadding vcenter"> {{ total_w }} ккал</div>
         </div>
+</div>
+
+<div v-show="toggle_button_2 == false" key="c_2">
+        <div class="calc_title">Ваша цель</div>
+        <form>
+        <div class="row justify-content-center">
+        <label class="menu_label"><input value="2400" v-model="c_target_m" type="radio"><div>Набор</div></label>
+        <label class="menu_label"><input value="2200" v-model="c_target_m" type="radio"><div>Поддержание</div></label>
+        <label class="menu_label"><input value="2000" v-model="c_target_m" type="radio"><div>Похудение</div></label>
+        </div>
+        </form>
+        <div class="calc_line"></div>
+        <div class="calc_title">Ваши параметры</div>
+        <div class="row justify-content-center">
+          <div class="col-lg-3 col-md-4 calc_text">Возраст
+            <form>
+              <div class="row">
+                <div class="col-lg-12 nopadding"><label class="calc_label_min"><input value="0" v-model="c_age_m" type="radio"><div>от 20 до 40 лет</div></label></div>
+                <div class="col-lg-6 nopadding"><label class="calc_label_min"><input value="100" v-model="c_age_m" type="radio"><div>до 20 лет</div></label></div>
+                <div class="col-lg-6 nopadding"><label class="calc_label_min"><input value="-100" v-model="c_age_m" type="radio"><div>от 40 лет</div></label></div>
+              </div>
+            </form>
+          </div>
+          <div class="col-lg-3 col-md-4 calc_text">Рост
+            <form>
+              <div class="row">
+                <div class="col-lg-12 nopadding"><label class="calc_label_min"><input value="0" v-model="c_growth_m" type="radio"><div>от 150 до 180 см</div></label></div>
+                <div class="col-lg-6 nopadding"><label class="calc_label_min"><input value="-100" v-model="c_growth_m" type="radio"><div>до 150 см</div></label></div>
+                <div class="col-lg-6 nopadding"><label class="calc_label_min"><input value="100" v-model="c_growth_m" type="radio"><div>от 180 см</div></label></div>
+              </div>
+            </form>
+          </div>
+          <div class="col-lg-3 col-md-4 calc_text">Вес
+            <form>
+            <div class="row">
+              <div class="col-lg-12 nopadding"><label class="calc_label_min"><input value="0" v-model="c_weight_m" type="radio"><div>от 60 до 80 кг</div></label></div>
+              <div class="col-lg-6 nopadding"><label class="calc_label_min"><input value="100" v-model="c_weight_m" type="radio"><div>до 60 кг</div></label></div>
+              <div class="col-lg-6 nopadding"><label class="calc_label_min"><input value="-100" v-model="c_weight_m" type="radio"><div>от 80 кг</div></label></div>
+            </div>
+            </form>
+          </div>
+        </div>
+        <div class="calc_line"></div>
+        <div class="calc_title">Ваша активность</div>
+        <form>
+          <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-5 nopadding">
+              <label class="calc_label"><input input value="-100" v-model="c_active_m" type="radio"><div>Сидячий образ жизни</div></label>
+            </div>
+            <div class="col-lg-4 col-md-5 nopadding">
+              <label class="calc_label"><input input value="0" v-model="c_active_m" type="radio"><div>Средняя активность</div></label><br>
+            </div>
+            </div>
+            <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-5 nopadding">
+              <label class="calc_label"><input input value="100" v-model="c_active_m" type="radio"><div>Повышенная активость</div></label>
+            </div>
+            <div class="col-lg-4 col-md-5 nopadding">
+              <label class="calc_label"><input input value="200" v-model="c_active_m" type="radio"><div>Высокая активность</div></label>
+            </div>
+          </div>
+        </form>
+        <div class="calc_line"></div>
+        <div class="row justify-content-center calc_bottom">
+          <div class="col-lg-4 col-md-6 calc_bottom_text nopadding vcenter">Ваша дневная<br> норма калорий</div>
+          <div class="col-lg-4 col-md-6 calc_bottom_count nopadding vcenter"> {{ total_m }} ккал</div>
+        </div>
+</div>
+
+</transition-group>
+</div><!-- relative -->
+
       </div>
     </div>
   </div><!-- container -->
 </div><!-- container-fluid -->
-
 
 <div class="container-fluid cons_bg">
   <div class="container">
@@ -746,8 +857,6 @@
         <div class="row_sub_title">Оставьте заявку и наш менеджер свяжется с вами</div>
       </div>
     </div>
-
-
 
     <div class="row justify-content-center vcenter">
       <div class="col-lg-5 col-md-6">
@@ -760,17 +869,17 @@
       </div>
     </div>
 
-
   </div><!-- container -->
 </div><!-- container-fluid -->
+
 
 
 <div class="container-fluid footer_bg">
   <div class="container">
     <div class="row">
-      <div class="col-md-4 footer_text vcenter">Дизайн KARCREATIVE.RU</div>
-      <div class="col-md-4"></div>
-      <div class="col-md-4 vcenter">
+      <div class="col-md-5 footer_text vcenter">KARCREATIVE.RU © 2017</div>
+      <div class="col-md-2"></div>
+      <div class="col-md-5 vcenter">
         <img class="social" src="./img/vk.png" alt="vk">
         <img class="social" src="./img/fb.png" alt="fb">
         <img class="social" src="./img/ins.png" alt="ins">
@@ -802,20 +911,29 @@ new Vue({
     toggle_button_3: true,
     tabs_fit: 1,
     tabs_mass: 1,
-    c_target: 2000,
-    c_age: 0,
-    c_weight: 0,
-    c_growth: 0,
-    c_active: 0,
-    animatedNumber: 2000,
+    c_target_w: 2000,
+    c_age_w: 0,
+    c_weight_w: 0,
+    c_growth_w: 0,
+    c_active_w: 0,
+    total_w: 2000,
+    c_target_m: 2200,
+    c_age_m: 0,
+    c_weight_m: 0,
+    c_growth_m: 0,
+    c_active_m: 0,
+    total_m: 2200,
   },
   computed: {
-    total: function() {
-        return parseInt(this.c_target) + parseInt(this.c_age) + parseInt(this.c_weight) + parseInt(this.c_growth) + parseInt(this.c_active);
+    total_1: function() {
+        return parseInt(this.c_target_w) + parseInt(this.c_age_w) + parseInt(this.c_weight_w) + parseInt(this.c_growth_w) + parseInt(this.c_active_w);
+    },
+    total_2: function() {
+        return parseInt(this.c_target_m) + parseInt(this.c_age_m) + parseInt(this.c_weight_m) + parseInt(this.c_growth_m) + parseInt(this.c_active_m);
     }
   },
   watch: {
-    total: function(newValue, oldValue) {
+    total_1: function(newValue, oldValue) {
       var vm = this
       function animate () {
         if (TWEEN.update()) {
@@ -826,7 +944,23 @@ new Vue({
         .easing(TWEEN.Easing.Quadratic.Out)
         .to({ tweeningNumber: newValue }, 1000)
         .onUpdate(function () {
-          vm.animatedNumber = this.tweeningNumber.toFixed(0)
+          vm.total_w = this.tweeningNumber.toFixed(0)
+        })
+        .start()
+      animate()
+    },
+    total_2: function(newValue, oldValue) {
+      var vm = this
+      function animate () {
+        if (TWEEN.update()) {
+          requestAnimationFrame(animate)
+        }
+      }
+      new TWEEN.Tween({ tweeningNumber: oldValue })
+        .easing(TWEEN.Easing.Quadratic.Out)
+        .to({ tweeningNumber: newValue }, 1000)
+        .onUpdate(function () {
+          vm.total_m = this.tweeningNumber.toFixed(0)
         })
         .start()
       animate()
