@@ -433,7 +433,6 @@ input[type="radio"]:checked + div {
 .footer_bg {
   background-image: url(../img/footer_bg.png);
   background-position: center top;
-  background-size: cover;
   background-repeat: repeat-x;
   padding-bottom: 30px;
   padding-top: 100px;
