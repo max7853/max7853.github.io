@@ -1,0 +1,116 @@
+
+.vcenter
+  display: flex
+  align-items: center
+
+.main
+  background-image: url(../img/main_bg.png)
+  background-size: cover
+  background-position: center center
+
+
+.menu_row
+  padding-top: 60px
+
+.menu-link
+  padding: 5px
+  font-family: Muller Hairline
+  font-size: 24px
+  color: white
+  font-weight: bold
+  transition: all 0.3s
+  &:hover
+    color: #f0772e
+    cursor: pointer
+
+.logo_row
+  padding-top: 60px
+  text-align: center
+
+.phone
+  font-size: 40px
+  font-family: Muller
+  font-weight: bold
+  line-height: 1
+  text-align: right
+
+
+.call
+  font-size: 30px
+  text-decoration: underline
+
+.main_line
+  height: 10px
+  background-color: #f0772e
+  margin-top: 30px
+  margin-bottom: 30px
+
+.main_title
+  font-family: Muller
+  font-weight: bold
+  color: white
+  font-size: 62px
+  margin-bottom: 30px
+  line-height: 1
+
+.main_text
+  font-family: Muller Hairline
+  color: white
+  font-size: 26px
+  font-weight: bold
+
+.main_button
+  padding: 20px 40px
+  background-color: #f0772e
+  border: none
+  border-radius: 30px
+  color: white
+  font-family: Roboto
+  font-size: 24px
+  font-weight: bold
+
+.main_row
+  padding-bottom: 200px
+
+
+
+@media (max-width: 1500px)
+  .main_img_fluid
+    max-width: 100%
+  .main
+    background-image: url(../img/main_bg_2.png)
+
+@media (max-width: 1199px)
+  .main_button
+    font-size: 20px
+  .main_title
+    font-size: 50px
+
+
+@media (max-width: 991px)
+  .phone
+    text-align: center
+    margin-top: 10px
+  .main_button
+    font-size: 15px
+  .menu_row
+    padding-top: 30px
+  .logo_row
+    padding-top: 30px
+  .main_title
+    font-size: 40px
+
+@media (max-width: 767px)
+  .main_button
+    margin: auto
+    display: block
+    margin-bottom: 30px
+
+
+@media (max-width: 575px)
+  .phone
+    font-size: 30px
+  .call
+    font-size: 25px
+  .main_button
+    padding: 20px 30px
