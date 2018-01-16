@@ -1,12 +1,10 @@
 body
-  background-color: lightgray
-  color: black
+  background-color: #e8e8e8
 
 .center
   display: flex
   align-items: center
   justify-content: center
-
 
 .main
   background-image: url(../img/main_bg.png)
@@ -86,6 +84,7 @@ body
   font-style: italic
   width: 100%
   margin-bottom: 30px
+  color: gray
   &:focus
     outline: none
 
@@ -111,6 +110,14 @@ body
   font-size: 80px
   color: black
   font-weight: 700
+  line-height: 1.2
+
+.row_sub_title_1
+  font-family: Roboto
+  color: black
+  font-size: 24px
+  font-weight: normal
+  padding-top: 20px
   line-height: 1.2
 
 .title_line
@@ -210,9 +217,112 @@ body
   font-family: Roboto
   color: white
   font-size: 24px
-  padding-top: 20px
+  padding-top: 10px
 
-@media (max-width: 1199px)
+.alg_text
+  font-family: Roboto
+  color: black
+  font-size: 24px
+
+.alg_img
+  padding-top: 40px
+  padding-bottom: 10px
+
+
+.art_row
+  background-image: url(../img/art_bg.png)
+  background-size: cover
+  background-position: center
+
+.art_img
+  padding-top: 40px
+  padding-bottom: 10px
+  width: 100%
+
+.art_title
+  font-family: Roboto
+  color: #f7ba15
+  font-size: 24px
+
+.art_text
+    font-family: Roboto
+    color: white
+    font-size: 16px
+
+.art_col
+  padding-right: 50px
+  padding-left: 50px
+
+.art_button
+  padding: 5px 20px
+  border-radius: 10px
+  border: none
+  font-size: 20px
+  font-family: Roboto
+  background-color: #f7ba15
+  font-weight: 700
+  transition: all 0.3s
+  margin-top: 10px
+  &:hover
+    background-color: #ffd769
+    cursor: pointer
+  &:focus
+    outline: none
+
+
+.send_button
+  padding: 10px 40px
+  border-radius: 10px
+  border: none
+  font-size: 24px
+  font-family: Roboto
+  background-color: #f7ba15
+  font-weight: 700
+  transition: all 0.3s
+  margin-top: 25px
+  &:hover
+    background-color: #ffd769
+    cursor: pointer
+  &:focus
+    outline: none
+
+
+.send_input
+  width: 100%
+  padding: 15px 20px
+  border: none
+  margin-top: 25px
+  border-radius: 10px
+  font-family: Roboto
+  color: gray
+  &:focus
+    outline: none
+
+.send_input_text
+  padding-bottom: 150px
+
+.footer
+  background-color: #100e14
+  color: #f7ba15
+  padding-top: 30px
+  padding-bottom: 30px
+
+.footer_text
+  font-family: Roboto
+  font-size: 20px
+  padding-top: 10px
+  padding-bottom: 10px
+
+.soc_ico
+  transition: all 0.3s
+  padding-left: 5px
+  padding-right: 5px
+  &:hover
+    filter: brightness(2)
+    cursor: pointer
+
+
+@media (max-width: 1200px)
   .menu_link_none
     display: none
   .main_title_1
@@ -226,15 +336,17 @@ body
   .adv_ico_text
     font-size: 18px
 
-@media (max-width: 991px)
+@media (max-width: 992px)
   .main_title_1
     font-size: 60px
   .main_title_2
     font-size: 50px
   .main_title_3
     font-size: 30px
+  .alg_item
+    text-align: center
 
-@media (max-width: 767px)
+@media (max-width: 768px)
   .main_contacts
     margin-top: 30px
     text-align: center
@@ -245,8 +357,11 @@ body
     font-size: 18px
   .adv_cert
     padding-top: 60px
+  .art_col
+    padding-left: 15px
+    padding-right: 15px
 
-@media (max-width: 575px)
+@media (max-width: 576px)
   .main_title_1
     font-size: 45px
   .main_title_2
@@ -254,6 +369,10 @@ body
   .main_title_3
     font-size: 20px
   .row_title_1
-    font-size: 60px
+    font-size: 40px
   .row_title_2
     font-size: 40px
+  .menu_link
+    font-size: 16px
+  .main_phone
+    font-size: 28px
