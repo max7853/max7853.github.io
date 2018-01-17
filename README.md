@@ -1,6 +1,6 @@
-Верстальщик
+Р’РµСЂСЃС‚Р°Р»СЊС‰РёРє
 
-Портфолио:
+РџРѕСЂС‚С„РѕР»РёРѕ:
 
 GoodFood
 
@@ -14,12 +14,12 @@ https://max7853.github.io/praline/prod/
 
 https://github.com/max7853/max7853.github.io/tree/master/praline/prod
 
-Фортуна Люкс
+Р¤РѕСЂС‚СѓРЅР° Р›СЋРєСЃ
 
 https://max7853.github.io/fortunelux/prod/
 
 https://github.com/max7853/max7853.github.io/tree/master/fortunelux/prod
 
-Контакты:
+РљРѕРЅС‚Р°РєС‚С‹:
 
 maxim7853@gmail.com
