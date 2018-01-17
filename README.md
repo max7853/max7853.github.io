@@ -20,6 +20,6 @@ https://max7853.github.io/fortunelux/prod/
 
 https://github.com/max7853/max7853.github.io/tree/master/fortunelux/prod
 
-Контакты:
+Контакты: maxim7853@gmail.com
 
-maxim7853@gmail.com
+Дизайн: karcreative.ru

@@ -18,12 +18,12 @@
 <div class="container-fluid main_bg">
   <div class="container">
     <div class="row justify-content-center menu">
-      <a href="#"><div v-scroll-to="{el: '#about', duration: 700}" class="menu_link">О нас</div></a>
-      <a href="#"><div v-scroll-to="{el: '#menu', duration: 1000}" class="menu_link">Меню</div></a>
-      <a href="#"><div v-scroll-to="{el: '#sub', duration: 1300}" class="menu_link">Подписки</div></a>
-      <a href="#"><div v-scroll-to="{el: '#calc', duration: 1500}" class="menu_link">Расчет калорий</div></a>
-      <a href="#"><div v-scroll-to="{el: '#cons', duration: 1700}" class="menu_link">Консультация</div></a>
-      <a href="#"><div v-on:click="modal_bg = 1, modal = 2" class="menu_link_p">+7(900)287-25-25</div></a>
+      <div v-scroll-to="{el: '#about', duration: 700}" class="menu_link">О нас</div>
+      <div v-scroll-to="{el: '#menu', duration: 1000}" class="menu_link">Меню</div>
+      <div v-scroll-to="{el: '#sub', duration: 1300}" class="menu_link">Подписки</div>
+      <div v-scroll-to="{el: '#calc', duration: 1500}" class="menu_link">Расчет калорий</div>
+      <div v-scroll-to="{el: '#cons', duration: 1700}" class="menu_link">Консультация</div>
+      <div v-on:click="modal_bg = 1, modal = 2" class="menu_link_p">+7(900)287-25-25</div>
     </div>
     <div class="row">
       <div class="col-md-12 text-center">
@@ -49,19 +49,19 @@
       </div>
     </div>
     <div class="row justify-content-center about_row">
-      <div class="col-xl-3 col-md-4 col-8 text-center">
+      <div class="col-xl-3 col-md-4 col-10 text-center">
         <img class="img-fluid about_ico_img" src="./img/about_ico_1.png" alt="about_ico_1">
         <div class="about_text">
           Good Food - это доставка готовых сбалансированных блюд с учетом личных потребностей
         </div>
       </div>
-      <div class="col-xl-3 col-md-4 col-8 text-center">
+      <div class="col-xl-3 col-md-4 col-10 text-center">
         <img class="img-fluid about_ico_img" src="./img/about_ico_2.png" alt="about_ico_2">
         <div class="about_text">
           Мы готовим наши блюда только из натуральных и свежих продуктов с минимальной обработкой
         </div>
       </div>
-      <div class="col-xl-3 col-md-4 col-8 text-center">
+      <div class="col-xl-3 col-md-4 col-10 text-center">
         <img class="img-fluid about_ico_img" src="./img/about_ico_3.png" alt="about_ico_3">
         <div class="about_text">
           Доставка в холодильнике, контейнеры блюд подходят для перевозки и разогрева
@@ -532,9 +532,6 @@
 
 
 
-
-
-
 <div class="container-fluid" id="sub">
   <div class="container">
     <div class="row row_padding">
@@ -846,7 +843,6 @@
         <div class="row_sub_title">Оставьте заявку и наш менеджер свяжется с вами</div>
       </div>
     </div>
-
     <div class="row justify-content-center vcenter">
       <div class="col-lg-5 col-md-6">
         <form v-on:submit.prevent="modal = 1, modal_bg = 1" v-on:submit="reset_form">
@@ -868,7 +864,7 @@
 <div class="container-fluid footer_bg">
   <div class="container">
     <div class="row">
-      <div class="col-md-5 footer_text vcenter">KARCREATIVE.RU © 2017</div>
+      <div class="col-md-5 footer_text vcenter">Дизайн KARCREATIVE.RU</div>
       <div class="col-md-2"></div>
       <div class="col-md-5 vcenter">
         <img class="social" src="./img/vk.png" alt="vk">
@@ -878,11 +874,6 @@
     </div>
   </div><!-- container -->
 </div><!-- container-fluid -->
-
-
-
-
-
 
 
 
@@ -912,25 +903,15 @@
       </div>
   </div>
 
-
 </transition-group>
 
-
-
-
 </div><!-- #app -->
-
-
 
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 <script src="https://unpkg.com/vue-scrollto"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/16.3.5/Tween.min.js"></script>
 
-
-
-
 <script>
-
 
 new Vue({
   el: '#app',
@@ -1002,10 +983,6 @@ new Vue({
 })
 
 </script>
-
-
-
-
 
 </body>
 </html>

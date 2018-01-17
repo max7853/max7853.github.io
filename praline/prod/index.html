@@ -27,11 +27,11 @@
       <div class="col-lg-3 logo text-center"><img class="img-fluid" src="./img/logo.png" alt="logo"></div>
       <div class="col-lg-8 offset-xl-1">
         <div class="row menu justify-content-center">
-          <a href="#" v-scroll-to="{el: '#about-item', duration: 500}"><div class="menu_link">Обо мне</div></a>
-          <a href="#" v-scroll-to="{el: '#prod-item', duration: 1000}"><div class="menu_link">Каталог</div></a>
-          <a href="#" v-scroll-to="{el: '#rev-item', duration: 1500}"><div class="menu_link">Отзывы</div></a>
-          <a href="#" v-scroll-to="{el: '#zakaz-item', duration: 2000}"><div class="menu_link">Заказать</div></a>
-          <a href="#" v-scroll-to="{el: '#zakaz-item', duration: 2000}"><div class="menu_link">8 900 287 25 25</div></a>
+          <div class="menu_link" v-scroll-to="{el: '#about-item', duration: 500}">Обо мне</div>
+          <div class="menu_link" v-scroll-to="{el: '#prod-item', duration: 1000}">Каталог</div>
+          <div class="menu_link" v-scroll-to="{el: '#rev-item', duration: 1500}">Отзывы</div>
+          <div class="menu_link" v-scroll-to="{el: '#zakaz-item', duration: 2000}">Заказать</div>
+          <div class="menu_link" v-scroll-to="{el: '#zakaz-item', duration: 2000}">8 900 287 25 25</div>
         </div>
       </div>
     </div>
@@ -227,7 +227,7 @@
 <div class="container-fluid footer">
   <div class="container">
     <div class="row">
-      <div class="col-md-4 vcenter hcenter">KARCREATIVE.RU © 2017</div>
+      <div class="col-md-4 vcenter hcenter">Дизайн KARCREATIVE.RU</div>
       <div class="col-md-4 text-center hcenter vcenter footer_social">
         <img class="social_ico" src="./img/fb.png" alt="fb">
         <img class="social_ico" src="./img/vk.png" alt="vk">
@@ -286,13 +286,36 @@
 
 </transition-group>
 
+</div><!-- #app -->
+
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 <script src="https://unpkg.com/vue-scrollto"></script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/css/swiper.min.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/js/swiper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue-awesome-swiper@3.0.4/dist/vue-awesome-swiper.js"></script>
-<script src="./js/scrypt.js" type="text/javascript"></script>
 
-</div><!-- #app -->
+<script>
+
+Vue.use(VueAwesomeSwiper)
+new Vue({
+  el: '#app',
+  data: {
+    modal_bg: 0,
+    modal: 0,
+    slider: {
+      speed: 600,
+      loop: true,
+       navigation: {
+         nextEl: '.swiper-button-next',
+         prevEl: '.swiper-button-prev'
+       }
+    },
+  },
+  methods: {reset_form:function(){event.target.reset()}
+  },
+})
+
+</script>
+
 </body>
 </html>
