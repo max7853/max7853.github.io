@@ -19,18 +19,18 @@
   <div class="container">
     <div class="row justify-content-center menu_row">
       <div class="col-xl-1 menu_link_none"></div>
-      <div class="col-xl-2 col-lg-2 col-md-4 col-6 menu_link">О нас</div>
-      <div class="col-xl-2 col-lg-2 col-md-4 col-6 menu_link">Преимущества</div>
-      <div class="col-xl-2 col-lg-3 col-md-4 col-6 menu_link">Как это работает</div>
-      <div class="col-xl-2 col-lg-2 col-md-4 col-6 menu_link">Статьи</div>
-      <div class="col-xl-2 col-lg-3 col-md-4 col-6 menu_link">Оставить заявку</div>
+      <div class="col-xl-2 col-lg-2 col-md-4 col-6 menu_link" v-scroll-to="{el: '#about', duration: 700}">О нас</div>
+      <div class="col-xl-2 col-lg-2 col-md-4 col-6 menu_link" v-scroll-to="{el: '#advant', duration: 900}">Преимущества</div>
+      <div class="col-xl-2 col-lg-3 col-md-4 col-6 menu_link" v-scroll-to="{el: '#how', duration: 1200}">Как это работает</div>
+      <div class="col-xl-2 col-lg-2 col-md-4 col-6 menu_link" v-scroll-to="{el: '#art', duration: 1500}">Статьи</div>
+      <div class="col-xl-2 col-lg-3 col-md-4 col-6 menu_link" v-scroll-to="{el: '#call', duration: 1700}">Оставить заявку</div>
       <div class="col-xl-1 menu_link_none"></div>
     </div>
     <div class="row justify-content-center main_logo_row">
       <div class="col-lg-4 col-md-5 center"><img class="img-fluid" src="./img/logo.png" alt="logo"></div>
       <div class="col-lg-2 col-md-1"></div>
       <div class="col-lg-4 col-md-6 main_contacts">
-        +7 (929) <span class="main_phone">994-89-83</span><br><span class="main_address">Москва, ул. Ленина, 25А</span>
+        +7 (929) <span class="main_phone">994-89-83</span><br><span class="main_address">г. Москва, ул. Ленина, 25А</span>
       </div>
     </div>
     <div class="row">
@@ -41,14 +41,16 @@
         всего за 14 999 рублей?</span>
       </div>
     </div>
-    <div class="row justify-content-center main_input_row">
-      <div class="col-xl-5 col-lg-6 col-md-7"><input class="main_input" placeholder="Ваш номер"></div>
-      <div class="col-xl-3 col-lg-4 col-md-5"><button class="main_button">ЗАКАЗАТЬ ЗВОНОК</button></div>
-    </div>
+    <form v-on:submit.prevent="modal = 1, modal_bg = 1" v-on:submit="reset_form">
+      <div class="row justify-content-center main_input_row">
+        <div class="col-xl-5 col-lg-6 col-md-7"><input class="main_input" placeholder="Ваш номер" required></div>
+        <div class="col-xl-3 col-lg-4 col-md-5"><button class="main_button">ЗАКАЗАТЬ ЗВОНОК</button></div>
+      </div>
+    </form>
   </div>
 </div>
 
-<div class="container row_padding">
+<div class="container row_padding" id="about">
   <div class="row">
     <div class="col-xl-12 row_title_1">
       О НАС
@@ -62,7 +64,7 @@
       занятие абсолютно <strong>БЕСПЛАТНО</strong></span><br><br>
       Наша автошкола организует курсы вождения для начинающих водителей для дальнейшего
       прохождения экзамена в ГИБДД на категорию B, а так же на категорию А.<br><br>
-      <button class="about_button">ПОДРОБНЕЕ</button>
+      <button class="about_button" v-on:click="modal_bg = 1, modal = 5">ПОДРОБНЕЕ</button>
     </div>
     <div class="col-xl-5 col-lg-5 about_ico_border">
       <div class="row">
@@ -97,7 +99,7 @@
   </div>
 </div>
 
-<div class="container-fluid adv_row_bg">
+<div class="container-fluid adv_row_bg" id="advant">
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-8 row_title_2">
@@ -127,8 +129,7 @@
   </div>
 </div>
 
-
-<div class="container row_padding">
+<div class="container row_padding" id="how">
   <div class="row">
     <div class="col-lg-12 row_title_1">
     АЛГОРИТМ
@@ -160,11 +161,7 @@
   </div>
 </div>
 
-
-
-
-
-<div class="container-fluid art_row row_padding">
+<div class="container-fluid art_row row_padding" id="art">
   <div class="container">
     <div class="row">
       <div class="col-lg-12 row_title_2">
@@ -176,27 +173,26 @@
       <div class="col-lg-4 col-md-6 col-sm-6 col-10 art_col">
         <img class="art_img" src="./img/art_1.png" alt="art_1">
         <div class="art_title">Разметка на дороге</div>
-        <div class="art_text">Линии разметки — главные составные части дорожного полотна. Они...</div>
-        <button class="art_button">ПОДРОБНЕЕ</button>
+        <div class="art_text">Дорожная разметка - маркировка на покрытии автомобильных дорог...</div>
+        <button class="art_button" v-on:click="modal_bg = 1, modal = 2">ПОДРОБНЕЕ</button>
       </div>
       <div class="col-lg-4 col-md-6 col-sm-6 col-10 art_col">
         <img class="art_img" src="./img/art_2.png" alt="art_2">
         <div class="art_title">Летний период</div>
-        <div class="art_text">Перед наступлением зимы все мы очень тщательно занимаемся подготовкой...</div>
-        <button class="art_button">ПОДРОБНЕЕ</button>
+        <div class="art_text">На первый взгляд, лето - самая благоприятная пора для автомобиля...</div>
+        <button class="art_button" v-on:click="modal_bg = 1, modal = 3">ПОДРОБНЕЕ</button>
       </div>
       <div class="col-lg-4 col-md-6 col-sm-6 col-10 art_col">
         <img class="art_img" src="./img/art_3.png" alt="art_3">
-        <div class="art_title">Разметка на дороге</div>
-        <div class="art_text">На курсах вождения, в автошколах, учеников всегда учат, что на дороге...</div>
-        <button class="art_button">ПОДРОБНЕЕ</button>
+        <div class="art_title">Важность дистанции</div>
+        <div class="art_text">Каждого начинающего автомобилиста учат соблюдать дистанцию до...</div>
+        <button class="art_button" v-on:click="modal_bg = 1, modal = 4">ПОДРОБНЕЕ</button>
       </div>
     </div>
   </div>
 </div>
 
-
-<div class="container row_padding">
+<div class="container row_padding" id="call">
   <div class="row">
     <div class="col-lg-12 row_title_1">
     ОСТАВИТЬ ЗАЯВКУ
@@ -204,18 +200,20 @@
     <div class="row_sub_title_1">Пожалуйста, заполните все поля</div>
     </div>
   </div>
+  <form v-on:submit.prevent="modal = 1, modal_bg = 1" v-on:submit="reset_form">
   <div class="row">
-    <div class="col-md-6"><input class="send_input" placeholder="Имя *"></div>
-    <div class="col-md-6"><input class="send_input" placeholder="Фамилия *"></div>
-    <div class="col-md-6"><input class="send_input" placeholder="Телефон *"></div>
-    <div class="col-md-6"><input class="send_input" placeholder="E-mail *"></div>
+    <div class="col-md-6"><input class="send_input" placeholder="Имя *" required></div>
+    <div class="col-md-6"><input class="send_input" placeholder="Фамилия *" required></div>
+    <div class="col-md-6"><input class="send_input" placeholder="Телефон *" required></div>
+    <div class="col-md-6"><input class="send_input" placeholder="E-mail *" required></div>
   </div>
   <div class="row">
     <div class="col-md-12">
-      <input class="send_input send_input_text" placeholder="Комментарий *">
+      <input class="send_input send_input_text" placeholder="Комментарий *" required>
       <button class="send_button">ОТПРАВИТЬ</button>
     </div>
   </div>
+  </form>
 </div>
 
 <div class="container-fluid footer">
@@ -233,22 +231,129 @@
   </div>
 </div>
 
+<!-- модальные окна -->
 
+<transition name="modal_bg">
+<div v-show="modal_bg == 1" v-on:click="modal_bg = 0, modal=0" class="modal_bg" v-cloak></div>
+</transition>
 
+<transition-group name="modal">
 
+  <div v-show="modal == 1" class="modal-container text-center" key="m_1" v-cloak>
+     <div class="modal_title">ВАША ЗАЯВКА ПРИНЯТА</div>
+     <div class="modal_text">Вам перезвонят в течении 10 минут</div>
+     <button class="send_button" v-on:click="modal_bg = 0, modal = 0">ЗАКРЫТЬ</button>
+  </div>
 
+  <div v-show="modal == 2" class="modal-container" key="m_2" v-cloak>
+    <div class="modal_title">Разметка на дороге</div>
+    <img class="img-fluid" src="./img/art_img_1.png" alt="art_img_1">
+    <div class="modal_text_2">
+    Дорожная разметка - маркировка на покрытии автомобильных дорог.
+    Она служит для сообщения определённой информации участникам дорожного движения.
+    Разметка может использоваться самостоятельно или сочетаться
+    с дорожными знаками или светофорами.<br><br>
+    Разметка может быть постоянной или временной.
+    Для постоянной разметки во всех странах используется белая краска.
+    Исключение составляет постоянная желтая разметка, обозначающая места остановки
+    маршрутных транспортных средств и такси, а также места, где запрещена остановка или стоянка.
+    Временная разметка может наноситься краской желтого (Германия, Эстония),
+    оранжевого или красного (Австрия, Швейцария) цвета и используется при ремонтных
+    работах и реорганизации дорожного движения.<br><br>
+    При наличии одновременно постоянной и временной разметки, необходимо руководствоваться временной.
+    Наносится она обычно недолговечной краской, которая к завершению ремонтных работ стирается
+    сама или удаляется дорожными службами. Для улучшения видимости разметки часто используются
+    светоотражающие материалы.<br>
+    <div class="text-center">
+    <button class="send_button" v-on:click="modal_bg = 0, modal = 0">ЗАКРЫТЬ</button>
+    </div>
+    </div>
+  </div>
 
+  <div v-show="modal == 3" class="modal-container" key="m_3" v-cloak>
+    <div class="modal_title">Летний период</div>
+    <img class="img-fluid" src="./img/art_img_2.png" alt="art_img_2">
+    <div class="modal_text_2">
+    На первый взгляд, лето - самая благоприятная пора для автомобиля и его владельца.
+    Но даже летом следует продолжать ухаживать за авто, особенно за кузовом.<br><br>
+    Первый вопрос – как правильно мыть автомобиль. Многие эксперты сходятся на мысли, что делать это
+    слишком часто или редко – одинаково вредно. В этом деле нужно найти золотую середину.
+    Наше видение – не реже одного раза в месяц, но и не чаще, чем раз в пару недель.<br><br>
+    В летнюю пору велик риск запачкать свою машину набором разных специфических веществ: битумом,
+    соком деревьев, следами от мошек и пр. Если вы проехались по только постеленному асфальту,
+    или после мойки заметили у себя на кузове битумные пятна, то постарайтесь убрать их как можно
+    быстрее своими силами с помощью специальных спреев.<br><br>
+    Не стоит летом забывать и про пассажирский отсек, который не любит прямых солнечных лучей
+    и высокой температуры. Если вы на длительное время оставляете машину на стоянке,
+    не ленитесь ставить под стекло светоотражающую пленку.<br>
+    <div class="text-center">
+    <button class="send_button" v-on:click="modal_bg = 0, modal = 0">ЗАКРЫТЬ</button>
+    </div>
+    </div>
+  </div>
 
+  <div v-show="modal == 4" class="modal-container" key="m_4" v-cloak>
+    <div class="modal_title">Важность дистанции</div>
+    <img class="img-fluid" src="./img/art_img_3.png" alt="art_img_3">
+    <div class="modal_text_2">
+    Каждого начинающего автомобилиста учат соблюдать дистанцию до расположенного впереди транспортного
+    средства. Однако даже если вы проведёте опрос среди опытных водителей и инструкторов автомобильных школ,
+    то не найдёте однозначного ответа на вопрос.<br><br>
+    Истина заключается в том, что действующие правила не содержат определённых указаний на этот
+    счёт и придётся определять значение безопасного расстояния до едущего
+    впереди автомобиля самостоятельно.<br><br>
+    Существует только одно исключение — использование знака под номером 3.16, указывающего на расстояние,
+    которое должно быть между двумя машинами, едущими в потоке. Обычно его устанавливают
+    на участках дороги изобилующих резкими поворотами.<br><br>
+    Начинающие водители пытаются удерживать расстояние в 5–10 метров до едущего впереди транспорта и
+    тем самым допускают огромную ошибку. Проблема заключается в том, что такой большой дистанцией
+    может воспользоваться иной участник дорожного движения.<br>
+    <div class="text-center">
+    <button class="send_button" v-on:click="modal_bg = 0, modal = 0">ЗАКРЫТЬ</button>
+    </div>
+    </div>
+  </div>
 
+  <div v-show="modal == 5" class="modal-container" key="m_5" v-cloak>
+    <div class="modal_title">АВТОШКОЛА ФОРТУНА ЛЮКС</div>
+    <img class="img-fluid" src="./img/about_img.png" alt="about_img">
+    <div class="modal_text_2">
+    Автошкола ФОРТУНА ЛЮКС организует курсы вождения для начинающих водителей для дальнейшего прохождения
+    экзамена в ГИБДД на категорию B, а так же на категорию А. В автошколе работают опытные инструктора
+    с 5-летним и более стажем профессионального обучения.<br><br>
+    Система обучения в нашей школе позволяет ученикам самостоятельно спланировать свое обучение,
+    снизив временные затраты на дорогу до автошколы, также у нас есть свой автодром в черте города,
+    что значительно упрощают обучение нашим ученикам.<br><br>
+    Мы принимаем заявки на обучение от физических лиц и организаций, а так же обучаем группы на предприятиях.
+    Учебные классы автошколы оборудованы в соответствии с требованиями для образовательных учреждений:
+    компьютерный класс, тренажер, наглядные пособия. Отучившись в нашей автошколе,
+    Вы без проблем сможете сдать на права в ГИБДД.
+    <div class="text-center">
+    <button class="send_button" v-on:click="modal_bg = 0, modal = 0">ЗАКРЫТЬ</button>
+    </div>
+    </div>
+  </div>
 
-
+</transition-group>
 
 </div><!-- #app -->
 
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 <script src="https://unpkg.com/vue-scrollto"></script>
 
+<script>
 
+new Vue({
+  el: '#app',
+  data: {
+    modal_bg: 0,
+    modal: 0,
+  },
+  methods: {reset_form:function(){event.target.reset()}
+  },
+})
+
+</script>
 
 </body>
 </html>
