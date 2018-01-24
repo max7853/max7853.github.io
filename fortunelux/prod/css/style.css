@@ -373,6 +373,9 @@ body {
   right: 16px;
   cursor: pointer; }
 
+.modal-open {
+  overflow: hidden; }
+
 .modal-enter-active, .modal-leave-active {
   transition: all 0.3s; }
 

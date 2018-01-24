@@ -64,7 +64,7 @@
       занятие абсолютно <strong>БЕСПЛАТНО</strong></span><br><br>
       Наша автошкола организует курсы вождения для начинающих водителей для дальнейшего
       прохождения экзамена в ГИБДД на категорию B, а так же на категорию А.<br><br>
-      <button class="about_button" v-on:click="modal_bg = 1, modal = 5">ПОДРОБНЕЕ</button>
+      <button class="about_button" onclick="modal_open()" v-on:click="modal_bg = 1, modal = 5">ПОДРОБНЕЕ</button>
     </div>
     <div class="col-xl-5 col-lg-5 about_ico_border">
       <div class="row">
@@ -234,20 +234,20 @@
 <!-- модальные окна -->
 
 <transition name="modal_bg">
-<div v-show="modal_bg == 1" v-on:click="modal_bg = 0, modal=0" class="modal_bg" v-cloak></div>
+<div onclick="modal_close()" v-show="modal_bg == 1" v-on:click="modal_bg = 0, modal=0" class="modal_bg" v-cloak></div>
 </transition>
 
 <transition-group name="modal">
 
   <div v-show="modal == 1" class="modal-container text-center" key="m_1" v-cloak>
-     <div class="close_modal" v-on:click="modal_bg = 0, modal = 0">&times</div>
+     <div class="close_modal" onclick="modal_close()" v-on:click="modal_bg = 0, modal = 0">&times</div>
      <div class="modal_title">ВАША ЗАЯВКА ПРИНЯТА</div>
      <div class="modal_text">Вам перезвонят в течении 10 минут</div>
-     <button class="send_button" v-on:click="modal_bg = 0, modal = 0">ЗАКРЫТЬ</button>
+     <button class="send_button" onclick="modal_close()" v-on:click="modal_bg = 0, modal = 0">ЗАКРЫТЬ</button>
   </div>
 
   <div v-show="modal == 2" class="modal-container" key="m_2" v-cloak>
-    <div class="close_modal" v-on:click="modal_bg = 0, modal = 0">&times</div>
+    <div class="close_modal" onclick="modal_close()" v-on:click="modal_bg = 0, modal = 0">&times</div>
     <div class="modal_title">Разметка на дороге</div>
     <img class="img-fluid" src="./img/art_img_1.png" alt="art_img_1">
     <div class="modal_text_2">
@@ -267,13 +267,13 @@
     сама или удаляется дорожными службами. Для улучшения видимости разметки часто используются
     светоотражающие материалы.<br>
     <div class="text-center">
-    <button class="send_button" v-on:click="modal_bg = 0, modal = 0">ЗАКРЫТЬ</button>
+    <button class="send_button" onclick="modal_close()" v-on:click="modal_bg = 0, modal = 0">ЗАКРЫТЬ</button>
     </div>
     </div>
   </div>
 
   <div v-show="modal == 3" class="modal-container" key="m_3" v-cloak>
-    <div class="close_modal" v-on:click="modal_bg = 0, modal = 0">&times</div>
+    <div class="close_modal" onclick="modal_close()" v-on:click="modal_bg = 0, modal = 0">&times</div>
     <div class="modal_title">Летний период</div>
     <img class="img-fluid" src="./img/art_img_2.png" alt="art_img_2">
     <div class="modal_text_2">
@@ -290,13 +290,13 @@
     и высокой температуры. Если вы на длительное время оставляете машину на стоянке,
     не ленитесь ставить под стекло светоотражающую пленку.<br>
     <div class="text-center">
-    <button class="send_button" v-on:click="modal_bg = 0, modal = 0">ЗАКРЫТЬ</button>
+    <button class="send_button" onclick="modal_close()" v-on:click="modal_bg = 0, modal = 0">ЗАКРЫТЬ</button>
     </div>
     </div>
   </div>
 
   <div v-show="modal == 4" class="modal-container" key="m_4" v-cloak>
-    <div class="close_modal" v-on:click="modal_bg = 0, modal = 0">&times</div>
+    <div class="close_modal" onclick="modal_close()" v-on:click="modal_bg = 0, modal = 0">&times</div>
     <div class="modal_title">Важность дистанции</div>
     <img class="img-fluid" src="./img/art_img_3.png" alt="art_img_3">
     <div class="modal_text_2">
@@ -313,13 +313,13 @@
     тем самым допускают огромную ошибку. Проблема заключается в том, что такой большой дистанцией
     может воспользоваться иной участник дорожного движения.<br>
     <div class="text-center">
-    <button class="send_button" v-on:click="modal_bg = 0, modal = 0">ЗАКРЫТЬ</button>
+    <button class="send_button" onclick="modal_close()" v-on:click="modal_bg = 0, modal = 0">ЗАКРЫТЬ</button>
     </div>
     </div>
   </div>
 
   <div v-show="modal == 5" class="modal-container" key="m_5" v-cloak>
-    <div class="close_modal" v-on:click="modal_bg = 0, modal = 0">&times</div>
+    <div class="close_modal" onclick="modal_close()" v-on:click="modal_bg = 0, modal = 0">&times</div>
     <div class="modal_title">АВТОШКОЛА ФОРТУНА ЛЮКС</div>
     <img class="img-fluid" src="./img/about_img.png" alt="about_img">
     <div class="modal_text_2">
@@ -334,7 +334,7 @@
     компьютерный класс, тренажер, наглядные пособия. Отучившись в нашей автошколе,
     Вы без проблем сможете сдать на права в ГИБДД.
     <div class="text-center">
-    <button class="send_button" v-on:click="modal_bg = 0, modal = 0">ЗАКРЫТЬ</button>
+    <button class="send_button" onclick="modal_close()" v-on:click="modal_bg = 0, modal = 0">ЗАКРЫТЬ</button>
     </div>
     </div>
   </div>
@@ -357,6 +357,14 @@ new Vue({
   methods: {reset_form:function(){event.target.reset()}
   },
 })
+
+function modal_open() {
+  document.body.classList.add("modal-open")
+};
+
+function modal_close() {
+  document.body.classList.remove("modal-open")
+};
 
 </script>
 
