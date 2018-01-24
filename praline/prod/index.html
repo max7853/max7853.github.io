@@ -250,12 +250,14 @@
 <transition-group name="modal">
 
   <div v-show="modal == 1" class="modal-container text-center" key="m_1" v-cloak>
+     <div class="close_modal" v-on:click="modal_bg = 0, modal = 0">&times</div>
      <h1>ВАШ ЗАКАЗ ПРИНЯТ</h1>
      <span class="modal_text">Вам перезвонят в течении 10 минут</span><br>
      <button class="send_button" v-on:click="modal_bg = 0, modal = 0">ЗАКРЫТЬ</button>
   </div>
 
   <div v-show="modal == 2" class="modal-container text-center" key="m_2" v-cloak>
+     <div class="close_modal" v-on:click="modal_bg = 0, modal = 0">&times</div>
      <h1>ОТПРАВИТЬ ОТЗЫВ</h1>
      <form v-on:submit.prevent="modal_bg = 1, modal = 3" v-on:submit="reset_form">
      <input class="input_text" placeholder="Сообщение" required><br><br>
@@ -264,22 +266,26 @@
   </div>
 
   <div v-show="modal == 3" class="modal-container text-center" key="m_3" v-cloak>
+     <div class="close_modal" v-on:click="modal_bg = 0, modal = 0">&times</div>
      <h1>ВАШ ОТЗЫВ ПРИНЯТ</h1>
      <span class="modal_text">Спасибо за ваш комментарий</span><br>
      <button class="send_button" v-on:click="modal_bg = 0, modal = 0">ЗАКРЫТЬ</button>
   </div>
 
   <div v-show="modal == 4" class="modal-container text-center" key="m_4" v-cloak>
+     <div class="close_modal" v-on:click="modal_bg = 0, modal = 0">&times</div>
      <img class="prod_img_modal" src="./img/menu_1.jpg">
      <button class="send_button" v-scroll-to="{el: '#zakaz-item', duration: 1000}" v-on:click="modal_bg = 0, modal = 0">СДЕЛАТЬ ЗАКАЗ</button>
   </div>
 
   <div v-show="modal == 5" class="modal-container text-center" key="m_5" v-cloak>
+     <div class="close_modal" v-on:click="modal_bg = 0, modal = 0">&times</div>
      <img class="prod_img_modal" src="./img/menu_2.jpg">
      <button class="send_button" v-scroll-to="{el: '#zakaz-item', duration: 1000}" v-on:click="modal_bg = 0, modal = 0">СДЕЛАТЬ ЗАКАЗ</button>
   </div>
 
   <div v-show="modal == 6" class="modal-container text-center" key="m_6" v-cloak>
+     <div class="close_modal" v-on:click="modal_bg = 0, modal = 0">&times</div>
      <img class="prod_img_modal" src="./img/menu_3.jpg">
      <button class="send_button" v-scroll-to="{el: '#zakaz-item', duration: 1000}" v-on:click="modal_bg = 0, modal = 0">СДЕЛАТЬ ЗАКАЗ</button>
   </div>

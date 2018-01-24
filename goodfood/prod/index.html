@@ -886,12 +886,14 @@
 <transition-group name="modal">
 
   <div v-show="modal == 1" class="modal-container text-center" key="m_1" v-cloak>
+     <div class="close_modal" v-on:click="modal_bg = 0, modal = 0">&times</div>
      <div class="modatl_title">Ваша заявка получена</div>
      <div class="modal_text">Вам перезвонят в течении 10 минут</div>
      <button class="modal_button" v-on:click="modal_bg = 0, modal = 0">ЗАКРЫТЬ</button>
   </div>
 
   <div v-show="modal == 2" class="modal-container text-center" key="m_2" v-cloak>
+  <div class="close_modal" v-on:click="modal_bg = 0, modal = 0">&times</div>
   <div class="modatl_title">Оставьте заявку и наш <br>менеджер свяжется с вами</div>
   <div class="row justify-content-center">
       <div class="col-md-8">
@@ -901,6 +903,7 @@
       <button class="cons_button">ОСТАВИТЬ ЗАЯВКУ</button>
       </form>
       </div>
+  </div>
   </div>
 
 </transition-group>

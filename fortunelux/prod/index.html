@@ -240,12 +240,14 @@
 <transition-group name="modal">
 
   <div v-show="modal == 1" class="modal-container text-center" key="m_1" v-cloak>
+     <div class="close_modal" v-on:click="modal_bg = 0, modal = 0">&times</div>
      <div class="modal_title">ВАША ЗАЯВКА ПРИНЯТА</div>
      <div class="modal_text">Вам перезвонят в течении 10 минут</div>
      <button class="send_button" v-on:click="modal_bg = 0, modal = 0">ЗАКРЫТЬ</button>
   </div>
 
   <div v-show="modal == 2" class="modal-container" key="m_2" v-cloak>
+    <div class="close_modal" v-on:click="modal_bg = 0, modal = 0">&times</div>
     <div class="modal_title">Разметка на дороге</div>
     <img class="img-fluid" src="./img/art_img_1.png" alt="art_img_1">
     <div class="modal_text_2">
@@ -271,6 +273,7 @@
   </div>
 
   <div v-show="modal == 3" class="modal-container" key="m_3" v-cloak>
+    <div class="close_modal" v-on:click="modal_bg = 0, modal = 0">&times</div>
     <div class="modal_title">Летний период</div>
     <img class="img-fluid" src="./img/art_img_2.png" alt="art_img_2">
     <div class="modal_text_2">
@@ -293,6 +296,7 @@
   </div>
 
   <div v-show="modal == 4" class="modal-container" key="m_4" v-cloak>
+    <div class="close_modal" v-on:click="modal_bg = 0, modal = 0">&times</div>
     <div class="modal_title">Важность дистанции</div>
     <img class="img-fluid" src="./img/art_img_3.png" alt="art_img_3">
     <div class="modal_text_2">
@@ -315,6 +319,7 @@
   </div>
 
   <div v-show="modal == 5" class="modal-container" key="m_5" v-cloak>
+    <div class="close_modal" v-on:click="modal_bg = 0, modal = 0">&times</div>
     <div class="modal_title">АВТОШКОЛА ФОРТУНА ЛЮКС</div>
     <img class="img-fluid" src="./img/about_img.png" alt="about_img">
     <div class="modal_text_2">
