@@ -44,7 +44,7 @@
     <form v-on:submit.prevent="modal = 1, modal_bg = 1" v-on:submit="reset_form">
       <div class="row justify-content-center main_input_row">
         <div class="col-xl-5 col-lg-6 col-md-7"><input class="main_input" placeholder="Ваш номер" required></div>
-        <div class="col-xl-3 col-lg-4 col-md-5"><button class="main_button">ЗАКАЗАТЬ ЗВОНОК</button></div>
+        <div class="col-xl-3 col-lg-4 col-md-5"><button class="main_button" onclick="modal_open()">ЗАКАЗАТЬ ЗВОНОК</button></div>
       </div>
     </form>
   </div>
@@ -174,19 +174,19 @@
         <img class="art_img" src="./img/art_1.png" alt="art_1">
         <div class="art_title">Разметка на дороге</div>
         <div class="art_text">Дорожная разметка - маркировка на покрытии автомобильных дорог...</div>
-        <button class="art_button" v-on:click="modal_bg = 1, modal = 2">ПОДРОБНЕЕ</button>
+        <button class="art_button" onclick="modal_open()" v-on:click="modal_bg = 1, modal = 2">ПОДРОБНЕЕ</button>
       </div>
       <div class="col-lg-4 col-md-6 col-sm-6 col-10 art_col">
         <img class="art_img" src="./img/art_2.png" alt="art_2">
         <div class="art_title">Летний период</div>
         <div class="art_text">На первый взгляд, лето - самая благоприятная пора для автомобиля...</div>
-        <button class="art_button" v-on:click="modal_bg = 1, modal = 3">ПОДРОБНЕЕ</button>
+        <button class="art_button" onclick="modal_open()" v-on:click="modal_bg = 1, modal = 3">ПОДРОБНЕЕ</button>
       </div>
       <div class="col-lg-4 col-md-6 col-sm-6 col-10 art_col">
         <img class="art_img" src="./img/art_3.png" alt="art_3">
         <div class="art_title">Важность дистанции</div>
         <div class="art_text">Каждого начинающего автомобилиста учат соблюдать дистанцию до...</div>
-        <button class="art_button" v-on:click="modal_bg = 1, modal = 4">ПОДРОБНЕЕ</button>
+        <button class="art_button" onclick="modal_open()" v-on:click="modal_bg = 1, modal = 4">ПОДРОБНЕЕ</button>
       </div>
     </div>
   </div>
@@ -200,7 +200,7 @@
     <div class="row_sub_title_1">Пожалуйста, заполните все поля</div>
     </div>
   </div>
-  <form v-on:submit.prevent="modal = 1, modal_bg = 1" v-on:submit="reset_form">
+  <form v-on:submit.prevent="modal = 1, modal_bg = 1" v-on:submit="reset_form" onsubmit="modal_open()">
   <div class="row">
     <div class="col-md-6"><input class="send_input" placeholder="Имя *" required></div>
     <div class="col-md-6"><input class="send_input" placeholder="Фамилия *" required></div>
@@ -243,7 +243,7 @@
      <div class="close_modal" onclick="modal_close()" v-on:click="modal_bg = 0, modal = 0">&times</div>
      <div class="modal_title">ВАША ЗАЯВКА ПРИНЯТА</div>
      <div class="modal_text">Вам перезвонят в течении 10 минут</div>
-     <button class="send_button" onclick="modal_close()" v-on:click="modal_bg = 0, modal = 0">ЗАКРЫТЬ</button>
+     <button class="send_button" onclick="modal_close()" v-on:click="modal_bg = 0, modal = 0">ЗАКРЫТЬ</button><br><br>
   </div>
 
   <div v-show="modal == 2" class="modal-container" key="m_2" v-cloak>
@@ -267,7 +267,7 @@
     сама или удаляется дорожными службами. Для улучшения видимости разметки часто используются
     светоотражающие материалы.<br>
     <div class="text-center">
-    <button class="send_button" onclick="modal_close()" v-on:click="modal_bg = 0, modal = 0">ЗАКРЫТЬ</button>
+    <button class="send_button" onclick="modal_close()" v-on:click="modal_bg = 0, modal = 0">ЗАКРЫТЬ</button><br><br>
     </div>
     </div>
   </div>
@@ -290,7 +290,7 @@
     и высокой температуры. Если вы на длительное время оставляете машину на стоянке,
     не ленитесь ставить под стекло светоотражающую пленку.<br>
     <div class="text-center">
-    <button class="send_button" onclick="modal_close()" v-on:click="modal_bg = 0, modal = 0">ЗАКРЫТЬ</button>
+    <button class="send_button" onclick="modal_close()" v-on:click="modal_bg = 0, modal = 0">ЗАКРЫТЬ</button><br><br>
     </div>
     </div>
   </div>
@@ -313,7 +313,7 @@
     тем самым допускают огромную ошибку. Проблема заключается в том, что такой большой дистанцией
     может воспользоваться иной участник дорожного движения.<br>
     <div class="text-center">
-    <button class="send_button" onclick="modal_close()" v-on:click="modal_bg = 0, modal = 0">ЗАКРЫТЬ</button>
+    <button class="send_button" onclick="modal_close()" v-on:click="modal_bg = 0, modal = 0">ЗАКРЫТЬ</button><br><br>
     </div>
     </div>
   </div>
@@ -334,7 +334,7 @@
     компьютерный класс, тренажер, наглядные пособия. Отучившись в нашей автошколе,
     Вы без проблем сможете сдать на права в ГИБДД.
     <div class="text-center">
-    <button class="send_button" onclick="modal_close()" v-on:click="modal_bg = 0, modal = 0">ЗАКРЫТЬ</button>
+    <button class="send_button" onclick="modal_close()" v-on:click="modal_bg = 0, modal = 0">ЗАКРЫТЬ</button><br><br>
     </div>
     </div>
   </div>
@@ -359,12 +359,27 @@ new Vue({
 })
 
 function modal_open() {
-  document.body.classList.add("modal-open")
+  if(/Mobi/.test(navigator.userAgent)) {
+    document.body.classList.add("scroll-disable-mobile")
+  }
+  else {
+    document.body.classList.add("scroll-disable-desktop")
+    }
 };
 
 function modal_close() {
-  document.body.classList.remove("modal-open")
+  setTimeout(function() {
+    if(/Mobi/.test(navigator.userAgent)) {
+      document.body.classList.remove("scroll-disable-mobile")
+      }
+    else {
+      document.body.classList.remove("scroll-disable-desktop")
+      }
+  }, 300);
 };
+
+
+
 
 </script>
 
