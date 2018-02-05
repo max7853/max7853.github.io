@@ -23,7 +23,7 @@
       <div v-scroll-to="{el: '#sub', duration: 1300}" class="menu_link">Подписки</div>
       <div v-scroll-to="{el: '#calc', duration: 1500}" class="menu_link">Расчет калорий</div>
       <div v-scroll-to="{el: '#cons', duration: 1700}" class="menu_link">Консультация</div>
-      <div v-on:click="modal_bg = 1, modal = 2" class="menu_link_p">+7(900)287-25-25</div>
+      <div v-on:click="modal_bg = 1, modal = 2" class="menu_link_p" onclick="modal_open()">+7(900)287-25-25</div>
     </div>
     <div class="row">
       <div class="col-md-12 text-center">
@@ -570,7 +570,7 @@
               <div class="col-sm-4 menu_item_col">Углеводы:<br>300 гр.</div>
             </div>
             <div class="sub_text">3 приема пищи, 3 перекуса, доставка на дом или в офис</div>
-            <div class="text-center"><button v-on:click="modal_bg = 1, modal = 2" class="sub_button">ЗАКАЗАТЬ</button></div>
+            <div class="text-center"><button v-on:click="modal_bg = 1, modal = 2" class="sub_button" onclick="modal_open()">ЗАКАЗАТЬ</button></div>
           </div>
         </div>
         <div class="col-lg-4 col-md-6 col-sm-8">
@@ -584,7 +584,7 @@
               <div class="col-sm-4 menu_item_col">Углеводы:<br>170 гр.</div>
             </div>
             <div class="sub_text">3 приема пищи, 2 перекуса, доставка на дом или в офис</div>
-            <div class="text-center"><button v-on:click="modal_bg = 1, modal = 2" class="sub_button">ЗАКАЗАТЬ</button></div>
+            <div class="text-center"><button v-on:click="modal_bg = 1, modal = 2" class="sub_button" onclick="modal_open()">ЗАКАЗАТЬ</button></div>
           </div>
         </div>
         <div class="col-lg-4 col-md-6 col-sm-8">
@@ -598,7 +598,7 @@
               <div class="col-sm-4 menu_item_col">Углеводы:<br>220 гр.</div>
             </div>
             <div class="sub_text">3 приема пищи, 3 перекуса, доставка на дом или в офис</div>
-            <div class="text-center"><button v-on:click="modal_bg = 1, modal = 2" class="sub_button">ЗАКАЗАТЬ</button></div>
+            <div class="text-center"><button v-on:click="modal_bg = 1, modal = 2" class="sub_button" onclick="modal_open()">ЗАКАЗАТЬ</button></div>
           </div>
         </div>
       </div>
@@ -616,7 +616,7 @@
               <div class="col-sm-4 menu_item_col">Углеводы:<br>320 гр.</div>
             </div>
             <div class="sub_text">3 приема пищи, 3 перекуса, доставка на дом или в офис</div>
-            <div class="text-center"><button v-on:click="modal_bg = 1, modal = 2" class="sub_button">ЗАКАЗАТЬ</button></div>
+            <div class="text-center"><button onclick="modal_open()" v-on:click="modal_bg = 1, modal = 2" class="sub_button">ЗАКАЗАТЬ</button></div>
           </div>
         </div>
         <div class="col-lg-4 col-md-6 col-sm-8">
@@ -630,7 +630,7 @@
               <div class="col-sm-4 menu_item_col">Углеводы:<br>190 гр.</div>
             </div>
             <div class="sub_text">3 приема пищи, 2 перекуса, доставка на дом или в офис</div>
-            <div class="text-center"><button v-on:click="modal_bg = 1, modal = 2" class="sub_button">ЗАКАЗАТЬ</button></div>
+            <div class="text-center"><button onclick="modal_open()" v-on:click="modal_bg = 1, modal = 2" class="sub_button">ЗАКАЗАТЬ</button></div>
           </div>
         </div>
         <div class="col-lg-4 col-md-6 col-sm-8">
@@ -644,7 +644,7 @@
               <div class="col-sm-4 menu_item_col">Углеводы:<br>240 гр.</div>
             </div>
             <div class="sub_text">3 приема пищи, 3 перекуса, доставка на дом или в офис</div>
-            <div class="text-center"><button v-on:click="modal_bg = 1, modal = 2" class="sub_button">ЗАКАЗАТЬ</button></div>
+            <div class="text-center" onclick="modal_open()"><button v-on:click="modal_bg = 1, modal = 2" class="sub_button">ЗАКАЗАТЬ</button></div>
           </div>
         </div>
       </div>
@@ -845,7 +845,7 @@
     </div>
     <div class="row justify-content-center vcenter">
       <div class="col-lg-5 col-md-6">
-        <form v-on:submit.prevent="modal = 1, modal_bg = 1" v-on:submit="reset_form">
+        <form v-on:submit.prevent="modal = 1, modal_bg = 1" v-on:submit="reset_form" onsubmit="modal_open()">
         <input class="cons_input" type="text" placeholder="Ваше имя" required><br>
         <input class="cons_input" type="text" placeholder="Номер телефона" required><br>
         <button class="cons_button">ОСТАВИТЬ ЗАЯВКУ</button>
@@ -880,20 +880,20 @@
 <!-- модальные окна -->
 
 <transition name="modal_bg">
-<div v-show="modal_bg == 1" v-on:click="modal_bg = 0, modal=0" class="modal_bg" v-cloak></div>
+<div v-show="modal_bg == 1" v-on:click="modal_bg = 0, modal=0" class="modal_bg" onclick="modal_close()" v-cloak></div>
 </transition>
 
 <transition-group name="modal">
 
   <div v-show="modal == 1" class="modal-container text-center" key="m_1" v-cloak>
-     <div class="close_modal" v-on:click="modal_bg = 0, modal = 0">&times</div>
+     <div class="close_modal" v-on:click="modal_bg = 0, modal = 0" onclick="modal_close()">&times</div>
      <div class="modatl_title">Ваша заявка получена</div>
      <div class="modal_text">Вам перезвонят в течении 10 минут</div>
-     <button class="modal_button" v-on:click="modal_bg = 0, modal = 0">ЗАКРЫТЬ</button>
+     <button class="modal_button" v-on:click="modal_bg = 0, modal = 0" onclick="modal_close()">ЗАКРЫТЬ</button>
   </div>
 
   <div v-show="modal == 2" class="modal-container text-center" key="m_2" v-cloak>
-  <div class="close_modal" v-on:click="modal_bg = 0, modal = 0">&times</div>
+  <div class="close_modal" v-on:click="modal_bg = 0, modal = 0" onclick="modal_close()">&times</div>
   <div class="modatl_title">Оставьте заявку и наш <br>менеджер свяжется с вами</div>
   <div class="row justify-content-center">
       <div class="col-md-8">
@@ -984,6 +984,27 @@ new Vue({
     }
   }
 })
+
+
+function modal_open() {
+  if(/Mobi/.test(navigator.userAgent)) {
+    document.body.classList.add("scroll-disable-mobile")
+  }
+  else {
+    document.body.classList.add("scroll-disable-desktop")
+    }
+};
+
+function modal_close() {
+  setTimeout(function() {
+    if(/Mobi/.test(navigator.userAgent)) {
+      document.body.classList.remove("scroll-disable-mobile")
+      }
+    else {
+      document.body.classList.remove("scroll-disable-desktop")
+      }
+  }, 300);
+};
 
 </script>
 

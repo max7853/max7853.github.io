@@ -41,10 +41,10 @@
         всего за 14 999 рублей?</span>
       </div>
     </div>
-    <form v-on:submit.prevent="modal = 1, modal_bg = 1" v-on:submit="reset_form">
+    <form v-on:submit.prevent="modal = 1, modal_bg = 1" v-on:submit="reset_form" onsubmit="modal_open()">
       <div class="row justify-content-center main_input_row">
         <div class="col-xl-5 col-lg-6 col-md-7"><input class="main_input" placeholder="Ваш номер" required></div>
-        <div class="col-xl-3 col-lg-4 col-md-5"><button class="main_button" onclick="modal_open()">ЗАКАЗАТЬ ЗВОНОК</button></div>
+        <div class="col-xl-3 col-lg-4 col-md-5"><button class="main_button">ЗАКАЗАТЬ ЗВОНОК</button></div>
       </div>
     </form>
   </div>
@@ -377,8 +377,6 @@ function modal_close() {
       }
   }, 300);
 };
-
-
 
 
 </script>
