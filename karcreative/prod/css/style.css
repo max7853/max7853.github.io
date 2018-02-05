@@ -4,8 +4,8 @@
 
 .main {
   background-image: url(../img/main_bg.png);
-  background-size: cover;
-  background-position: center center; }
+  background-position: center center;
+  background-repeat: no-repeat; }
 
 .menu_row {
   padding-top: 60px; }
@@ -35,7 +35,8 @@
 .call {
   font-family: Roboto;
   font-size: 26px;
-  text-decoration: underline; }
+  text-decoration: underline;
+  cursor: pointer; }
 
 .main_line {
   height: 10px;
@@ -59,13 +60,19 @@
 
 .main_button {
   padding: 20px 40px;
-  background-color: #f0772e;
+  background: linear-gradient(to right, #f0782e, #e55c00);
   border: none;
   border-radius: 30px;
   color: white;
   font-family: Roboto;
   font-size: 24px;
-  font-weight: bold; }
+  font-weight: bold;
+  transition: all 0.3s; }
+  .main_button:hover {
+    filter: brightness(1.2);
+    cursor: pointer; }
+  .main_button:focus {
+    outline: none; }
 
 .main_row {
   padding-bottom: 120px; }
@@ -109,7 +116,8 @@
 
 .about {
   background-image: url(../img/about_bg.png);
-  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
   padding-top: 200px; }
 
 .about_row {
@@ -143,7 +151,10 @@
   margin: 20px;
   text-align: center;
   color: white;
-  width: 80%; }
+  width: 80%;
+  font-family: Roboto;
+  font-size: 22px;
+  font-style: italic; }
   .buy_input:focus {
     outline: none; }
 
@@ -152,7 +163,69 @@
 
 .portfolio_row {
   padding-top: 60px;
-  padding-bottom: 60px; }
+  padding-bottom: 30px; }
+
+.portfolio_item {
+  padding-bottom: 30px;
+  position: relative; }
+
+.portfolio_img {
+  width: 100%; }
+
+.portfolio_hover {
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  top: 0;
+  left: 0;
+  background-clip: padding-box;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 30px solid transparent;
+  opacity: 0;
+  transition: all 0.3s;
+  text-align: center;
+  color: white;
+  font-family: Roboto;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: underline;
+  cursor: pointer; }
+  .portfolio_hover:hover {
+    opacity: 0.8; }
+
+.plan_row {
+  padding-top: 60px; }
+
+.plan_title {
+  font-family: Franklin Gothic Demi Cond;
+  font-size: 36px; }
+
+.plan_text {
+  font-family: Roboto;
+  font-size: 22px;
+  line-height: 1.2; }
+
+.plan_bg {
+  background-image: url(../img/about_bg.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  padding-bottom: 1000px;
+  padding-top: 200px; }
+
+.plan_number {
+  font-family: Franklin Gothic Demi Cond;
+  font-size: 70px;
+  padding-right: 20px; }
+
+.plan_number_text {
+  font-family: Roboto;
+  font-size: 24px;
+  padding-right: 20px; }
 
 @media (max-width: 1500px) {
   .main_img_fluid {
