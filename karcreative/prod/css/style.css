@@ -2,6 +2,9 @@
   display: flex;
   align-items: center; }
 
+.hcenter {
+  justify-content: center; }
+
 .main {
   background-image: url(../img/main_bg.png);
   background-position: center center;
@@ -42,7 +45,8 @@
   height: 10px;
   background-color: #f0772e;
   margin-top: 30px;
-  margin-bottom: 30px; }
+  margin-bottom: 30px;
+  margin-left: 36px; }
 
 .main_title {
   font-family: Muller;
@@ -59,7 +63,7 @@
   font-weight: bold; }
 
 .main_button {
-  padding: 20px 40px;
+  padding: 15px 40px;
   background: linear-gradient(to right, #f0782e, #e55c00);
   border: none;
   border-radius: 30px;
@@ -199,11 +203,14 @@
     opacity: 0.8; }
 
 .plan_row {
-  padding-top: 60px; }
+  padding-top: 60px;
+  padding-bottom: 30px; }
 
 .plan_title {
   font-family: Franklin Gothic Demi Cond;
-  font-size: 36px; }
+  font-size: 36px;
+  line-height: 1;
+  padding-bottom: 30px; }
 
 .plan_text {
   font-family: Roboto;
@@ -211,21 +218,58 @@
   line-height: 1.2; }
 
 .plan_bg {
-  background-image: url(../img/about_bg.png);
+  background-image: url(../img/plan_bg.png);
   background-repeat: no-repeat;
   background-position: center center;
-  padding-bottom: 1000px;
-  padding-top: 200px; }
+  padding-top: 180px;
+  padding-bottom: 60px; }
 
 .plan_number {
   font-family: Franklin Gothic Demi Cond;
-  font-size: 70px;
+  font-size: 60px; }
+
+.plan_arrow {
+  padding-left: 20px;
   padding-right: 20px; }
 
 .plan_number_text {
   font-family: Roboto;
-  font-size: 24px;
-  padding-right: 20px; }
+  font-size: 22px;
+  cursor: pointer; }
+
+.contacts_title_padding {
+  padding-top: 180px;
+  padding-bottom: 60px; }
+
+.contacts_input {
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 20px;
+  font-family: Roboto;
+  color: gray; }
+  .contacts_input_big {
+    padding-bottom: 100px; }
+
+.contacts_ico {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 8px; }
+
+.contacts_text {
+  font-family: Roboto;
+  font-size: 30px;
+  color: white;
+  padding-top: 30px;
+  line-height: 2; }
+
+.footer {
+  background-color: #090b18;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 20px;
+  color: #32333b; }
 
 @media (max-width: 1500px) {
   .main_img_fluid {
@@ -239,7 +283,9 @@
   .main_title {
     font-size: 50px; }
   .main_row {
-    padding-bottom: 160px; } }
+    padding-bottom: 160px; }
+  .plan_number {
+    font-size: 50px; } }
 
 @media (max-width: 991px) {
   .phone {
@@ -252,7 +298,15 @@
   .logo_row {
     padding-top: 30px; }
   .main_title {
-    font-size: 40px; } }
+    font-size: 40px; }
+  .main_line {
+    margin-left: 0px; }
+  .plan_bg {
+    background-size: cover; }
+  .about {
+    background-size: cover; }
+  .main {
+    background-size: cover; } }
 
 @media (max-width: 767px) {
   .main_button {
@@ -268,4 +322,6 @@
   .main_button {
     padding: 20px 30px; }
   .row_title {
-    font-size: 40px; } }
+    font-size: 35px; }
+  .contacts_text {
+    font-size: 25px; } }
