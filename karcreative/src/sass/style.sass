@@ -126,12 +126,11 @@
 .about
   background-image: url(../img/about_bg.png)
   background-repeat: no-repeat
-  background-position: center center
+  background-position: center top
   padding-top: 200px
 
 .about_row
   padding-top: 60px
-  padding-bottom: 300px
 
 .about_text
   font-family: Roboto
@@ -141,12 +140,21 @@
 .about_text_orange
   color: #ee7327
 
+.about_ico
+  width: 50px
+
 .row_sub_title
   font-family: Roboto
   font-size: 26px
   color: white
   text-align: center
   font-weight: 400
+
+.buy
+  background-image: url(../img/buy_bg.png)
+  background-repeat: no-repeat
+  background-position: center top
+  padding-top: 250px
 
 .input_row
   padding-top: 80px
@@ -168,7 +176,7 @@
     outline: none
 
 .buy_button_row
-  padding-bottom: 270px
+  padding-bottom: 320px
 
 .portfolio_row
   padding-top: 60px
@@ -223,11 +231,10 @@
   line-height: 1.2
 
 .plan_bg
-  background-image: url(../img/plan_bg.png)
+  background-image: url(../img/about_bg.png)
   background-repeat: no-repeat
-  background-position: center center
+  background-position: center top
   padding-top: 180px
-  padding-bottom: 60px
 
 
 .plan_number
@@ -247,7 +254,7 @@
   white-space: nowrap
 
 .contacts_title_padding
-  padding-top: 180px
+  padding-top: 220px
   padding-bottom: 60px
 
 .contacts_input
@@ -279,6 +286,12 @@
 
 .contacts_col
   padding-left: 80px
+
+.contacts
+  background-image: url(../img/contacts_bg.png)
+  background-repeat: no-repeat
+  background-position: center top
+  padding-bottom: 60px
 
 .footer
   background-color: #090b18
@@ -313,8 +326,17 @@
     font-size: 50px
   .plan_bg
     background-size: cover
+    padding-top: 140px
+  .contacts
+    background-size: cover
   .about
     background-size: cover
+  .buy
+    background-size: cover
+  .buy_button_row
+    padding-bottom: 200px
+  .about
+    padding-top: 130px
 
 
 @media (max-width: 991px)
@@ -335,6 +357,13 @@
     padding: 0px
   .contacts_col
     padding-left: 30px
+  .input_row
+    padding-top: 20px
+    padding-bottom: 40px
+  .about
+    padding-top: 180px
+  .buy
+    padding-top: 200px
 
 @media (max-width: 767px)
   .main_button
@@ -342,13 +371,28 @@
     display: block
     margin-bottom: 30px
   .main
-    background-image: url(../img/main_bg_mobile.png)
+    background-image: url(../img/main_bg_m.png)
+  .about
+    background-image: url(../img/about_bg_m.png)
+    padding-top: 130px
+  .plan_bg
+    background-image: url(../img/about_bg_m.png)
+    padding-top: 100px
+  .buy
+    background-image: url(../img/buy_bg_m.png)
+    padding-top: 130px
+  .contacts
+    background-image: url(../img/contacts_bg_m.png)
+  .contacts_title_padding
+    padding-top: 140px
   .main_row
     padding-bottom: 130px
   .contacts_col
     padding-left: 15px
     text-align: center
     padding-top: 30px
+  .buy_button_row
+    padding-bottom: 80px
 
 @media (max-width: 575px)
   .phone
@@ -363,3 +407,5 @@
     font-size: 20px
   .contacts_ico_big
     width: 70px
+  .buy
+    padding-top: 100px

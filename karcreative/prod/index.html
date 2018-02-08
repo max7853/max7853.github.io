@@ -20,11 +20,11 @@
 <div class="container-fluid main">
   <div class="container">
     <div class="row justify-content-center menu_row text-center">
-      <div class="col-lg-3 col-md-4 menu_link">Преимущества</div>
-      <div class="col-lg-2 col-md-4 menu_link">Обо мне</div>
-      <div class="col-lg-2 col-md-4 menu_link">Портфолио</div>
-      <div class="col-lg-3 col-md-4 menu_link">Схема работы</div>
-      <div class="col-lg-2 col-md-4 menu_link">Контакты</div>
+      <div class="col-lg-3 col-md-4 menu_link" v-scroll-to="{el: '#adv-item', duration: 600}">Преимущества</div>
+      <div class="col-lg-2 col-md-4 menu_link" v-scroll-to="{el: '#about-item', duration: 800}">Обо мне</div>
+      <div class="col-lg-2 col-md-4 menu_link" v-scroll-to="{el: '#port-item', duration: 1300}">Портфолио</div>
+      <div class="col-lg-3 col-md-4 menu_link" v-scroll-to="{el: '#plan-item', duration: 1800}">Схема работы</div>
+      <div class="col-lg-2 col-md-4 menu_link" v-scroll-to="{el: '#contacts-item', duration: 2200}">Контакты</div>
     </div>
     <div class="row justify-content-center logo_row">
       <div class="col-xl-6 col-lg-6">
@@ -60,7 +60,7 @@
 
 
 
-<div class="container">
+<div class="container" id="adv-item">
   <div class="row">
     <div class="col-md-12 row_title">ПРЕИМУЩЕСТВА РАБОТЫ СО МНОЙ</div>
   </div>
@@ -95,7 +95,7 @@
 
 <div class="container-fluid about">
   <div class="container">
-    <div class="row">
+    <div class="row" id="about-item">
       <div class="col-md-12 row_title">ОБО МНЕ</div>
     </div>
     <div class="row about_row">
@@ -113,19 +113,25 @@
         художественное образование. Регулярно повышаю
         квалификацию и занимаюсь самообразованием.<br><br>
         <div class="row">
-          <div class="col-xl-6">
+          <div class="col-xl-6 col-lg-7">
             Телефон: <span class="about_text_orange">+7 (900) 287 25 50</span><br>
             E-mail: <span class="about_text_orange">karcreative@mail.ru</span><br><br>
           </div>
-          <div class="col-xl-6">
-            <img class="img-fluid social_ico" src="./img/vk.png" alt="vk">
-            <img class="img-fluid social_ico" src="./img/ins.png" alt="ins">
-            <img class="img-fluid social_ico" src="./img/be.png" alt="be">
+          <div class="col-xl-6 col-lg-5">
+            <img class="about_ico social_ico" src="./img/vk.png" alt="vk">
+            <img class="about_ico social_ico" src="./img/ins.png" alt="ins">
+            <img class="about_ico social_ico" src="./img/be.png" alt="be">
           </div>
         </div>
       </div>
       <div class="col-lg-6 vcenter hcenter"><img class="img-fluid" src="./img/about_photo.png" alt="about_photo"></div>
     </div>
+  </div>
+</div>
+
+
+<div class="container-fluid buy">
+  <div class="container">
     <div class="row">
       <div class="col-md-12 row_title text-center">
         ХОТИТЕ ЗАКАЗАТЬ У МЕНЯ САЙТ?<br>
@@ -144,7 +150,9 @@
 </div>
 
 
-<div class="container">
+
+
+<div class="container" id="port-item">
   <div class="row">
       <div class="col-md-12 row_title">ПОРТФОЛИО</div>
   </div>
@@ -196,7 +204,7 @@
 
 <div class="container-fluid plan_bg">
 
-  <div class="row">
+  <div class="row" id="plan-item">
       <div class="col-md-12 row_title">СХЕМА РАБОТЫ</div>
   </div>
 
@@ -378,36 +386,38 @@
 </swiper-slide>
 </swiper>
 
+</div><!-- container-fluid -->
 
-<div class="container">
-  <div class="row contacts_title_padding">
-    <div class="col-md-12 row_title">ВЫБЕРЕТЕ УДОБНЫЙ СПОСОБ ОБЩЕНИЯ</div>
-  </div>
-  <div class="row">
-    <div class="col-md-6 text-center">
-      <input class="contacts_input" placeholder="*Ваше имя">
-      <input class="contacts_input" placeholder="*Ваш телефон">
-      <input class="contacts_input contacts_input_big" placeholder="*Ваше сообщение">
-      <button class="main_button">ОТПРАВИТЬ</button>
+
+
+<div class="container-fluid contacts">
+  <div class="container">
+    <div class="row contacts_title_padding" id="contacts-item">
+      <div class="col-md-12 row_title">ВЫБЕРЕТЕ УДОБНЫЙ СПОСОБ ОБЩЕНИЯ</div>
     </div>
-    <div class="col-md-6 contacts_col">
-      <img class="contacts_ico_big social_ico" src="./img/vk_big.png" alt="vk">
-      <img class="contacts_ico_big social_ico" src="./img/ins_big.png" alt="ins">
-      <img class="contacts_ico_big social_ico" src="./img/be_big.png" alt="be">
-      <div class="contacts_text">
-        <img class="contacts_ico" src="./img/phone.png" alt="phone">
-        + 7 (900) 287 25 50<br>
-        <img class="contacts_ico" src="./img/mail.png" alt="mail">
-        kar.creative@mail.ru<br>
-        <img class="contacts_ico" src="./img/skype.png" alt="skype">
-        skype: vailent_sama<br>
+    <div class="row">
+      <div class="col-md-6 text-center">
+        <input class="contacts_input" placeholder="*Ваше имя">
+        <input class="contacts_input" placeholder="*Ваш телефон">
+        <input class="contacts_input contacts_input_big" placeholder="*Ваше сообщение">
+        <button class="main_button">ОТПРАВИТЬ</button>
+      </div>
+      <div class="col-md-6 contacts_col">
+        <img class="contacts_ico_big social_ico" src="./img/vk_big.png" alt="vk">
+        <img class="contacts_ico_big social_ico" src="./img/ins_big.png" alt="ins">
+        <img class="contacts_ico_big social_ico" src="./img/be_big.png" alt="be">
+        <div class="contacts_text">
+          <img class="contacts_ico" src="./img/phone.png" alt="phone">
+          + 7 (900) 287 25 50<br>
+          <img class="contacts_ico" src="./img/mail.png" alt="mail">
+          kar.creative@mail.ru<br>
+          <img class="contacts_ico" src="./img/skype.png" alt="skype">
+          skype: vailent_sama<br>
+        </div>
       </div>
     </div>
   </div>
 </div>
-
-</div><!-- container-fluid -->
-
 
 
 
