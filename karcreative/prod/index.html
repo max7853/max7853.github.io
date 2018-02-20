@@ -1,485 +1,625 @@
 <!doctype html>
 <html>
-  <head>
-    <title>KARCREATIVE</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
-    integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&amp;subset=cyrillic" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700&amp;subset=cyrillic" rel="stylesheet">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="icon" type="image/png" href="./img/favicon.png">
-    <link rel="stylesheet" href="./fonts/stylesheet.css">
-  </head>
+
+<head>
+  <title>KARCREATIVE</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+    crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&amp;subset=cyrillic" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700&amp;subset=cyrillic" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="icon" type="image/png" href="./img/favicon.png">
+  <link rel="stylesheet" href="./fonts/stylesheet.css">
+</head>
+
 <body>
 
-<div id="app">
+  <div id="app">
 
+    <div class="container-fluid main">
+      <div class="container">
+        <div class="row justify-content-center menu_row text-center">
+          <div class="col-lg-3 col-md-4 col-6 menu_link" v-scroll-to="{el: '#adv-item', duration: 600}">Преимущества</div>
+          <div class="col-lg-2 col-md-4 col-6 menu_link" v-scroll-to="{el: '#about-item', duration: 800}">Обо мне</div>
+          <div class="col-lg-2 col-md-4 col-6 menu_link" v-scroll-to="{el: '#port-item', duration: 1300}">Портфолио</div>
+          <div class="col-lg-3 col-md-4 col-6 menu_link" v-scroll-to="{el: '#plan-item', duration: 1800}">Схема работы</div>
+          <div class="col-lg-2 col-md-4 col-6 menu_link" v-scroll-to="{el: '#contacts-item', duration: 2200}">Контакты</div>
+        </div>
+        <div class="row justify-content-center logo_row">
+          <div class="col-xl-6 col-lg-6">
+            <img class="img-fluid" src="./img/logo.png" alt="logo">
+          </div>
+          <div class="col-xl-1 col-lg-1"></div>
+          <div class="col-xl-4 col-lg-5 col-md-8 callback">
+            <div class="phone">+7 (900) 287 25 50</div>
 
-<div class="container-fluid main">
-  <div class="container">
-    <div class="row justify-content-center menu_row text-center">
-      <div class="col-lg-3 col-md-4 menu_link" v-scroll-to="{el: '#adv-item', duration: 600}">Преимущества</div>
-      <div class="col-lg-2 col-md-4 menu_link" v-scroll-to="{el: '#about-item', duration: 800}">Обо мне</div>
-      <div class="col-lg-2 col-md-4 menu_link" v-scroll-to="{el: '#port-item', duration: 1300}">Портфолио</div>
-      <div class="col-lg-3 col-md-4 menu_link" v-scroll-to="{el: '#plan-item', duration: 1800}">Схема работы</div>
-      <div class="col-lg-2 col-md-4 menu_link" v-scroll-to="{el: '#contacts-item', duration: 2200}">Контакты</div>
-    </div>
-    <div class="row justify-content-center logo_row">
-      <div class="col-xl-6 col-lg-6">
-        <img class="img-fluid" src="./img/logo.png" alt="logo">
+            <div class="call" v-on:click="modal_bg = 1, modal = 2" onclick="modal_open()">
+
+              перезвоните мне </div>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-1 main_line"></div>
+          <div class="col-lg-10"></div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-11 main_title">
+            Нужен красивый и удобный сайт?
+          </div>
+        </div>
+        <div class="row justify-content-center main_row">
+          <div class="col-lg-5 col-md-6 main_text">
+            Создание современных, адаптивных сайтов под ключ и Landing Page
+            <br> Разработка логотипов
+            <br>
+            <br>от 5000 рублей
+            <br>
+            <br>
+            <button class="main_button" v-on:click="modal_bg = 1, modal = 2" onclick="modal_open()">ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ</button>
+          </div>
+          <div class="col-lg-6 col-md-6 vcenter">
+            <img class="main_img_fluid" src="./img/pc.png" alt="pc">
+          </div>
+        </div>
       </div>
-      <div class="col-xl-1 col-lg-1"></div>
-      <div class="col-xl-4 col-lg-5 phone">
-        +7 (900) 287 25 50<br>
-        <span class="call">перезвоните мне</span>
+    </div>
+
+
+
+    <div class="container" id="adv-item">
+      <div class="row">
+        <div class="col-md-12 row_title">ПРЕИМУЩЕСТВА РАБОТЫ СО МНОЙ</div>
+      </div>
+      <div class="row adv_row">
+        <div class="col-lg-3 col-md-6 text-center adv_col">
+          <img class="img-fluid" src="./img/adv_ico_1.png" alt="adv_ico_1">
+          <div class="adv_ico_title">МИНИМАЛЬНАЯ
+            <br>ПРЕДОПЛАТА</div>
+          <img class="img_adv_line" src="./img/adv_line_1.png" alt="adv_line_1.png">
+          <div class="adv_text">Понимаю ваши опасения, поэтому работаю по небольшой предоплате - 3000 руб.</div>
+        </div>
+        <div class="col-lg-3 col-md-6 text-center adv_col">
+          <img class="img-fluid" src="./img/adv_ico_2.png" alt="adv_ico_2">
+          <div class="adv_ico_title">СОБЛЮДЕНИЕ
+            <br>СРОКОВ</div>
+          <img class="img_adv_line" src="./img/adv_line_2.png" alt="adv_line_2.png">
+          <div class="adv_text">Я дорожу своей репутацией, поэтому ежедневно на связи с 09.00 до 21.00</div>
+        </div>
+        <div class="col-lg-3 col-md-6 text-center adv_col">
+          <img class="img-fluid" src="./img/adv_ico_3.png" alt="adv_ico_3">
+          <div class="adv_ico_title">ПОЭТАПНАЯ
+            <br>ОПЛАТА</div>
+          <img class="img_adv_line" src="./img/adv_line_3.png" alt="adv_line_3.png">
+          <div class="adv_text">Вы не рискуете, так как вносите оплату поэтапно - после того, как увидете часть выполненной работы </div>
+        </div>
+        <div class="col-lg-3 col-md-6 text-center adv_col">
+          <img class="img-fluid" src="./img/adv_ico_4.png" alt="adv_ico_4">
+          <div class="adv_ico_title">ЭФФЕКТИВНЫЕ
+            <br>РЕШЕНИЯ</div>
+          <img class="img_adv_line" src="./img/adv_line_4.png" alt="adv_line_4.png">
+          <div class="adv_text">Я работаю без шаблонов, оригинальный дизайн и индивидуальный подход для вашей компании</div>
+        </div>
       </div>
     </div>
-    <div class="row justify-content-center">
-      <div class="col-lg-1 main_line"></div>
-      <div class="col-lg-10"></div>
-    </div>
-    <div class="row justify-content-center">
-      <div class="col-lg-11 main_title">
-        Нужен красивый и удобный сайт?
+
+
+
+    <div class="container-fluid about">
+      <div class="container">
+        <div class="row" id="about-item">
+          <div class="col-md-12 row_title">ОБО МНЕ</div>
+        </div>
+        <div class="row about_row">
+          <div class="col-lg-6 about_text">
+            <strong>
+              Я - профессиональный графический дизайнер, мастер-универсал со специализацией web-дизайн. Живу в Краснодаре, работаю с клиентами
+              по всему миру.
+              <br>
+              <br>
+            </strong>
+            Успешно работаю в сфере дизайна с 2011 года. Постоянно слежу за трендами в отраслях сайтостроения и айдентики. Большой опыт
+            работы в рекламных агентствах Краснодара. Предпочитаю: создание сайтов под ключ, landing page.
+            <br>
+            <br>В настоящее время занимаюсь фрилансом. Высшее художественное образование. Регулярно повышаю квалификацию и занимаюсь
+            самообразованием.
+            <br>
+            <br>
+            <div class="row">
+              <div class="col-xl-7 col-lg-7 col-sm-7">
+                Телефон:
+                <span class="about_text_orange">+7 (900) 287 25 50</span>
+                <br> E-mail:
+                <span class="about_text_orange">karcreative@mail.ru</span>
+                <br>
+                <br>
+              </div>
+              <div class="col-xl-5 col-lg-5 col-sm-5">
+                <a href="https://vk.com/karcreative" target="_blank">
+                  <img class="about_ico social_ico" src="./img/vk.png" alt="vk">
+                </a>
+                <a href="https://www.instagram.com/kar.creative/" target="_blank">
+                  <img class="about_ico social_ico" src="./img/ins.png" alt="ins">
+                </a>
+                <a href="https://www.behance.net/karcreative" target="_blank">
+                  <img class="about_ico social_ico" src="./img/be.png" alt="be">
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 vcenter hcenter">
+            <img class="img-fluid" src="./img/about_photo.png" alt="about_photo">
+          </div>
+        </div>
       </div>
     </div>
-    <div class="row justify-content-center main_row">
-      <div class="col-lg-5 col-md-6 main_text">
-        Создание современных, адаптивных сайтов под ключ и Landing Page<br>
-        Разработка логотипов<br><br>от 5000 рублей<br><br>
-        <button class="main_button">ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ</button>
-      </div>
-      <div class="col-lg-6 col-md-6 vcenter">
-        <img class="main_img_fluid" src="./img/pc.png" alt="pc">
-      </div>
-    </div>
-  </div>
-</div>
 
 
 
-<div class="container" id="adv-item">
-  <div class="row">
-    <div class="col-md-12 row_title">ПРЕИМУЩЕСТВА РАБОТЫ СО МНОЙ</div>
-  </div>
-  <div class="row adv_row">
-    <div class="col-lg-3 col-md-6 text-center adv_col">
-      <img class="img-fluid" src="./img/adv_ico_1.png" alt="adv_ico_1">
-      <div class="adv_ico_title">МИНИМАЛЬНАЯ<br>ПРЕДОПЛАТА</div>
-      <img class="img_adv_iine" src="./img/adv_line_1.png" alt="adv_line_1.png">
-      <div class="adv_text">Понимаю ваши опасения, поэтому  работаю по небольшой предоплате - 3000 руб.</div>
-    </div>
-    <div class="col-lg-3 col-md-6 text-center adv_col">
-      <img class="img-fluid" src="./img/adv_ico_2.png" alt="adv_ico_2">
-      <div class="adv_ico_title">СОБЛЮДЕНИЕ<br>СРОКОВ</div>
-      <img class="img_adv_iine" src="./img/adv_line_2.png" alt="adv_line_2.png">
-      <div class="adv_text">Я дорожу своей репутацией, поэтому ежедневно на связи с 09.00 до 21.00</div>
-    </div>
-    <div class="col-lg-3 col-md-6 text-center adv_col">
-      <img class="img-fluid" src="./img/adv_ico_3.png" alt="adv_ico_3">
-      <div class="adv_ico_title">ПОЭТАПНАЯ<br>ОПЛАТА</div>
-      <img class="img_adv_iine" src="./img/adv_line_3.png" alt="adv_line_3.png">
-      <div class="adv_text">Вы не рискуете, так как вносите оплату поэтапно - после того, как увидете часть выполненной работы </div>
-    </div>
-    <div class="col-lg-3 col-md-6 text-center adv_col">
-      <img class="img-fluid" src="./img/adv_ico_4.png" alt="adv_ico_4">
-      <div class="adv_ico_title">ЭФФЕКТИВНЫЕ<br>РЕШЕНИЯ</div>
-      <img class="img_adv_iine" src="./img/adv_line_4.png" alt="adv_line_4.png">
-      <div class="adv_text">Я работаю без шаблонов, оригинальный дизайн и индивидуальный подход для вашей компании</div>
-    </div>
-  </div>
-</div>
-
-
-<div class="container-fluid about">
-  <div class="container">
-    <div class="row" id="about-item">
-      <div class="col-md-12 row_title">ОБО МНЕ</div>
-    </div>
-    <div class="row about_row">
-      <div class="col-lg-6 about_text"><strong>
-        Я - профессиональный графический дизайнер,
-        мастер-универсал со специализацией web-дизайн.
-        Живу в Краснодаре, работаю с клиентами по всему миру.<br><br></strong>
-
-        Успешно работаю в сфере дизайна с 2011 года. Постоянно
-        слежу за трендами в отраслях сайтостроения и айдентики.
-        Большой опыт работы в рекламных агентствах Краснодара.
-        Предпочитаю: создание сайтов под ключ, landing page.<br><br>
-
-        В настоящее время занимаюсь фрилансом. Высшее
-        художественное образование. Регулярно повышаю
-        квалификацию и занимаюсь самообразованием.<br><br>
+    <div class="container-fluid buy">
+      <div class="container">
         <div class="row">
-          <div class="col-xl-6 col-lg-7">
-            Телефон: <span class="about_text_orange">+7 (900) 287 25 50</span><br>
-            E-mail: <span class="about_text_orange">karcreative@mail.ru</span><br><br>
-          </div>
-          <div class="col-xl-6 col-lg-5">
-            <img class="about_ico social_ico" src="./img/vk.png" alt="vk">
-            <img class="about_ico social_ico" src="./img/ins.png" alt="ins">
-            <img class="about_ico social_ico" src="./img/be.png" alt="be">
+          <div class="col-md-12 row_title text-center">
+            ХОТИТЕ ЗАКАЗАТЬ У МЕНЯ САЙТ?
+            <br>
+            <span class="row_sub_title">Оставьте заявку, и я свяжусь с вами в течение 10 минут </span>
           </div>
         </div>
-      </div>
-      <div class="col-lg-6 vcenter hcenter"><img class="img-fluid" src="./img/about_photo.png" alt="about_photo"></div>
-    </div>
-  </div>
-</div>
-
-
-<div class="container-fluid buy">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12 row_title text-center">
-        ХОТИТЕ ЗАКАЗАТЬ У МЕНЯ САЙТ?<br>
-        <span class="row_sub_title">Оставьте заявку, и я свяжусь с вами в течение 10 минут </span>
-      </div>
-    </div>
-    <div class="row input_row">
-      <div class="col-lg-4 text-center"><input class="buy_input" placeholder="Введите ваше имя"></div>
-      <div class="col-lg-4 text-center"><input class="buy_input" placeholder="Введите ваш номер"></div>
-      <div class="col-lg-4 text-center"><input class="buy_input" placeholder="Введите ваш e-mail"></div>
-    </div>
-    <div class="row buy_button_row">
-      <div class="col-lg-12 text-center"><button class="main_button">ОСТАВИТЬ ЗАЯВКУ</button></div>
-    </div>
-  </div>
-</div>
-
-
-
-
-<div class="container" id="port-item">
-  <div class="row">
-      <div class="col-md-12 row_title">ПОРТФОЛИО</div>
-  </div>
-  <div class="row portfolio_row justify-content-center">
-    <div class="col-lg-4 col-md-6 col-sm-8 col-10 portfolio_item">
-      <img class="portfolio_img" src="./img/portfolio_1.png" alt="portfolio_img">
-      <div class="portfolio_hover">Перейти на сайт</div>
-    </div>
-    <div class="col-lg-4 col-md-6 col-sm-8 col-10 portfolio_item">
-      <img class="portfolio_img" src="./img/portfolio_2.png" alt="portfolio_img">
-      <div class="portfolio_hover">Перейти на сайт</div>
-    </div>
-    <div class="col-lg-4 col-md-6 col-sm-8 col-10 portfolio_item">
-      <img class="portfolio_img" src="./img/portfolio_3.png" alt="portfolio_img">
-      <div class="portfolio_hover">Перейти на сайт</div>
-    </div>
-    <div class="col-lg-4 col-md-6 col-sm-8 col-10 portfolio_item">
-      <img class="portfolio_img" src="./img/portfolio_4.png" alt="portfolio_img">
-      <div class="portfolio_hover">Смотреть макет</div>
-    </div>
-    <div class="col-lg-4 col-md-6 col-sm-8 col-10 portfolio_item">
-      <img class="portfolio_img" src="./img/portfolio_5.png" alt="portfolio_img">
-      <div class="portfolio_hover">Смотреть макет</div>
-    </div>
-    <div class="col-lg-4 col-md-6 col-sm-8 col-10 portfolio_item">
-      <img class="portfolio_img" src="./img/portfolio_6.png" alt="portfolio_img">
-      <div class="portfolio_hover">Смотреть макет</div>
-    </div>
-    <div class="col-lg-4 col-md-6 col-sm-8 col-10 portfolio_item">
-      <img class="portfolio_img" src="./img/portfolio_7.png" alt="portfolio_img">
-      <div class="portfolio_hover">Смотреть макет</div>
-    </div>
-    <div class="col-lg-4 col-md-6 col-sm-8 col-10 portfolio_item">
-      <img class="portfolio_img" src="./img/portfolio_8.png" alt="portfolio_img">
-      <div class="portfolio_hover">Смотреть макет</div>
-    </div>
-    <div class="col-lg-4 col-md-6 col-sm-8 col-10 portfolio_item">
-      <img class="portfolio_img" src="./img/portfolio_9.png" alt="portfolio_img">
-      <div class="portfolio_hover">Смотреть макет</div>
-    </div>
-  </div>
-  <div class="row text-center">
-    <div class="col-md-12"><button class="main_button">СМОТРЕТЬ ВСЕ РАБОТЫ</button></div>
-  </div>
-</div>
-
-
-
-
-<div class="container-fluid plan_bg">
-
-  <div class="row" id="plan-item">
-      <div class="col-md-12 row_title">СХЕМА РАБОТЫ</div>
-  </div>
-
-
-<swiper :options="slider">
-
-<swiper-slide>
-  <div class="container">
-    <div class="row plan_row">
-      <div class="col-md-6 vcenter">
-        <img class="img-fluid" src="./img/plan_1.png" alt="plan_1">
-      </div>
-      <div class="col-md-6">
-        <div class="plan_title">Заполнение брифа</div>
-        <div class="plan_text">
-          Чтобы начать работу над вашим проектом, вам
-          необходимо заполнить бриф.<br><br>
-          Бриф призван четко обозначить цели и задачи проекта,
-          а также ответить на три главных вопроса: что, для кого
-          и как нужно делать.<br><br>
-          От его верно заполнения зависит то, как быстро и
-          верно я пойму требования к будущему сайту.
+        <form v-on:submit.prevent="modal = 1, modal_bg = 1" v-on:submit="reset_form" onsubmit="modal_open()">
+          <div class="row input_row">
+            <div class="col-lg-4 text-center">
+              <input class="buy_input" placeholder="Введите ваше имя" required>
+            </div>
+            <div class="col-lg-4 text-center">
+              <input class="buy_input" placeholder="Введите ваш номер" required>
+            </div>
+            <div class="col-lg-4 text-center">
+              <input class="buy_input" placeholder="Введите ваш e-mail" required>
+            </div>
+          </div>
+          <div class="row buy_button_row">
+            <div class="col-lg-12 text-center">
+              <button type="submit" class="main_button">ОСТАВИТЬ ЗАЯВКУ</button>
+            </div>
+        </form>
         </div>
       </div>
     </div>
-    <div class="row justify-content-center vcenter">
-        <div class="col-lg-4 col-md-6 text-center">
 
-        </div>
-        <div class="col-lg-2 col-md-12 text-center">
-          <div class="plan_number">01/05</div>
-        </div>
-        <div class="col-lg-4 col-md-6 text-center">
-          <div class="plan_number_text next_slide"><span class="nowrap">следующий этап</span>
-          <img class="plan_arrow" src="./img/plan_arrow_n.png" alt="plan_arrow">
+
+
+    <div class="container" id="port-item">
+      <div class="row">
+        <div class="col-md-12 row_title">ПОРТФОЛИО</div>
+      </div>
+      <div class="row portfolio_row justify-content-center">
+        <div class="col-lg-4 col-md-6 col-sm-8 col-10 portfolio_item">
+          <img class="portfolio_img" src="./img/portfolio_1.png" alt="portfolio_img">
+          <div class="portfolio_hover">
+            <a class="portfolio_link" href="https://max7853.github.io/praline/prod/" target="_blank">Перейти на сайт</a>
+            <a class="portfolio_link" href="https://www.behance.net/gallery/56136249/Landing-page-for-sweet-shop" target="_blank">Смотреть макет</a>
           </div>
         </div>
-    </div>
-  </div>
-</swiper-slide>
-
-
-<swiper-slide>
-  <div class="container">
-    <div class="row plan_row">
-      <div class="col-md-6 vcenter">
-        <img class="img-fluid" src="./img/plan_2.png" alt="plan_2">
-      </div>
-      <div class="col-md-6">
-        <div class="plan_title">Разработка прототипа и его утверждение</div>
-        <div class="plan_text">
-          Прототип – это схематическое изображение страниц
-          будущего сайта со всеми его элементами: меню,
-          кнопками, баннерами... То есть это картинка, на которой
-          видно, где  и что на вашем сайте будет расположено,
-          и как это будет работать.<br><br>
-          Работа над прототипом и текстом для сайта начинается
-          после предоплаты в 3000 рублей.
-        </div>
-      </div>
-    </div>
-    <div class="row justify-content-center vcenter">
-        <div class="col-lg-4 col-md-6 text-center">
-          <div class="plan_number_text prev_slide"><img class="plan_arrow" src="./img/plan_arrow_p.png" alt="plan_arrow"><span class="nowrap">предыдущий этап</span></div>
-        </div>
-        <div class="col-lg-2 col-md-12 text-center">
-          <div class="plan_number">02/05</div>
-        </div>
-        <div class="col-lg-4 col-md-6 text-center">
-          <div class="plan_number_text next_slide"><span class="nowrap">следующий этап</span>
-          <img class="plan_arrow" src="./img/plan_arrow_n.png" alt="plan_arrow">
+        <div class="col-lg-4 col-md-6 col-sm-8 col-10 portfolio_item">
+          <img class="portfolio_img" src="./img/portfolio_2.png" alt="portfolio_img">
+          <div class="portfolio_hover">
+            <a class="portfolio_link" href="https://max7853.github.io/goodfood/prod/" target="_blank">Перейти на сайт</a>
+            <a class="portfolio_link" href="https://www.behance.net/gallery/56485385/Landing-page-for-GOOD-FOOD" target="_blank">Смотреть макет</a>
           </div>
         </div>
-    </div>
-  </div>
-</swiper-slide>
-
-<swiper-slide>
-  <div class="container">
-    <div class="row plan_row">
-      <div class="col-md-6 vcenter">
-        <img class="img-fluid" src="./img/plan_3.png" alt="plan_3">
-      </div>
-      <div class="col-md-6">
-        <div class="plan_title">Разработка дизайна и его утверждение</div>
-        <div class="plan_text">
-          Дизайн сайта - это оформление вашего сайта, общая
-          работа с графикой, шрифтами, изображениями,
-          расположением элементов.<br><br>
-          Дизайн создается на основе брифа, все ньюансы
-          элементов зависят от анализа целевой аудитории,
-          правил web-дизайна и моего опыта в данной сфере.<br><br>
-          На разработку дизайна уходит от 3 до 5 рабочих дней.
-          После презентации вы вносите следующие 30% оплаты.
-        </div>
-      </div>
-    </div>
-    <div class="row justify-content-center vcenter">
-        <div class="col-lg-4 col-md-6 text-center">
-          <div class="plan_number_text prev_slide"><img class="plan_arrow" src="./img/plan_arrow_p.png" alt="plan_arrow"><span class="nowrap">предыдущий этап</span></div>
-        </div>
-        <div class="col-lg-2 col-md-12 text-center">
-          <div class="plan_number">03/05</div>
-        </div>
-        <div class="col-lg-4 col-md-6 text-center">
-          <div class="plan_number_text next_slide"><span class="nowrap">следующий этап</span>
-          <img class="plan_arrow" src="./img/plan_arrow_n.png" alt="plan_arrow">
+        <div class="col-lg-4 col-md-6 col-sm-8 col-10 portfolio_item">
+          <img class="portfolio_img" src="./img/portfolio_3.png" alt="portfolio_img">
+          <div class="portfolio_hover">
+            <a class="portfolio_link" href="https://max7853.github.io/fortunelux/prod/" target="_blank">Перейти на сайт</a>
+            <a class="portfolio_link" href="https://www.behance.net/gallery/60156935/Landing-page-for-driving-school" target="_blank">Смотреть макет</a>
           </div>
         </div>
+        <div class="col-lg-4 col-md-6 col-sm-8 col-10 portfolio_item">
+          <img class="portfolio_img" src="./img/portfolio_4.png" alt="portfolio_img">
+          <a href="https://www.behance.net/gallery/58756761/Website-for-legal-agency" target="_blank">
+            <div class="portfolio_hover">
+              <a class="portfolio_link" href="https://www.behance.net/gallery/58756761/Website-for-legal-agency" target="_blank">Смотреть макет</a>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-8 col-10 portfolio_item">
+          <img class="portfolio_img" src="./img/portfolio_5.png" alt="portfolio_img">
+          <a href="https://www.behance.net/gallery/59642911/Landing-page-for-slipsole" target="_blank">
+            <div class="portfolio_hover">
+              <a class="portfolio_link" href="https://www.behance.net/gallery/59642911/Landing-page-for-slipsole" target="_blank">Смотреть макет</a>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-8 col-10 portfolio_item">
+          <img class="portfolio_img" src="./img/portfolio_6.png" alt="portfolio_img">
+          <a href="https://www.behance.net/gallery/58306211/Landing-page-for-student-program" target="_blank">
+            <div class="portfolio_hover">
+              <a class="portfolio_link" href="https://www.behance.net/gallery/58306211/Landing-page-for-student-program" target="_blank">Смотреть макет</a>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-8 col-10 portfolio_item">
+          <img class="portfolio_img" src="./img/portfolio_7.png" alt="portfolio_img">
+          <a href="https://www.behance.net/karcreative" target="blank">
+            <div class="portfolio_hover">
+              <a class="portfolio_link" href="https://www.behance.net/gallery/56952809/Logos-2017-Part-one" target="_blank">Смотреть макет</a>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-8 col-10 portfolio_item">
+          <img class="portfolio_img" src="./img/portfolio_8.png" alt="portfolio_img">
+          <a href="https://www.behance.net/karcreative" target="blank">
+            <div class="portfolio_hover">
+              <a class="portfolio_link" href="https://www.behance.net/gallery/60368201/Logos-2017-Part-two" target="_blank">Смотреть макет</a>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-8 col-10 portfolio_item">
+          <img class="portfolio_img" src="./img/portfolio_9.png" alt="portfolio_img">
+          <a href="https://www.behance.net/karcreative" target="blank">
+            <div class="portfolio_hover">
+              <a class="portfolio_link" href="https://www.behance.net/gallery/60368201/Logos-2017-Part-two" target="_blank">Смотреть макет</a>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="row text-center">
+        <div class="col-md-12">
+          <a href="https://www.behance.net/karcreative" target="_blank">
+            <button class="main_button">СМОТРЕТЬ ВСЕ РАБОТЫ</button>
+          </a>
+        </div>
+      </div>
     </div>
-  </div>
-</swiper-slide>
 
-<swiper-slide>
-  <div class="container">
-    <div class="row plan_row">
-      <div class="col-md-6 vcenter">
-        <img class="img-fluid" src="./img/plan_4.png" alt="plan_4">
+
+
+    <div class="container-fluid plan_bg">
+      <div class="row" id="plan-item">
+        <div class="col-md-12 row_title">СХЕМА РАБОТЫ</div>
       </div>
-      <div class="col-md-6">
-        <div class="plan_title">Верстка сайта</div>
-        <div class="plan_text">
-          Далее дизайн трансформируется в чистый HTML и CSS
-          код, что увеличит скорость загрузки страниц, и сайт
-          будет корректно отображаться в любом браузере.<br><br>
-          Вся верстка - адаптивная. Это значит то, что  страница
-          будет  автоматически подстраиваться под разрешение
-          устройства, изменять размер картинок и так далее.
-        </div>
-      </div>
+
+      <swiper :options="slider">
+        <swiper-slide>
+          <div class="container">
+            <div class="row plan_row">
+              <div class="col-md-6 vcenter">
+                <img class="img-fluid" src="./img/plan_1.png" alt="plan_1">
+              </div>
+              <div class="col-md-6">
+                <div class="plan_title">Заполнение брифа</div>
+                <div class="plan_text">
+                  Чтобы начать работу над вашим проектом, вам необходимо заполнить бриф.
+                  <br>
+                  <br> Бриф призван четко обозначить цели и задачи проекта, а также ответить на три главных вопроса: что, для
+                  кого и как нужно делать.
+                  <br>
+                  <br> От его верно заполнения зависит то, как быстро и верно я пойму требования к будущему сайту.
+                </div>
+              </div>
+            </div>
+            <div class="row justify-content-center vcenter">
+              <div class="col-lg-4 col-md-6 text-center">
+
+              </div>
+              <div class="col-lg-2 col-md-12 text-center">
+                <div class="plan_number">01/05</div>
+              </div>
+              <div class="col-lg-4 col-md-6 text-center">
+                <div class="plan_number_text next_slide">
+                  <span class="nowrap">следующий этап</span>
+                  <img class="plan_arrow" src="./img/plan_arrow_n.png" alt="plan_arrow">
+                </div>
+              </div>
+            </div>
+          </div>
+        </swiper-slide>
+
+        <swiper-slide>
+          <div class="container">
+            <div class="row plan_row">
+              <div class="col-md-6 vcenter">
+                <img class="img-fluid" src="./img/plan_2.png" alt="plan_2">
+              </div>
+              <div class="col-md-6">
+                <div class="plan_title">Разработка прототипа и его утверждение</div>
+                <div class="plan_text">
+                  Прототип – это схематическое изображение страниц будущего сайта со всеми его элементами: меню, кнопками, баннерами... То
+                  есть это картинка, на которой видно, где и что на вашем сайте будет расположено, и как это будет работать.
+                  <br>
+                  <br> Работа над прототипом и текстом для сайта начинается после предоплаты в 3000 рублей.
+                </div>
+              </div>
+            </div>
+            <div class="row justify-content-center vcenter">
+              <div class="col-lg-4 col-md-6 text-center">
+                <div class="plan_number_text prev_slide">
+                  <img class="plan_arrow" src="./img/plan_arrow_p.png" alt="plan_arrow">
+                  <span class="nowrap">предыдущий этап</span>
+                </div>
+              </div>
+              <div class="col-lg-2 col-md-12 text-center">
+                <div class="plan_number">02/05</div>
+              </div>
+              <div class="col-lg-4 col-md-6 text-center">
+                <div class="plan_number_text next_slide">
+                  <span class="nowrap">следующий этап</span>
+                  <img class="plan_arrow" src="./img/plan_arrow_n.png" alt="plan_arrow">
+                </div>
+              </div>
+            </div>
+          </div>
+        </swiper-slide>
+
+        <swiper-slide>
+          <div class="container">
+            <div class="row plan_row">
+              <div class="col-md-6 vcenter">
+                <img class="img-fluid" src="./img/plan_3.png" alt="plan_3">
+              </div>
+              <div class="col-md-6">
+                <div class="plan_title">Разработка дизайна и его утверждение</div>
+                <div class="plan_text">
+                  Дизайн сайта - это оформление вашего сайта, общая работа с графикой, шрифтами, изображениями, расположением элементов.
+                  <br>
+                  <br> Дизайн создается на основе брифа, все ньюансы элементов зависят от анализа целевой аудитории, правил web-дизайна
+                  и моего опыта в данной сфере.
+                  <br>
+                  <br> На разработку дизайна уходит от 3 до 5 рабочих дней. После презентации вы вносите следующие 30% оплаты.
+                </div>
+              </div>
+            </div>
+            <div class="row justify-content-center vcenter">
+              <div class="col-lg-4 col-md-6 text-center">
+                <div class="plan_number_text prev_slide">
+                  <img class="plan_arrow" src="./img/plan_arrow_p.png" alt="plan_arrow">
+                  <span class="nowrap">предыдущий этап</span>
+                </div>
+              </div>
+              <div class="col-lg-2 col-md-12 text-center">
+                <div class="plan_number">03/05</div>
+              </div>
+              <div class="col-lg-4 col-md-6 text-center">
+                <div class="plan_number_text next_slide">
+                  <span class="nowrap">следующий этап</span>
+                  <img class="plan_arrow" src="./img/plan_arrow_n.png" alt="plan_arrow">
+                </div>
+              </div>
+            </div>
+          </div>
+        </swiper-slide>
+
+        <swiper-slide>
+          <div class="container">
+            <div class="row plan_row">
+              <div class="col-md-6 vcenter">
+                <img class="img-fluid" src="./img/plan_4.png" alt="plan_4">
+              </div>
+              <div class="col-md-6">
+                <div class="plan_title">Верстка сайта</div>
+                <div class="plan_text">
+                  Далее дизайн трансформируется в чистый HTML и CSS код, что увеличит скорость загрузки страниц, и сайт будет корректно отображаться
+                  в любом браузере.
+                  <br>
+                  <br> Вся верстка - адаптивная. Это значит то, что страница будет автоматически подстраиваться под разрешение
+                  устройства, изменять размер картинок и так далее.
+                </div>
+              </div>
+            </div>
+            <div class="row justify-content-center vcenter">
+              <div class="col-lg-4 col-md-6 text-center">
+                <div class="plan_number_text prev_slide">
+                  <img class="plan_arrow" src="./img/plan_arrow_p.png" alt="plan_arrow">
+                  <span class="nowrap">предыдущий этап</span>
+                </div>
+              </div>
+              <div class="col-lg-2 col-md-12 text-center">
+                <div class="plan_number">04/05</div>
+              </div>
+              <div class="col-lg-4 col-md-6 text-center">
+                <div class="plan_number_text next_slide">
+                  <span class="nowrap">следующий этап</span>
+                  <img class="plan_arrow" src="./img/plan_arrow_n.png" alt="plan_arrow">
+                </div>
+              </div>
+            </div>
+          </div>
+        </swiper-slide>
+
+        <swiper-slide>
+          <div class="container">
+            <div class="row plan_row">
+              <div class="col-md-6 vcenter">
+                <img class="img-fluid" src="./img/plan_5.png" alt="plan_5">
+              </div>
+              <div class="col-md-6">
+                <div class="plan_title">Перенос сайта</div>
+                <div class="plan_text">
+                  После того, как все элементы будут утверждены, готовый сайт размещается на нашем хостинге.
+                  <br>
+                  <br> После внесения последней части оплаты, сайт переносится на ваш хостинг. Обращаю ваше внимание, что хостинг
+                  и домент являются именными, клиент покупает их самостоятельно. При необходимости, сайт можно установить
+                  на CSM-систему Word Press.
+                </div>
+              </div>
+            </div>
+            <div class="row justify-content-center vcenter">
+              <div class="col-lg-4 col-md-6 text-center">
+                <div class="plan_number_text prev_slide">
+                  <img class="plan_arrow" src="./img/plan_arrow_p.png" alt="plan_arrow">
+                  <span class="nowrap">предыдущий этап</span>
+                </div>
+              </div>
+              <div class="col-lg-2 col-md-12 text-center">
+                <div class="plan_number">05/05</div>
+              </div>
+              <div class="col-lg-4 col-md-6 text-center">
+
+              </div>
+            </div>
+          </div>
+        </swiper-slide>
+      </swiper>
+
     </div>
-    <div class="row justify-content-center vcenter">
-        <div class="col-lg-4 col-md-6 text-center">
-          <div class="plan_number_text prev_slide"><img class="plan_arrow" src="./img/plan_arrow_p.png" alt="plan_arrow"><span class="nowrap">предыдущий этап</span></div>
+    <!-- container-fluid -->
+
+
+
+    <div class="container-fluid contacts">
+      <div class="container">
+        <div class="row contacts_title_padding" id="contacts-item">
+          <div class="col-md-12 row_title">ВЫБЕРЕТЕ УДОБНЫЙ СПОСОБ ОБЩЕНИЯ</div>
         </div>
-        <div class="col-lg-2 col-md-12 text-center">
-          <div class="plan_number">04/05</div>
-        </div>
-        <div class="col-lg-4 col-md-6 text-center">
-          <div class="plan_number_text next_slide"><span class="nowrap">следующий этап</span>
-          <img class="plan_arrow" src="./img/plan_arrow_n.png" alt="plan_arrow">
+        <div class="row">
+          <div class="col-md-6 text-center">
+            <form v-on:submit.prevent="modal = 1, modal_bg = 1" v-on:submit="reset_form" onsubmit="modal_open()">
+              <input class="contacts_input" placeholder="*Ваше имя" required>
+              <input class="contacts_input" placeholder="*Ваш телефон" required>
+              <input class="contacts_input contacts_input_big" placeholder="*Ваше сообщение" required>
+              <button type="submit" class="main_button">ОТПРАВИТЬ</button>
+            </form>
+          </div>
+          <div class="col-md-6 contacts_col">
+            <a href="https://vk.com/karcreative" target="_blank">
+              <img class="contacts_ico_big social_ico" src="./img/vk_big.png" alt="vk">
+            </a>
+            <a href="https://www.instagram.com/kar.creative/" target="_blank">
+              <img class="contacts_ico_big social_ico" src="./img/ins_big.png" alt="ins">
+            </a>
+            <a href=" https://www.behance.net/karcreative" target="_blank">
+              <img class="contacts_ico_big social_ico" src="./img/be_big.png" alt="be">
+            </a>
+            <div class="contacts_text">
+              <img class="contacts_ico" src="./img/phone.png" alt="phone"> + 7 (900) 287 25 50
+              <br>
+              <img class="contacts_ico" src="./img/mail.png" alt="mail"> kar.creative@mail.ru
+              <br>
+              <img class="contacts_ico" src="./img/skype.png" alt="skype"> skype: vailent_sama
+              <br>
+            </div>
           </div>
         </div>
-    </div>
-  </div>
-</swiper-slide>
-
-<swiper-slide>
-  <div class="container">
-    <div class="row plan_row">
-      <div class="col-md-6 vcenter">
-        <img class="img-fluid" src="./img/plan_5.png" alt="plan_5">
-      </div>
-      <div class="col-md-6">
-        <div class="plan_title">Перенос сайта</div>
-        <div class="plan_text">
-          После того, как все элементы будут утверждены,
-          готовый сайт размещается на нашем хостинге.<br><br>
-          После внесения последней части оплаты, сайт переносится
-          на ваш хостинг. Обращаю ваше внимание, что хостинг
-          и домент являются именными, клиент покупает их
-          самостоятельно. При необходимости, сайт можно
-          установить на CSM-систему Word Press.
-        </div>
       </div>
     </div>
-    <div class="row justify-content-center vcenter">
-        <div class="col-lg-4 col-md-6 text-center">
-          <div class="plan_number_text prev_slide"><img class="plan_arrow" src="./img/plan_arrow_p.png" alt="plan_arrow"><span class="nowrap">предыдущий этап</span></div>
-        </div>
-        <div class="col-lg-2 col-md-12 text-center">
-          <div class="plan_number">05/05</div>
-        </div>
-        <div class="col-lg-4 col-md-6 text-center">
 
+
+
+    <div class="container-fluid footer">
+      <div class="row">
+        <div class="col-md-12">Дизайн KARCREATIVE.RU</div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+    <!-- модальные окна -->
+
+    <transition name="modal_bg">
+      <div v-show="modal_bg == 1" v-on:click="modal_bg = 0, modal=0" class="modal_bg" onclick="modal_close()" v-cloak></div>
+    </transition>
+
+    <transition-group name="modal">
+
+      <div v-show="modal == 1" class="modal-container text-center" key="m_1" v-cloak>
+        <div class="close_modal" v-on:click="modal_bg = 0, modal = 0" onclick="modal_close()">&times</div>
+        <div class="modal_title">Ваша заявка получена</div>
+        <div class="modal_text">Вам перезвонят в течении 10 минут</div>
+        <button class="modal_button" v-on:click="modal_bg = 0, modal = 0" onclick="modal_close()">ЗАКРЫТЬ</button>
+      </div>
+
+      <div v-show="modal == 2" class="modal-container text-center" key="m_2" v-cloak>
+        <div class="close_modal" v-on:click="modal_bg = 0, modal = 0" onclick="modal_close()">&times</div>
+        <div class="modal_title">Оставьте заявку и наш менеджер свяжется с вами</div>
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <form v-on:submit.prevent="modal = 1, modal_bg = 1" v-on:submit="reset_form">
+              <input class="modal_input" type="text" placeholder="Ваше имя" required>
+              <input class="modal_input" type="text" placeholder="Номер телефона" required>
+              <button class="modal_button">ОСТАВИТЬ ЗАЯВКУ</button>
+            </form>
           </div>
         </div>
-    </div>
-</swiper-slide>
-</swiper>
-
-</div><!-- container-fluid -->
-
-
-
-<div class="container-fluid contacts">
-  <div class="container">
-    <div class="row contacts_title_padding" id="contacts-item">
-      <div class="col-md-12 row_title">ВЫБЕРЕТЕ УДОБНЫЙ СПОСОБ ОБЩЕНИЯ</div>
-    </div>
-    <div class="row">
-      <div class="col-md-6 text-center">
-        <input class="contacts_input" placeholder="*Ваше имя">
-        <input class="contacts_input" placeholder="*Ваш телефон">
-        <input class="contacts_input contacts_input_big" placeholder="*Ваше сообщение">
-        <button class="main_button">ОТПРАВИТЬ</button>
       </div>
-      <div class="col-md-6 contacts_col">
-        <img class="contacts_ico_big social_ico" src="./img/vk_big.png" alt="vk">
-        <img class="contacts_ico_big social_ico" src="./img/ins_big.png" alt="ins">
-        <img class="contacts_ico_big social_ico" src="./img/be_big.png" alt="be">
-        <div class="contacts_text">
-          <img class="contacts_ico" src="./img/phone.png" alt="phone">
-          + 7 (900) 287 25 50<br>
-          <img class="contacts_ico" src="./img/mail.png" alt="mail">
-          kar.creative@mail.ru<br>
-          <img class="contacts_ico" src="./img/skype.png" alt="skype">
-          skype: vailent_sama<br>
-        </div>
-      </div>
-    </div>
+
+    </transition-group>
+
+
+
+
+
+
+
+
   </div>
-</div>
+  <!-- #app -->
+
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="https://unpkg.com/vue-scrollto"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/css/swiper.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/js/swiper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue-awesome-swiper@3.0.4/dist/vue-awesome-swiper.js"></script>
+
+  <script>
+
+    Vue.use(VueAwesomeSwiper)
+    new Vue({
+      el: '#app',
+      data: {
+        modal_bg: 0,
+        modal: 0,
+        slider: {
+          speed: 600,
+          loop: false,
+          simulateTouch: false,
+          navigation: {
+            nextEl: '.next_slide',
+            prevEl: '.prev_slide'
+          }
+        },
+      },
+      methods: {
+        reset_form: function () { event.target.reset() }
+      },
+    })
+
+
+    function modal_open() {
+      if (/Mobi/.test(navigator.userAgent)) {
+        document.body.classList.add("scroll-disable-mobile")
+      }
+      else {
+        document.body.classList.add("scroll-disable-desktop")
+      }
+    };
+
+    function modal_close() {
+      setTimeout(function () {
+        if (/Mobi/.test(navigator.userAgent)) {
+          document.body.classList.remove("scroll-disable-mobile")
+        }
+        else {
+          document.body.classList.remove("scroll-disable-desktop")
+        }
+      }, 300);
+    };
 
 
 
-<div class="container-fluid footer">
-  <div class="row">
-    <div class="col-md-12">Дизайн KARCREATIVE.RU</div>
-  </div>
-</div>
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</div><!-- #app -->
-
-<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-<script src="https://unpkg.com/vue-scrollto"></script>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/css/swiper.min.css" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/js/swiper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vue-awesome-swiper@3.0.4/dist/vue-awesome-swiper.js"></script>
-
-<script>
-
-Vue.use(VueAwesomeSwiper)
-new Vue({
-  el: '#app',
-  data: {
-    modal_bg: 0,
-    modal: 0,
-    slider: {
-      speed: 600,
-      loop: false,
-       navigation: {
-         nextEl: '.next_slide',
-         prevEl: '.prev_slide'
-       }
-    },
-  },
-  methods: {reset_form:function(){event.target.reset()}
-  },
-})
-
-</script>
+  </script>
 
 
 </body>
+
 </html>
